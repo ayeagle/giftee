@@ -121,13 +121,18 @@ export default function HomeTop({ oneOpen }) {
     }
   };
 
+  useEffect(() => {
+    let promise = getAccessTokenSilently();
+    promise.then((token) => {
+      PageLoadDataInit({ user, token });
+    });
+  });
 
   // if (user) {
   return (
     <>
       <LoadingPage />
       <MetaHead />
-      <PageLoadDataInit />
       <div
         style={{
           backgroundColor: oneOpen ? "rgba(0, 0, 0, 0.657)" : "",

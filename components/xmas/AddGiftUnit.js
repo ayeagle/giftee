@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from "react";
 import styles from "/pages/AddGift.module.css";
 import XMAS_AddGift from "@components/mutation_apis/XMAS_AddGift";
 import XMAS_DeleteGift from "@components/mutation_apis/XMAS_DeleteGift";
-import { getGroupObject } from "@components/data_management/curr_group_data";
+import { getGroupObject } from "@components/data_management/CurrGroupData";
 import XMAS_GetGroupObject from "@components/mutation_apis/XMAS_GetGroupObject";
 import Spacer from "@components/Spacer";
 import HomeBottom from "@components/xmas/HomeBottom";
@@ -10,7 +10,7 @@ import HomeTop from "@components/xmas/HomeTop";
 import {
   isReady,
   getAllGroups,
-} from "@components/data_management/curr_group_data";
+} from "@components/data_management/CurrGroupData";
 import XMAS_UpdateGift from "@components/mutation_apis/XMAS_UpdateGift";
 import Loading from "@components/xmas/Loading";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -24,7 +24,7 @@ export default function AddGiftUnit({
   prompt,
   focusGift,
   setSingleGiftOpen,
-  groupData
+  groupData,
 }) {
   // const [userCheckVal, setUserCheckVal] = useState('')
   // const [userPasswordCheckVal, setUserPasswordCheckVal] = useState('')
@@ -67,7 +67,9 @@ export default function AddGiftUnit({
 
   const [privateGroup, setPrivateGroup] = useState(true);
   const [showDeletionWarning, setShowDeletionWarning] = useState(false);
-  const [showDeletionWarningText, setShowDeletionWarningText] = useState("Are you positive? There is a permanent deletion of your gift");
+  const [showDeletionWarningText, setShowDeletionWarningText] = useState(
+    "Are you positive? There is a permanent deletion of your gift"
+  );
 
   ///hkjhsdakjhsakjdh
 
@@ -191,12 +193,13 @@ export default function AddGiftUnit({
     setRunOnce(runOnce + 1);
   }
 
-   const  deleteGift = async (focusGift) => {
-    let tempObj = groupData
-    tempObj.gifts = groupData.gifts.filter((gift) => gift.gift_id !== focusGift.gift_id)
+  const deleteGift = async (focusGift) => {
+    let tempObj = groupData;
+    tempObj.gifts = groupData.gifts.filter(
+      (gift) => gift.gift_id !== focusGift.gift_id
+    );
 
     const token = await getAccessTokenSilently();
-
 
     let promise = XMAS_DeleteGift(
       localStorage.getItem("user_id"),
@@ -213,7 +216,7 @@ export default function AddGiftUnit({
         setGiftURL("");
         setGiftCost("");
         setCustomCost("");
-    
+
         setGiftDetails("");
         updateSlider("");
         setShowDeletionWarning(false);
@@ -222,7 +225,6 @@ export default function AddGiftUnit({
         slider.value = 0;
       }, [1500]);
     });
-
   };
 
   const getGroups = () => {
@@ -327,17 +329,17 @@ export default function AddGiftUnit({
         setSingleGiftOpen(false);
       }, [1000]);
     } else {
-      let promise = XMAS_AddGift(
-        localStorage.getItem("user_id"),
-        localStorage.getItem("user_name"),
-        localStorage.getItem("group_id"),
-        giftName,
-        giftURL,
-        true_cost,
-        giftDetails,
-        attachedGroups,
-        token
-      );
+      let promise = XMAS_AddGift({
+        user_id: localStorage.getItem("user_id"),
+        user_name: localStorage.getItem("user_name"),
+        group_id: localStorage.getItem("group_id"),
+        giftName: giftName,
+        giftURL: giftURL,
+        giftCost: true_cost,
+        giftDetails: giftDetails,
+        attachedGroups: attachedGroups,
+        token: token,
+      });
       setSuccessPrompt("Gift Added!");
 
       promise.then((data) => {
@@ -769,9 +771,7 @@ export default function AddGiftUnit({
                 <>
                   {showDeletionWarning ? (
                     <>
-                      <h3>
-                        {showDeletionWarningText}
-                      </h3>
+                      <h3>{showDeletionWarningText}</h3>
                       <div
                         style={{
                           display: "flex",

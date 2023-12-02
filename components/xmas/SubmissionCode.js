@@ -1,7 +1,7 @@
 // import React, { Component, useState, useEffect } from 'react'
 // import styles from '@components/xmas/Login.module.css'
 // import XMAS_CheckUser from '../mutation_apis/XMAS_CheckUser';
-// import { getGroupObject, updateGroupObject } from '../data_management/curr_group_data';
+// import { getGroupObject, updateGroupObject } from '../data_management/CurrGroupData';
 // import XMAS_GetGroupObject from '../mutation_apis/XMAS_GetGroupObject';
 // import InputUsers from '@components/xmas/InputUsers'
 // import UserSelect from './UserSelect';

@@ -4,7 +4,7 @@ import Spacer from "@components/Spacer";
 import {
   getGroupObject,
   updateGroupObject,
-} from "@components/data_management/curr_group_data";
+} from "@components/data_management/CurrGroupData";
 import XMAS_GetGroupObject from "@components/mutation_apis/XMAS_GetGroupObject";
 import NavBar from "@components/xmas/NavBar";
 // import Explore from "@components/xmas/Explore";
@@ -20,7 +20,7 @@ import Loading from "./Loading";
 // import NavBar from "@components/xmas/NavBar";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoadingPage from "./LoadingPage";
-import { isReady } from "@components/data_management/curr_group_data";
+import { isReady } from "@components/data_management/CurrGroupData";
 // import getStarted from "@pages/getStarted"
 import MetaHead from "./MetaHead";
 

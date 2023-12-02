@@ -1,8 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import styles from './Typing.module.css'
+import styles from "./Typing.module.css";
 
-export default function Typing({ content, size, applyGradient }) {
+export default function Typing({
+  content,
+  size,
+  applyGradient,
+}: {
+  content: string
+  size: string
+  applyGradient: boolean
+}) {
   const [displayText, setDisplayText] = useState("");
   const [index, setIndex] = useState(0);
   const [spacer, setSpacer] = useState(`|`);
@@ -50,15 +58,19 @@ export default function Typing({ content, size, applyGradient }) {
         justifyContent: "center",
       }}
     >
-      {/* <div   dangerouslySetInnerHTML={{ __html: displayText + extra}}><span style={{position: "absolute"}}>{spacer}</span> */}
       <div
-      className={styles.typing_animate}
+        className={applyGradient ? styles.typing_animate : null}
         style={{
           fontSize: size,
         }}
       >
         {displayText}
-        <span className={styles.typing_animate} style={{ position: "absolute" }}>{spacer}</span>
+        <span
+          className={applyGradient ? styles.typing_animate : null}
+          style={{ position: "absolute" }}
+        >
+          {spacer}
+        </span>
       </div>
     </div>
   );

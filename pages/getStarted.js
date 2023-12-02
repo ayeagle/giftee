@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import styles from "pages/getStarted.module.css";
 import Spacer from "@components/Spacer";
-import { getGroupObject } from "@components/data_management/curr_group_data";
+import { getGroupObject } from "@components/data_management/CurrGroupData";
 import HomeBottom from "@components/xmas/HomeBottom";
-import { isReady } from "@components/data_management/curr_group_data";
+import { isReady } from "@components/data_management/CurrGroupData";
 import LoadingPage from "@components/xmas/LoadingPage";
 import MasterBodyContainer from "@components/xmas/MasterBodyContainer";
 import NavBar from "@components/xmas/NavBar";
 import PageLoadDataInit from "@components/data_management/PageLoadDataInit";
 import { useAuth0 } from "@auth0/auth0-react";
 import XMAS_ChangeUserName from "@components/mutation_apis/XMAS_ChangeUserName";
-import { getUserData, updateUserData } from "@components/data_management/curr_group_data";
+import { getUserData, updateUserData } from "@components/data_management/CurrGroupData";
 import XMAS_ChangeOnboarded from "@components/mutation_apis/XMAS_ChangeOnboarded";
 
 const slides = [

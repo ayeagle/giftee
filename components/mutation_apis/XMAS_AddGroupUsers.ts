@@ -1,21 +1,30 @@
 import axios from "node_modules/axios/index";
-import { getGroupObject, updateGroupObject } from "../data_management/curr_group_data";
 
-export default function XMAS_AddGroupUsers(user_ids_array, user_names_array, group_id, token) {
+type AddGroupUsersProps = {
+  user_ids_array: string[];
+  user_names_array: string[];
+  group_id: string;
+  token: string;
+};
+
+export default function XMAS_AddGroupUsers(props: AddGroupUsersProps) {
   // let curr_group = getGroupObject()
   let testName = "";
 
   ////console.log("Add group users -- client-side invoked");
 
   return axios
-    .post("https://server.giftee.io/xmas_addGroupUsers", {
-      group_id: group_id,
-      user_names_array: user_names_array,
-      user_ids_array: user_ids_array,
-    },
-    {
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    .post(
+      "https://server.giftee.io/xmas_addGroupUsers",
+      {
+        group_id: props.group_id,
+        user_names_array: props.user_names_array,
+        user_ids_array: props.user_ids_array,
+      },
+      {
+        headers: { Authorization: `Bearer ${props.token}` },
+      }
+    )
     .then((response) => {
       ////console.log(response.data);
       testName = response.data;

@@ -15,11 +15,11 @@ import {
   getGroupObject,
   updateGroupObject,
   getAllGroups,
-} from "@components/data_management/curr_group_data";
+} from "@components/data_management/CurrGroupData";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import MasterBodyContainer from "@components/xmas/MasterBodyContainer";
 import XMAS_ChangeOnboarded from "@components/mutation_apis/XMAS_ChangeOnboarded";
-import { getUserData } from "@components/data_management/curr_group_data";
+import { getUserData } from "@components/data_management/CurrGroupData";
 
 let curr_group;
 let name = "";

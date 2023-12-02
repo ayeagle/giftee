@@ -4,7 +4,7 @@ import Spacer from "@components/Spacer";
 import {
   getGroupObject,
   updateGroupObject,
-} from "@components/data_management/curr_group_data";
+} from "@components/data_management/CurrGroupData";
 import XMAS_GetGroupObject from "@components/mutation_apis/XMAS_GetGroupObject";
 import NavBar from "@components/xmas/NavBar";
 // import Explore from "@components/xmas/Explore";

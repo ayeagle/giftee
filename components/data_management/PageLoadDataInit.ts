@@ -2,14 +2,14 @@ import XMAS_ResolveUser from "../mutation_apis/XMAS_ResolveUser";
 import XMAS_GetAllGroupsData from "../mutation_apis/XMAS_GetAllGroupsData";
 import XMAS_GetGroupObject from "../mutation_apis/XMAS_GetGroupObject";
 import XMAS_AddGroupUsers from "../mutation_apis/XMAS_AddGroupUsers";
-import * as local from "./curr_group_data";
+import * as local from "./CurrGroupData";
 import { useEffect } from "react";
 import XMAS_GetUserData from "../mutation_apis/XMAS_GetUserData";
 import {
   initGroupObject,
   updateAllGroups,
   updateUserData,
-} from "./curr_group_data";
+} from "./CurrGroupData";
 import { useAuth0 } from "@auth0/auth0-react";
 
 let local_user_id;
@@ -91,12 +91,12 @@ export default function PageLoadDataInit() {
     user_name = localStorage.getItem("user_name");
     local_user_id = localStorage.getItem("user_id");
     if (ref_group_id) {
-      let promise = XMAS_AddGroupUsers(
-        [local_user_id],
-        [user_name],
-        ref_group_id,
-        token
-      );
+      let promise = XMAS_AddGroupUsers({
+        user_ids_array: [local_user_id],
+        user_names_array: [user_name],
+        group_id: ref_group_id,
+        token: token,
+      });
       localStorage.removeItem("ref_group_id");
       promise.then((data) => {
         //console.log("Posted user update from referral");

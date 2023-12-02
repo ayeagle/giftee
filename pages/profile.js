@@ -1,13 +1,13 @@
 import React, { Component, useState, useEffect } from "react";
 import styles from "./Profile.module.css";
-import { getGroupObject } from "@components/data_management/curr_group_data";
+import { getGroupObject } from "@components/data_management/CurrGroupData";
 import XMAS_GetGroupObject from "@components/mutation_apis/XMAS_GetGroupObject";
 import XMAS_PostGroupChange from "@components/mutation_apis/XMAS_PostGroupChange";
 import Spacer from "@components/Spacer";
 // import React from 'react';
 import HomeTop from "@components/xmas/HomeTop";
 import HomeBottom from "@components/xmas/HomeBottom";
-import { isReady } from "@components/data_management/curr_group_data";
+import { isReady } from "@components/data_management/CurrGroupData";
 import Loading from "@components/xmas/Loading";
 import * as icons from "react-icons/fa";
 import ReferralLink from "@components/xmas/ReferralLink";

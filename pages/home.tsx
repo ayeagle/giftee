@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import Explore from "./Explore";
+import Explore from "./explore";
 
 export default function Home() {
   //this file should be moving forward for when users are not logged in

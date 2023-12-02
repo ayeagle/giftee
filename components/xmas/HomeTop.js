@@ -108,7 +108,7 @@ export default function HomeTop({ oneOpen }) {
     promise.then((token) => {
       PageLoadDataInit({ user, token });
     });
-  });
+  },[]);
 
   // if (user) {
   return (

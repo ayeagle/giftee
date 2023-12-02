@@ -10,7 +10,7 @@
 // //   login()
 
 // import axios from "node_modules/axios/index";
-// // import { getGroupObject, updateGroupObject } from "../data_management/curr_group_data";
+// // import { getGroupObject, updateGroupObject } from "../data_management/CurrGroupData";
 
 // // let testName = ''
 

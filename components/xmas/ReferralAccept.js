@@ -3,7 +3,7 @@ import Loading from "@components/xmas/Loading";
 import { useEffect, useState } from "react";
 import styles from "pages/tempInvite.module.css";
 import Spacer from "@components/Spacer";
-import { getGroupObject } from "@components/data_management/curr_group_data";
+import { getGroupObject } from "@components/data_management/CurrGroupData";
 import Gifts from "@components/xmas/Gifts";
 import HomeTop from "@components/xmas/HomeTop";
 import HomeBottom from "@components/xmas/HomeBottom";

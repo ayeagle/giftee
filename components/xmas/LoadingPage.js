@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { isReady } from "@components/data_management/curr_group_data";
+import { isReady } from "@components/data_management/CurrGroupData";
 import styles from "@components/xmas/LoadingPage.module.css";
 import Spacer from "@components/Spacer";
 

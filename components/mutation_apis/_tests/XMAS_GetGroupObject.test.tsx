@@ -40,29 +40,29 @@ type TestDataPayload = {
   };
 };
 
-const test_cases: TestDataPayload[] = [
-  {
-    test_title: "this is the test case",
-    input_data: {
-      group_id: "94c1bc75-3aaf-4a67-bcc7-6e5fdffc3ba3",
-    },
-    output: {
-      main_value: 3,
-      type: 'string'
-    },
-  },
-];
+// const test_cases: TestDataPayload[] = [
+//   {
+//     test_title: "this is the test case",
+//     input_data: {
+//       group_id: "94c1bc75-3aaf-4a67-bcc7-6e5fdffc3ba3",
+//     },
+//     output: {
+//       main_value: 3,
+//       type: 'string'
+//     },
+//   },
+// ];
 
-export default function XMAS_GetGroupObject_test(
-  test_cases: TestDataPayload[]
-) {
-  for (const t_case of test_cases) {
-    test("adds 1 + 2 to equal 3", () => {
-      const data = XMAS_GetGroupObject(t_case.input_data.group_id);
+// export default function XMAS_GetGroupObject_test(
+//   test_cases: TestDataPayload[]
+// ) {
+//   for (const t_case of test_cases) {
+//     test("adds 1 + 2 to equal 3", () => {
+//       const data = XMAS_GetGroupObject(t_case.input_data.group_id);
 
-      console.dir(data);
+//       console.dir(data);
 
-      expect(data).toBe(3);
-    });
-  }
-}
+//       expect(data).toBe(3);
+//     });
+//   }
+// }

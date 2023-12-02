@@ -2,7 +2,7 @@
 // import styles from './InputUsers.module.css'
 // import Spacer from '@components/Spacer';
 // import UserSelect from "@components/xmas/UserSelect";
-// import { getGroupObject, updateGroupObject } from '@components/data_management/curr_group_data';
+// import { getGroupObject, updateGroupObject } from '@components/data_management/CurrGroupData';
 // import XMAS_PostGroupObject from '../mutation_apis/XMAS_PostGroupObject';
 // import { useAuth0 } from "@auth0/auth0-react";
 

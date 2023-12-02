@@ -13,7 +13,7 @@ import {
   getGroupObject,
   updateGroupObject,
   getAllGroups,
-} from "@components/data_management/curr_group_data";
+} from "@components/data_management/CurrGroupData";
 import {
   useInRouterContext,
   useRevalidator,
@@ -301,13 +301,13 @@ export default function CreatGroupFlow({
 
     setGiftAdded(true);
 
-    ////console.log(attachedUsers);
-    let promise = XMAS_AddGroupUsers(
-      attachedUsers,
-      attachedUsersNames,
-      brandNewId,
-      token
-    );
+    let promise = XMAS_AddGroupUsers({
+      user_ids_array: attachedUsers,
+      user_names_array: attachedUsersNames,
+      group_id: brandNewId,
+      token: token,
+    });
+
 
     promise.then((data) => {
       ////console.log(data);

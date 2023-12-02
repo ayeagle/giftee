@@ -3,16 +3,16 @@ import styles from "@components/xmas/Gifts.module.css";
 import {
   getGroupObject,
   updateGroupObject,
-} from "../data_management/curr_group_data";
+} from "../data_management/CurrGroupData";
 import XMAS_GetGroupObject from "../mutation_apis/XMAS_GetGroupObject";
 import Spacer from "@components/Spacer";
 import XMAS_SetTaken from "../mutation_apis/XMAS_SetTaken";
 import XMAS_DeleteGift from "../mutation_apis/XMAS_DeleteGift";
 import { useRef } from "react";
 import XMAS_GetAllGroupsData from "@components/mutation_apis/XMAS_GetAllGroupsData";
-import { isReady } from "../data_management/curr_group_data";
+import { isReady } from "../data_management/CurrGroupData";
 import Loading from "./Loading";
-import * as local from "@components/data_management/curr_group_data";
+import * as local from "@components/data_management/CurrGroupData";
 import ErrorPrompt from "./ErrorPrompt";
 import { useAuth0 } from "@auth0/auth0-react";
 

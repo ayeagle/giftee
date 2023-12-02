@@ -3,13 +3,13 @@ import styles from "./myGifts.module.css";
 import {
   getGroupObject,
   updateGroupObject,
-} from "@components/data_management/curr_group_data";
+} from "@components/data_management/CurrGroupData";
 import XMAS_GetGroupObject from "@components/mutation_apis/XMAS_GetGroupObject";
 import Spacer from "@components/Spacer";
 import XMAS_SetTaken from "@components/mutation_apis/XMAS_SetTaken";
 import { useRef } from "react";
 import XMAS_GetAllGroupsData from "@components/mutation_apis/XMAS_GetAllGroupsData";
-import { isReady } from "@components/data_management/curr_group_data";
+import { isReady } from "@components/data_management/CurrGroupData";
 import HomeTop from "@components/xmas/HomeTop";
 import HomeBottom from "@components/xmas/HomeBottom";
 import AddGiftUnit from "@components/xmas/AddGiftUnit";

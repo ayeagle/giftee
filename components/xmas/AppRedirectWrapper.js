@@ -10,7 +10,7 @@ import { useState, useEffect, useRef } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoadingPage from "./LoadingPage";
 import Begin from "pages/begin";
-import * as local from "@components/data_management/curr_group_data";
+import * as local from "@components/data_management/CurrGroupData";
 import { useFetcher } from "node_modules/react-router-dom/dist/index";
 
 let slug;

@@ -1,6 +1,6 @@
 // import React, { Component, useState, useEffect } from 'react'
 // import styles from '@components/xmas/Profile.module.css'
-// import { getGroupObject } from '../data_management/curr_group_data';
+// import { getGroupObject } from '../data_management/CurrGroupData';
 // import XMAS_GetGroupObject from '../mutation_apis/XMAS_GetGroupObject';
 // import XMAS_PostGroupChange from '@components/mutation_apis/XMAS_PostGroupChange';
 // import Spacer from '@components/Spacer';

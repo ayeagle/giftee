@@ -10,19 +10,20 @@ import {
   updateAllGroups,
   updateUserData,
 } from "./CurrGroupData";
-import { useAuth0 } from "@auth0/auth0-react";
+import { User, useAuth0 } from "@auth0/auth0-react";
 
 let local_user_id;
 let main_group_id;
 let ref_group_id;
 let user_name;
 
-export default function PageLoadDataInit() {
-  const { user, getAccessTokenSilently } = useAuth0();
+type PageLoadDataInitProps = {
+  token: string;
+  user: User;
+};
 
-  useEffect(() => {
-    execUseEffect();
-  }, []);
+export default function PageLoadDataInit(props: PageLoadDataInitProps) {
+  execUseEffect();
 
   //////////////////////
   //////////////////////
@@ -37,18 +38,21 @@ export default function PageLoadDataInit() {
     const referralCode = params.get("refid");
     localStorage.setItem("refid", referralCode);
 
-    await user;
+    await props.user;
     let tempid = localStorage.getItem("user_id");
     if (tempid && tempid != "0") {
       await grabUserData();
       await grabGroupData();
       await grabAllGroupsData();
     } else if (window.location.href.split("/").pop() != "begin") {
-      await user;
-      const token = await getAccessTokenSilently();
-      let promise = XMAS_ResolveUser(user.name, user.email, token);
+      await props.user;
+      let promise = XMAS_ResolveUser(
+        props.user.name,
+        props.user.email,
+        props.token
+      );
       promise.then(async (data) => {
-        localStorage.setItem("user_name", user.name);
+        localStorage.setItem("user_name", props.user.name);
         localStorage.setItem("user_id", data.user_id);
         await grabUserData();
         await grabGroupData();
@@ -63,16 +67,11 @@ export default function PageLoadDataInit() {
   //need to delete the localstorage upon logout
 
   const grabUserData = async () => {
-    const token = await getAccessTokenSilently();
-    let promise = XMAS_GetUserData(localStorage.getItem("user_id"), token);
+    let promise = XMAS_GetUserData(
+      localStorage.getItem("user_id"),
+      props.token
+    );
     promise.then((data) => {
-      //console.log("this is the data returned by the user call");
-      //console.log("this is the data returned by the user call");
-      //console.log("this is the data returned by the user call");
-
-      //console.log(data);
-      //console.log(data);
-      //console.log(data);
       updateUserData(data);
     });
   };
@@ -82,12 +81,7 @@ export default function PageLoadDataInit() {
   //////////////////////
 
   const grabGroupData = async () => {
-    const token = await getAccessTokenSilently();
     ref_group_id = localStorage.getItem("ref_group_id");
-    //console.log('ref_group_id')
-    //console.log('ref_group_id')
-    //console.log(ref_group_id)
-    //console.log(ref_group_id)
     user_name = localStorage.getItem("user_name");
     local_user_id = localStorage.getItem("user_id");
     if (ref_group_id) {
@@ -95,7 +89,7 @@ export default function PageLoadDataInit() {
         user_ids_array: [local_user_id],
         user_names_array: [user_name],
         group_id: ref_group_id,
-        token: token,
+        token: props.token,
       });
       localStorage.removeItem("ref_group_id");
       promise.then((data) => {
@@ -105,17 +99,11 @@ export default function PageLoadDataInit() {
   };
 
   const grabAllGroupsData = async () => {
-    const token = await getAccessTokenSilently();
-    let allGroups = XMAS_GetAllGroupsData(local_user_id, token);
-    await user;
+    let allGroups = XMAS_GetAllGroupsData(local_user_id, props.token);
+    await props.user;
 
     allGroups.then((data) => {
       updateAllGroups(data, "page load init");
-      //console.log("{{{{{{{{{{{{{{{}}}}}}}}}}}}}}")
-      //console.log("{{{{{{{{{{{{{{{}}}}}}}}}}}}}}")
-      //console.log(data)
-      //console.log("{{{{{{{{{{{{{{{}}}}}}}}}}}}}}")
-      //console.log("{{{{{{{{{{{{{{{}}}}}}}}}}}}}}")
       if (!localStorage.getItem("group_id")) {
         if (data.length > 1) {
           main_group_id = data[0].id;
@@ -127,7 +115,7 @@ export default function PageLoadDataInit() {
       }
       localStorage.setItem("group_id", main_group_id);
       if (main_group_id != -1) {
-        let mainGroup = XMAS_GetGroupObject(main_group_id, token);
+        let mainGroup = XMAS_GetGroupObject(main_group_id, props.token);
         mainGroup.then((data) => {
           initGroupObject(data, "pageloadinit local update");
         });

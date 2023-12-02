@@ -226,10 +226,16 @@ export default function getStarted({errorHappening, setErrorHappening}) {
     }
   }, []);
 
+  useEffect(() => {
+    let promise = getAccessTokenSilently();
+    promise.then((token) => {
+      PageLoadDataInit(user, token);
+    });
+  });
+
   return (
     <>
       <LoadingPage />
-      <PageLoadDataInit />
       <div className={styles.gift_header_container}>
         <div className={styles.gift_header}>
           <div

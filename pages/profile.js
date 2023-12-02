@@ -1,7 +1,6 @@
 import React, { Component, useState, useEffect } from "react";
 import styles from "./Profile.module.css";
 import { getGroupObject } from "@components/data_management/CurrGroupData";
-import XMAS_GetGroupObject from "@components/mutation_apis/XMAS_GetGroupObject";
 import XMAS_PostGroupChange from "@components/mutation_apis/XMAS_PostGroupChange";
 import Spacer from "@components/Spacer";
 // import React from 'react';
@@ -12,7 +11,6 @@ import Loading from "@components/xmas/Loading";
 import * as icons from "react-icons/fa";
 import ReferralLink from "@components/xmas/ReferralLink";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
-import LoadingPage from "@components/xmas/LoadingPage";
 import MasterBodyContainer from "@components/xmas/MasterBodyContainer";
 import DatePicker from "react-datepicker";
 

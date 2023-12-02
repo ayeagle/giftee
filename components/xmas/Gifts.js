@@ -1,19 +1,11 @@
 import React, { Component, useState, useEffect, forceUpdate } from "react";
 import styles from "@components/xmas/Gifts.module.css";
-import {
-  getGroupObject,
-  updateGroupObject,
-} from "../data_management/CurrGroupData";
-import XMAS_GetGroupObject from "../mutation_apis/XMAS_GetGroupObject";
+import { getGroupObject } from "../data_management/CurrGroupData";
 import Spacer from "@components/Spacer";
 import XMAS_SetTaken from "../mutation_apis/XMAS_SetTaken";
-import XMAS_DeleteGift from "../mutation_apis/XMAS_DeleteGift";
 import { useRef } from "react";
-import XMAS_GetAllGroupsData from "@components/mutation_apis/XMAS_GetAllGroupsData";
 import { isReady } from "../data_management/CurrGroupData";
 import Loading from "./Loading";
-import * as local from "@components/data_management/CurrGroupData";
-import ErrorPrompt from "./ErrorPrompt";
 import { useAuth0 } from "@auth0/auth0-react";
 
 let colors = [
@@ -82,22 +74,6 @@ export default function Gifts({
 
   const displayedCountRef = useRef(0);
 
-
-  // useEffect(() => {
-  //   displayedCountRef.current = 0; // Reset the displayed count when the component mounts
-  //   ////console.log(displayCount)
-  //   ////console.log(maxGifts)
-  // }, [setMaxGifts]);
-
-  // useEffect(() => {
-  //   increaseGiftLimit()
-  // }, [groupData])
-
-  //////console.log("............");
-  //////console.log("............");
-  //////console.log("............");
-  //////console.log(groupData);
-
   useEffect(() => {
     startGiftWait();
   }, []);
@@ -114,14 +90,6 @@ export default function Gifts({
     // }, 100);
   }
 
-  ////console.log("this is is ready");
-
-  ////console.log(local.isUserReady());
-
-  // async function getGifts() {
-  //   userObject = await local.getUserData();
-  //   setUserLoaded(true);
-  // }
 
   const [oldCount, setOldCount] = useState(0);
 
@@ -281,18 +249,13 @@ export default function Gifts({
       set_curr_user_id(null);
     }
 
-    //////console.log("ghghghghghhgg");
-    //////console.log("ghghghghghhgg");
-    //////console.log("ghghghghghhgg");
-    //////console.log("ghghghghghhgg");
-    //////console.log("ghghghghghhgg");
-    //////console.log("ghghghghghhgg");
-    //////console.log(taken);
-    //////console.log(gift_id);
-    //////console.log(userValId);
-    //////console.log(userValName);
-
-    let promise = XMAS_SetTaken(taken, gift_id, userValId, userValName, token);
+    let promise = XMAS_SetTaken({
+      taken_value: taken,
+      gift_unique_id: gift_id,
+      giver_id: userValId,
+      giver_name: userValName,
+      token: token,
+    });
 
     promise.then((data) => {
       setStale(true);
@@ -410,9 +373,7 @@ export default function Gifts({
         <div className={styles.gift_container}>
           <div className={styles.sort_container}>
             {claimed ? (
-              <div style={{ flexDirection: "column" }}>
-      
-              </div>
+              <div style={{ flexDirection: "column" }}></div>
             ) : (
               <div></div>
             )}

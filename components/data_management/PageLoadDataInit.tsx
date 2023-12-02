@@ -99,7 +99,10 @@ export default function PageLoadDataInit(props: PageLoadDataInitProps) {
   };
 
   const grabAllGroupsData = async () => {
-    let allGroups = XMAS_GetAllGroupsData(local_user_id, props.token);
+    let allGroups = XMAS_GetAllGroupsData({
+      user_id: local_user_id,
+      token: props.token,
+    });
     await props.user;
 
     allGroups.then((data) => {
@@ -115,7 +118,10 @@ export default function PageLoadDataInit(props: PageLoadDataInitProps) {
       }
       localStorage.setItem("group_id", main_group_id);
       if (main_group_id != -1) {
-        let mainGroup = XMAS_GetGroupObject(main_group_id, props.token);
+        let mainGroup = XMAS_GetGroupObject({
+          xmas_group_id: main_group_id,
+          token: props.token,
+        });
         mainGroup.then((data) => {
           initGroupObject(data, "pageloadinit local update");
         });

@@ -1,34 +1,13 @@
 import { useEffect, useState } from "react";
 import styles from "./Home.module.css";
-import Spacer from "@components/Spacer";
-import {
-  getGroupObject,
-  updateGroupObject,
-} from "@components/data_management/CurrGroupData";
-import XMAS_GetGroupObject from "@components/mutation_apis/XMAS_GetGroupObject";
-import NavBar from "@components/xmas/NavBar";
-// import Explore from "@components/xmas/Explore";
-import AddGift from "@components/xmas/AddGiftUnit";
-import Profile from "@components/xmas/Profile";
-// import Begin from "./begin";
-import Groups from "pages/groups";
 import { useAuth0 } from "@auth0/auth0-react";
 
 let curr_group;
 
 export default function HomeBottom({ oneOpen }) {
-  // const [oneOpen, setOneOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [previousScrollPosition, setPreviousScrollPosition] = useState(0);
-  const [scrollDistance, setScrollDistance] = useState(0);
-
-  const [scroll, setScroll] = useState(0);
   const [fixedBottom, setFixedBottom] = useState(false);
 
-  // const [currPageCode, setCurrPageCode] = useState(<Explore oneOpen={oneOpen} setOneOpen={setOneOpen} groupData={groupData} setGroupData={setGroupData} dataChange={dataChange} setDataChange={setDataChange} />)
-  const { user, getAccessTokenSilently } = useAuth0();
 
-  ////console.log(curr_group);
 
   useEffect(() => {
     window.addEventListener("resize", handleScroll);
@@ -40,21 +19,10 @@ export default function HomeBottom({ oneOpen }) {
 
   const handleScroll = () => {
     const viewportHeight = window.scollheight;
-
     const myElement = document.getElementById("page-bottom");
-
     const elementRect = myElement.getBoundingClientRect();
-    ////console.log("element rect RECT RECT");
-    ////console.log(elementRect);
-    ////console.log(elementRect);
-
     const elementBottom = elementRect.top + elementRect.height;
 
-    // ////console.log(window.location.href)
-    // ////console.log(window.location.href)
-    // ////console.log(window.location.href)
-    // ////console.log(window.location.href)
-    // ////console.log(window.location.href)
     // && window.location.href.split("/").pop() != 'myGifts'
     if (elementBottom >= viewportHeight) {
       setFixedBottom(false);
@@ -65,35 +33,9 @@ export default function HomeBottom({ oneOpen }) {
     }
   };
 
-  // // Select the element whose height changes affect the total height of the webpage
-  // const targetNode = document.body;
-
-  // // Create a new instance of the MutationObserver with a callback function
-  // const observer = new MutationObserver((mutations) => {
-  //   // Loop through each mutation that was observed
-  //   mutations.forEach((mutation) => {
-  //     // Check if the mutation was a change in the style or attributes of the targetNode
-  //     if (
-  //       mutation.type === "attributes"
-  //       // &&
-  //       // (mutation.attributeName === "style" || mutation.attributeName === "class")
-  //     ) {
-  //       // Do something when the height of the targetNode changes
-  //       handleScroll()
-  //       ////console.log("Height of targetNode has changed!");
-  //     }
-  //   });
-  // });
-
-  // // Configure the observer to watch for changes in the attributes and child nodes of the targetNode
-  // const config = { attributes: true, childList: true, subtree: true };
-
-  // // Start observing the targetNode for changes
-  // observer.observe(targetNode, config);
 
   return (
     <>
-      {/* <div id="page-bottom" style={{ position: "relative", height: "10vh", backgroundColor: "blue", top: "0px", zIndex: "1000000000"}}   ></div> */}
       <div
         id="page-bottom"
         style={{
@@ -155,20 +97,6 @@ export default function HomeBottom({ oneOpen }) {
             </div>
           </div>
         </div>
-        {/* <div
-          style={{
-            backgroundColor: "black",
-            position: "relative",
-            height: "10vh",
-            overflow: "hidden",
-            scrollBehavior: "none",
-            overflowY: "hidden",
-                        // top: "0px",
-            // left: "0px",
-            // right: "0px",
-            zIndex: "100000",
-          }}
-        ></div> */}
       </div>
     </>
   );

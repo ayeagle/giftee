@@ -1,7 +1,6 @@
 import React, { Component, useState, useEffect } from 'react'
 import styles from '@components/xmas/UserSelect.module.css'
 import { getGroupObject } from '../data_management/CurrGroupData';
-import XMAS_GetGroupObject from '../mutation_apis/XMAS_GetGroupObject';
 import Loading from "@components/xmas/Loading";
 import { useAuth0 } from "@auth0/auth0-react";
 

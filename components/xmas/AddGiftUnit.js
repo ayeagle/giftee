@@ -2,17 +2,12 @@ import React, { Component, useState, useEffect } from "react";
 import styles from "/pages/AddGift.module.css";
 import XMAS_AddGift from "@components/mutation_apis/XMAS_AddGift";
 import XMAS_DeleteGift from "@components/mutation_apis/XMAS_DeleteGift";
-import { getGroupObject } from "@components/data_management/CurrGroupData";
-import XMAS_GetGroupObject from "@components/mutation_apis/XMAS_GetGroupObject";
 import Spacer from "@components/Spacer";
-import HomeBottom from "@components/xmas/HomeBottom";
-import HomeTop from "@components/xmas/HomeTop";
 import {
   isReady,
   getAllGroups,
 } from "@components/data_management/CurrGroupData";
 import XMAS_UpdateGift from "@components/mutation_apis/XMAS_UpdateGift";
-import Loading from "@components/xmas/Loading";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoadingPage from "./LoadingPage";
 
@@ -309,17 +304,17 @@ export default function AddGiftUnit({
     if (edit) {
       //update function
       ////console.log(focusGift);
-      let promise = XMAS_UpdateGift(
-        localStorage.getItem("user_name"),
-        localStorage.getItem("group_id"),
-        giftName,
-        giftURL,
-        true_cost,
-        giftDetails,
-        attachedGroups,
-        focusGift.gift_id,
-        token
-      );
+      let promise = XMAS_UpdateGift({
+        user: localStorage.getItem("user_name"),
+        group_id: localStorage.getItem("group_id"),
+        giftName: giftName,
+        giftURL: giftURL,
+        giftCost: true_cost,
+        giftDetails: giftDetails,
+        attachedGroups: attachedGroups,
+        gift_id: focusGift.gift_id,
+        token: token,
+      });
 
       promise.then((data) => {
         ////console.log("gift update dispatched");

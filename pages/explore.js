@@ -13,7 +13,7 @@ import FixedButtons from "@components/xmas/FixedButtons";
 
 
 let curr_group;
-export default function Explore({errorHappening, setErrorHappening}) {
+export default function Explore() {
   const [groupData, setGroupData] = useState();
   const [groupName, setGroupName] = useState("");
   const [oneOpen, setOneOpen] = useState(false);

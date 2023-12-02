@@ -1,19 +1,14 @@
 import React, { Component, useState, useEffect, forceUpdate } from "react";
 import styles from "./Groups.module.css";
-import XMAS_GetGroupObject from "../components/mutation_apis/XMAS_GetGroupObject";
 import Spacer from "@components/Spacer";
-import XMAS_SetTaken from "../components/mutation_apis/XMAS_SetTaken";
 import { useRef } from "react";
 import HomeTop from "@components/xmas/HomeTop";
 import HomeBottom from "@components/xmas/HomeBottom";
-import XMAS_GetAllGroupsData from "@components/mutation_apis/XMAS_GetAllGroupsData";
 import Loading from "@components/xmas/Loading";
 import CreatGroupFlow from "@components/xmas/CreateGroupFlow";
-import LoadingPage from "@components/xmas/LoadingPage";
 import {
   isReady,
   getGroupObject,
-  updateGroupObject,
   getAllGroups,
 } from "@components/data_management/CurrGroupData";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";

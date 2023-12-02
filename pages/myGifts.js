@@ -8,7 +8,6 @@ import XMAS_GetGroupObject from "@components/mutation_apis/XMAS_GetGroupObject";
 import Spacer from "@components/Spacer";
 import XMAS_SetTaken from "@components/mutation_apis/XMAS_SetTaken";
 import { useRef } from "react";
-import XMAS_GetAllGroupsData from "@components/mutation_apis/XMAS_GetAllGroupsData";
 import { isReady } from "@components/data_management/CurrGroupData";
 import HomeTop from "@components/xmas/HomeTop";
 import HomeBottom from "@components/xmas/HomeBottom";
@@ -40,7 +39,7 @@ function getRandomColor(input) {
   return colors[input % colors.length];
 }
 
-export default function  MyGifts({
+export default function MyGifts({
   prompt,
   oneOpen,
   setOneOpen,
@@ -224,7 +223,13 @@ export default function  MyGifts({
       userVal = null;
     }
 
-    let promise = XMAS_SetTaken(taken, gift_id, userVal, token);
+    let promise = XMAS_SetTaken({
+      taken_value: taken,
+      gift_unique_id: gift_id,
+      giver_id: userVal,
+      giver_name: userVal, // this is probably wrong
+      token: token,
+    });
 
     promise.then((data) => {
       setStale(true);
@@ -344,7 +349,6 @@ export default function  MyGifts({
           className={styles.master_container}
           style={{
             backgroundColor: singleGiftOpen ? "rgba(0, 0, 0, 0)" : "",
-
           }}
         >
           <button
@@ -553,7 +557,7 @@ export default function  MyGifts({
             <>
               <div
                 className={styles.single_gift_page_container}
-                style={{width:'80%', left: "10%"}}
+                style={{ width: "80%", left: "10%" }}
                 // style={{ top: window.pageYOffset }}
                 onClick={exitGiftClick}
                 onKeyDown={(event) => {

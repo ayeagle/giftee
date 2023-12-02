@@ -1,27 +1,9 @@
 import { Children, useEffect, useState } from "react";
 import styles from "./Home.module.css";
-import Spacer from "@components/Spacer";
-import {
-  getGroupObject,
-  updateGroupObject,
-} from "@components/data_management/CurrGroupData";
-import XMAS_GetGroupObject from "@components/mutation_apis/XMAS_GetGroupObject";
 import NavBar from "@components/xmas/NavBar";
-// import Explore from "@components/xmas/Explore";
-import AddGift from "@components/xmas/AddGiftUnit";
-import Profile from "@components/xmas/Profile";
-import rootAuthCheck from "@components/data_management/rootAuthCheck";
-// import Begin from "./begin";
-import Groups from "pages/groups";
 import PageLoadDataInit from "@components/data_management/PageLoadDataInit";
-import ProfileCheck from "@components/data_management/profileCheck";
-import Login from "pages/login";
-import Loading from "./Loading";
-// import NavBar from "@components/xmas/NavBar";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoadingPage from "./LoadingPage";
-import { isReady } from "@components/data_management/CurrGroupData";
-// import getStarted from "@pages/getStarted"
 import MetaHead from "./MetaHead";
 
 let position;

@@ -1,0 +1,21 @@
+.invite_box {
+  text-align: center;
+  width: 60%;
+  /* transition: 2s; */
+  max-width: 500px;
+  min-width: 300px;
+  opacity: inherit;
+  appearance: none;
+  background-color: rgb(249, 249, 249);
+  border-radius: 10px;
+  border-width: 0px;
+  box-shadow: 0 0 20px #888888;
+}
+
+.copied_box {
+  width: 60%;
+  /* transition: 2s; */
+  max-width: 500px;
+  min-width: 300px;
+  background-color: rgb(249, 249, 249);
+}

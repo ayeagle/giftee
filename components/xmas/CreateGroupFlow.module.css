@@ -1,0 +1,365 @@
+.form {
+
+    position: relative;
+    width: 80%;
+    left: 10%;
+    
+    justify-content: space-between;
+    padding: 10px;
+    color: black;
+}
+
+.inline_wrapper {
+    font-size: 1.2vw;
+    bottom: 0px;
+    width: 100%;
+    /* justify-content: space-between; */
+}
+
+.date_inline_wrapper {
+    font-size: 1.2vw;
+    /* bottom: 0px; */
+    width: 100%;
+    left: 0vw;
+    height: auto; 
+    position: relative;
+    /* justify-content: space-between; */
+}
+
+
+.check_button {
+    height: 5vw;
+    width: 45%;
+    position: relative;
+    top: .3vw;
+    
+    border-radius: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+
+.input {
+    height: 1vw;
+    padding: 1.5vw;
+    width: 100%;
+    position: relative;
+    top: .4vw;
+    font-size: 1.7vw;
+    /* border-radius: 10px 10px; */
+    padding-left: 1.5vw;
+    border: 0px;
+    border-bottom: 1px solid black;
+    outline: none;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+
+.warning {
+    position: relative;
+    width: 100%;
+    font-size: 1.5vw;
+    justify-content: space-between;
+    /* padding: 2vw; */
+    color: red;
+}
+
+
+.check_button:hover {
+    height: 5vw;
+    width: 45%;
+    position: relative;
+    top: .3vw;
+    
+    border-radius: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    opacity: 80%;
+    border: 3px solid black;
+}
+
+
+.submit_buttonl {
+    height: 5vw;
+    width: 100%;
+    position: relative;
+    
+    border-radius:  10px 0px 0px 0px;
+    border: 1px solid black;
+
+}
+
+.submit_buttonr {
+    height: 5vw;
+    width: 100%;
+    position: relative;
+    
+    border-radius: 0px 10px 0px 0px;
+    border: 1px solid black;
+
+}
+
+/* .submit_buttonl:active {
+    height: 5vw;
+    width: 100%;
+    position: relative;
+    
+    border-radius: 10px 10px 0px 0px 0px;
+    background-color: black;
+    color: white;
+} */
+
+/* .submit_buttonr:active {
+    height: 5vw;
+    width: 100%;
+    position: relative;
+    
+    border-radius: 10px  0px 10px 0px 0px;
+} */
+
+
+.go_button{
+    height: 5vw;
+    width: 60%;
+    position: relative;
+    
+    border-radius: 10px;
+    /* border-radius: 10px  0px 10px 0px 0px; */
+    border: 1px solid black;
+}
+
+.go_button:hover{
+/* background-color:#c5c5c5; */
+    border: 3px solid black;
+
+}
+
+
+
+.login_signup_wrapper {
+    display: inline-flex;
+    flex-direction: row;
+    /* margin-left:-3%; */
+    width: 100%;
+    /* margin-top:-10%; */
+}
+
+.submit_buttonl:hover {
+
+    opacity: 80%;    
+    border: 3px solid black;
+
+}
+
+.submit_buttonr:hover {
+
+    opacity: 80%;
+    /* background-color: rgb(148, 148, 251);
+    transition: 5s; */
+    border: 3px solid black;
+
+}
+
+
+.login_container{
+    height: auto;
+    width: 80%;
+    left:10%;
+    
+    box-shadow: 0 0 20px #888888;
+    /* justify-content: center; */
+    position:relative;
+    z-index: 10000;
+    /* background-color: rgb(190, 190, 190); */
+    border-radius: 10px;
+    text-decoration: none;
+    /* transition: 5s; */
+    /* padding: 1vw; */
+}
+
+/* .login_container:hover{
+    opacity: 60%;
+    text-decoration: none;
+
+} */
+
+.login_text{
+    text-decoration: none;
+    color: black;
+}
+
+.login_text:hover{
+    text-decoration: none;
+    color: black;
+}
+
+
+.label {
+    position: absolute;
+    z-index: 1;
+    color: rgb(112, 112, 112);
+    font-size: 1.3vw;
+    margin-top: 1vw;
+    margin-left: 1.5vw;
+    transition: .2s ease-out;
+    z-index: 0;
+}
+
+.label_float {
+    position: absolute;
+    z-index: 1;
+    color: rgb(112, 112, 112);
+    font-size: 1vw;
+    margin-top: -1vw;
+    margin-left: 1.5vw;
+    transition: .2s ease-out;
+}
+
+
+.sub_text {
+    font-size: 1.5vw;
+    font-style: italic;
+    padding: .5vw;
+}
+
+.mode_list_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:  center;
+}
+
+.mode_box {
+    position: relative;
+    padding: 1vw;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 1vw;
+}
+
+
+.gift_group_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.gift_group {
+    /* height: 5vw; */
+    /* width: 80%; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* left: 10%; */
+    font-size: 1.5vw;
+    border-radius: 10px;
+    border: 1px solid black;
+    /* top: -2vw; */
+    /* margin-top: 2vw; */
+    padding: 1vw;
+    margin: .5vw;
+    transition: .2s;
+    min-width: 30%;
+    max-width: 50%;
+
+    /* padding-left: 5vw;
+    padding-right: 5vw; */
+
+}
+
+.gift_group:hover {
+    position: relative;
+    opacity: 80%;
+    border: 1px solid black;
+    background-color: rgb(109,99,255);
+    color: white;
+    transition-property: background-color color;
+    transition-duration: .25s, .05s;
+    /* transition-delay: .2s, 1s; */
+    box-shadow: 0 0 20px #888888;
+    /* width: 90%; */
+    padding: 1vw;
+}
+
+
+
+.privacy_icon {
+    position: relative;
+    left: vw;
+    display: block;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    height: 2vw;
+    margin: .1vw;
+    padding: vw;
+    /* top: .5vw; */
+    /* bottom: 0; */
+}
+
+.icon_hidden {
+    position: relative;
+    display: none;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    height: 2.5vw;
+    margin: .1vw;
+    padding: .5vw;
+    top: .5vw;
+    /* bottom: 0; */
+}
+
+.group_added {
+    /* border: 2px solid black; */
+    /* background-color: rgb(57, 176, 57); */
+    padding: auto;
+    position: relative;
+    /* top: -20vw; */
+    left: 5%;
+    width: 90%;
+    padding: 2vw;
+    /* height: 8vw; */
+    z-index: 1000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.group_added_after {
+    /* border: 2px solid rgba(0, 0, 0, 0); */
+    /* color: rgba(0, 0, 0, 0); */
+    /* background-color: rgba(57, 176, 57, 0); */
+    padding: auto;
+    position: relative;
+    /* top: -20vw; */
+    left: 5%;
+    width: 90%;
+    padding: 2vw;
+    /* height: 8vw; */
+    z-index: 1000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* z-index: -1; */
+    opacity: 0%;
+    transition: 2s ease-in;
+}
+
+
+
+
+.react-datepicker__day--names {
+    background-color: red !important;
+    color: white !important;
+  }

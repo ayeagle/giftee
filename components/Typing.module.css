@@ -1,0 +1,25 @@
+.typing_animate {
+  white-space: pre-line;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(109, 99, 255) 10%,
+    #ef8c86 30%,
+    #ef8c86 60%,
+    rgb(109, 99, 255) 80%
+  );
+  color: transparent;
+  animation: typing_animate 5s ease infinite;
+  background-size: 300% 1000%;
+}
+
+
+@keyframes typing_animate {
+    0% {
+      background-position: left top;
+    }
+    100% {
+      background-position: right bottom;
+    }
+  }

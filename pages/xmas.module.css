@@ -1,0 +1,225 @@
+.page_container {
+    /* position: relative; */
+    background-color: rgb(69, 69, 69);
+    color: black;
+    /* fill: aquamarine; */
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+
+}
+
+
+/*  */
+
+.left_element_wrapper {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    fill: aquamarine;
+    width: 50%;
+    left: 0px;
+    height: 100%;
+    z-index: 200;
+    /* display: inline; */
+    transition: 1s;
+
+}
+
+.right_element_wrapper {
+    position: absolute;
+    background-color: rgb(249, 249, 249);
+    color: black;
+    /* fill: aquamarine; */
+    width: 50%;
+    right: 0px;
+    height: 100%;
+    z-index: 200;
+    /* display: inline; */
+    transition: 1s;
+
+}
+
+
+.left_element_wrapper2 {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    /* fill: aquamarine; */
+    width: 50%;
+    /* left:-50vw; */
+    height: 100%;
+    z-index: 200;
+    /* display: inline; */
+    /* transition:3s; */
+}
+
+.right_element_wrapper2 {
+    position: absolute;
+    background-color: rgb(249, 249, 249);
+    color: black;
+    /* fill: aquamarine; */
+    width: 100%;
+    right: 0px;
+    height: 100%;
+    z-index: 200;
+    /* display: inline; */
+    transition: 1s;
+}
+
+
+
+
+.centering_unit {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* top: 20vw; */
+    font-size: 5vh;
+    padding: 5%;
+    height: 100%;
+    /* transition: 3s; */
+
+}
+
+
+
+
+.home_divider {
+    position: absolute;
+    /* background-color: aquamarine fill;
+    color: black;
+    fill: aquamarine; */
+    width: 1%;
+    border-radius: 10px;
+    border: 4px solid rgb(157, 157, 157);
+    left: 49.5%;
+    height: 100vh;
+    z-index: 300;
+    /* display: inline; */
+
+}
+
+
+
+.home_divider2 {
+    position: absolute;
+    /* background-color: aquamarine fill;
+    color: black;
+    fill: aquamarine; */
+    width: .5%;
+    border-radius: 10px;
+    border: 4px solid white;
+    left: 49.75%;
+    height: 99.3vh;
+    top: .2vh;
+    z-index: 300;
+    /* display: inline; */
+
+}
+
+.gift_header {
+    color: rgb(255, 255, 255);
+    z-index: 10000;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.giftly_style {
+    color: rgb(255, 255, 255);
+    z-index: 10000;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.gift_header_container {
+    width: 100%;
+    height: 100%;
+    padding: 2vw;
+    background-color: rgb(0, 0, 0);
+}
+
+.image {
+    /* position:absolute; */
+    /* left: 5%; */
+    /* justify-content: center; */
+    width: 12vw;
+    height: 8vw;
+}
+
+
+.individual_home_header_columns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.descript_container {
+    position: relative;
+    /* border: 3px solid black; */
+    margin: 0 auto;
+
+    font-style: italic;
+    z-index: 1;
+    bottom: 60px;
+}
+
+.date_descript_container {
+    position: relative;
+    /* border: 3px solid black; */
+    margin: 0 auto;
+    z-index: 1;
+    bottom: 40px;
+}
+
+.master_container {
+    /* position : relative;  */
+        box-shadow: 0 0 20px #888888;
+        width: 80%;
+        max-width: 1000px;
+        margin: 0 auto;
+        min-width: 500px;
+        background-color: rgb(249, 249, 249);
+        border-radius: 10px;   
+
+    }
+
+    .name_option {
+        height: 5vw;
+        width: 10vw;
+        /* width: 100%; */
+        position: relative;
+        /* left:10%; */
+        font-size: 1.5vw;
+        border-radius: 10px;
+        border: 1px solid black;
+        /* margin-top: 2vw; */
+        padding: .3vw;
+        transition:.2s;
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        
+}
+
+.name_option:hover {
+    opacity: 100%;
+    /* border: 3px solid black; */
+    background-color: rgb(80, 80, 156);
+    color: white;
+    transition-property: background-color color;
+    transition-duration: .25s, .05s;
+    /* transition-delay: .2s, 1s; */
+    /* box-shadow: 0 0 20px #888888; */
+
+
+}
+
+.inline_add_gift_container {
+    display: flex;
+    max-width: 500px;
+    /* position: fixed; */
+}

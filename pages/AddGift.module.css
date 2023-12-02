@@ -1,0 +1,388 @@
+.add_gift_container {
+    position: relative;
+    margin: 0 auto;
+    background-color: rgb(249, 249, 249);
+    border-radius: 10px;
+    min-height: 400px;
+    width: 50%;
+    min-width: 400px;
+    box-shadow: 0 0 20px #888888;
+
+}
+
+.title {
+    padding: 0vh;
+    top: 5vh;
+    position: relative;
+}
+
+.form {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    min-width: 300px;
+    /* left: 15%; */
+    /* font-size: 1.3vh; */
+    justify-content: space-between;
+    /* padding: 2vh; */
+    color: black;
+    
+}
+
+
+.inline_wrapper {
+    /* font-size: 1.2vh; */
+    bottom: 0px;
+    width: 100%;
+    /* justify-content: space-between; */
+}
+
+.input {
+    min-height: 20px;
+    height: 1vh;
+    padding: 1vh;
+    width: 100%;
+    position: relative;
+    top: .5vh;
+    font-size: 1.5vh;
+    /* border-radius: 10px 10px; */
+    padding-left: 1.5vh;
+    border: 0px;
+    border-bottom: 1px solid black;
+    outline: none;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+
+.input_long {
+    min-height: 20px;
+
+    font-family: inherit;
+    /* height: 220vh; */
+    width: 100%;
+    min-width: 72%;
+    /* max-width: none; */
+    /* min-height: 3vh; */
+    height: 75px;
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    font-size: 1.5vh;
+    /* border-radius: 10px 10px; */
+    padding-left: 1.5vh;
+    border: 0px;
+    border-bottom: 1px solid black;
+    outline: none;
+    overflow-y: hidden;
+    z-index: 2;
+    /* top: .5vh; */
+}
+
+
+.input_title {
+    position: relative;
+    text-align: left;
+    bottom: -2vh;
+    width: 100%;
+}
+
+.input_option {
+    /* width: 2vh; */
+    position: relative;
+    justify-content: right;
+    text-align: right;
+    /* right:px; */
+    bottom: -2vh;
+    font-size: 1.2vh;
+    opacity: 80%;
+    padding-left: 1vh;
+}
+
+.warning {
+    position: relative;
+    width: 100%;
+    /* font-size: 1.5vh; */
+    justify-content: space-between;
+    color: red;
+}
+
+
+.go_button {
+    /* height: 5vh; */
+    width: 60%;
+    position: relative;
+    margin: 10px;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+}
+
+.delete_button {
+    /* height: 5vh; */
+    width: 60%;
+    position: relative;
+    margin: 10px;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+}
+
+.delete_button:hover {
+   background-color: rgb(255, 110, 110);
+   color: white;
+}
+
+
+
+.login_signup_wrapper {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+
+.login_container {
+    height: auto;
+    width: 100%;
+    /* left: 10%; */
+    
+    /* box-shadow: 0 0 20px #888888; */
+    position: relative;
+    z-index: 10000;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.login_text {
+    text-decoration: none;
+    color: black;
+}
+
+.login_text:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.gift_added {
+    /* border: 2px solid black; */
+    /* background-color: rgb(57, 176, 57); */
+    padding: auto;
+    position: relative;
+    /* top: -20vh; */
+    left: 5%;
+    width: 90%;
+    /* padding: 2vh; */
+    /* height: 8vh; */
+    z-index: 1000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.gift_added_after {
+    /* border: 2px solid rgba(0, 0, 0, 0); */
+    /* color: rgba(0, 0, 0, 0); */
+    /* background-color: rgba(57, 176, 57, 0); */
+    padding: auto;
+    position: relative;
+    /* top: -20vh; */
+    left: 5%;
+    width: 90%;
+    /* padding: 2vh; */
+    /* height: 8vh; */
+    z-index: 1000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* z-index: -1; */
+    opacity: 0%;
+    transition: 2s ease-in;
+}
+
+.label {
+    position: absolute;
+    z-index: 1;
+    color: rgb(112, 112, 112);
+    /* font-size: 1.3vh; */
+    margin-bottom: 10px;
+    margin-left: 1.5vh;
+    transition: .2s ease-out;
+    z-index: 1;
+}
+
+.label_float {
+    position: absolute;
+    z-index: 1;
+    color: rgb(112, 112, 112);
+    font-size: 1vh;
+    margin-top: -1vh;
+    margin-left: 1.5vh;
+    transition: .2s ease-out;
+}
+
+.apprx_cost_label {
+    position: absolute;
+    z-index: 1;
+    color: rgb(112, 112, 112);
+    /* font-size: 1.3vh; */
+    margin: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 22px;
+    transition: .2s ease-out;
+    z-index: 1;
+}
+
+.gift_group_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.gift_group {
+    /* height: 5vh; */
+    /* width: 80%; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* left: 10%; */
+    /* font-size: 1.5vh; */
+    border-radius: 10px;
+    border: 1px solid black;
+    /* top: -2vh; */
+    /* margin-top: 2vh; */
+    padding: .5vh;
+    margin: .5vh;
+    transition: .2s;
+    min-width: 20%;
+    max-width: 50%;
+
+    /* padding-left: 5vh;
+    padding-right: 5vh; */
+
+}
+
+.gift_group:hover {
+    position: relative;
+    opacity: 80%;
+    border: 1px solid black;
+    background-color: rgb(109,99,255);
+    color: white;
+    transition-property: background-color color;
+    transition-duration: .25s, .05s;
+    /* transition-delay: .2s, 1s; */
+    box-shadow: 0 0 20px #888888;
+    /* width: 90%; */
+    /* padding: 1vh; */
+}
+
+
+
+.privacy_icon {
+    position: relative;
+    left: vh;
+    display: block;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    height: 2vh;
+    margin: .1vh;
+    padding: vh;
+    /* top: .5vh; */
+    /* bottom: 0; */
+}
+
+.icon_hidden {
+    position: relative;
+    display: none;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    height: 2.5vh;
+    margin: .1vh;
+    padding: .5vh;
+    top: .5vh;
+    /* bottom: 0; */
+}
+
+
+.slidecontainer {
+    width: 100%;
+    height: 5vh;
+    /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    width: 100%;
+    /* Full-width */
+    height: 25px;
+    /* Specified height */
+    background: #d3d3d3;
+    /* Grey background */
+    outline: none;
+    /* Remove outline */
+    opacity: 0.7;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1;
+    /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #04AA6D;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #04AA6D;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+
+.skip_forward_button {
+    width: 5%;
+    opacity: 20%;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    z-index: 100;
+  }
+  
+  .skip_forward_button:hover {
+    opacity: 40%;
+    position: absolute;
+  }

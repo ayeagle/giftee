@@ -1,0 +1,69 @@
+.gif_positioning {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    left: 35%;
+    top: 50vh;
+}
+
+
+.gif_wrapper{
+    justify-content: center;
+    left: 25%;
+}
+
+
+.container_before {
+    height: 120vh;
+    width: 100%;
+    position: fixed;
+    background: rgb(249, 249, 249);
+    z-index: 999999;
+    transition: .5s ease-out;
+    bottom: 0vh;
+    border-radius: 20px;
+
+}
+
+.container_after {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background: linear-gradient(to bottom, rgba(249, 249, 249, 0) 40%, rgba(249, 249, 249, 0.527) 80%);
+    z-index: 999999;
+    transition: .5s ease-out;
+    bottom: -100vh;
+}
+
+.container_final {
+    display:none;
+}
+
+
+
+
+
+
+.container_small_before {
+    /* height: 10h; */
+    /* width: 100%; */
+    /* position: fixed; */
+    /* background: linear-gradient(to bottom, rgba(249, 249, 249, 0) 40%, rgba(249, 249, 249, 0.527) 80%); */
+    z-index: 999999;
+    transition: .5s ease-out;
+    /* bottom: -100vh; */
+}
+
+
+.container_small_after {
+    /* height: 10vh; */
+    /* width: 100%; */
+    left: 25%;
+    /* position: fixed; */
+    background: linear-gradient(to bottom, rgba(249, 249, 249, 0) 40%, rgba(249, 249, 249, 0.527) 80%);
+    z-index: 999999;
+    transition: .5s ease-out;
+    /* bottom: -100vh; */
+}

@@ -1,0 +1,81 @@
+.error_wrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 99999999;
+
+}
+
+.error_prompt_container{
+    position: fixed;
+    /* margin: 0 auto; */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.2) ;
+    /* opacity: 10%; */
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    z-index: 999999999;
+}
+
+.error_box {
+    top: 40vh;
+
+    position: relative;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 2vh;
+    width: 40vh;
+    height: 10vh;
+    /* width: auto; */
+    max-width: 40vh;
+    opacity: 100%;
+    z-index: 9999999999;
+
+}
+
+
+
+.change_data_button {
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+    right: 2vw;
+    top: 2vw;
+    width: 2vw;
+    height: 2vw;
+    flex-direction: column;
+    justify-content: center;
+    background-color: inherit;
+
+
+}
+
+.change_data_button_image {
+    height: 2vw;
+    width: 2vw;
+    position: relative;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+  
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: inherit; */
+
+    
+}
+
+.change_data_button :hover {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+    width: 2.5vw;
+    height: 2.5vw;
+    /* border: 1px solid black; */
+    transition: .1s;
+    
+
+}

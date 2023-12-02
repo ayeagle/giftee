@@ -1,0 +1,55 @@
+{
+  "name": "next-netlify-starter",
+  "version": "0.5.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@auth0/auth0-react": "^2.0.1",
+    "@aws-amplify/api": "^5.0.5",
+    "@giphy/js-fetch-api": "^4.6.0",
+    "@netlify/plugin-nextjs": "^4.32.2",
+    "axios": "^1.2.0",
+    "babel": "^6.23.0",
+    "bootstrap": "^5.2.3",
+    "cors": "^2.8.5",
+    "cypress": "^10.0.3",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "express-openid-connect": "^2.12.0",
+    "history": "^5.3.0",
+    "jsonwebtoken": "^9.0.0",
+    "jwks-rsa": "^3.0.1",
+    "kute": "^1.0.0",
+    "kute.js": "^2.2.4",
+    "next": "^12.1.5",
+    "pg": "^8.8.0",
+    "psql": "^0.0.1",
+    "react": "^18.0.0",
+    "react-datepicker": "^4.11.0",
+    "react-dom": "^18.0.0",
+    "react-icons": "^4.7.1",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.8.1",
+    "react-spring": "^9.5.5",
+    "redux": "^4.2.0",
+    "uuid": "^9.0.0"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/jest": "^29.5.10",
+    "jest": "^29.7.0",
+    "prettier": "2.8.4",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  }
+}

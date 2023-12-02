@@ -1,0 +1,33 @@
+.title_wrapper {
+    
+    padding: 1vw;
+
+}
+
+
+.name_option {
+        height: 5vw;
+        width: 80%;
+        position: relative;
+        left:10%;
+        
+        border-radius: 10px  20px;
+        border: 1px solid black;
+        margin-top: 2vw;
+        padding: 1vw;
+        transition:.2s;
+}
+
+.name_option:hover {
+    opacity: 80%;
+    border: 3px solid black;
+    background-color: rgb(109,99,255);
+    color: white;
+    transition-property: background-color color;
+    transition-duration: .25s, .05s;
+    /* transition-delay: .2s, 1s; */
+    box-shadow: 0 0 20px #888888;
+    width: 90%;
+    left: 5%;
+
+}

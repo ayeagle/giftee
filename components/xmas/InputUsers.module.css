@@ -1,0 +1,96 @@
+.input {
+    height: 1vw;
+    padding: 1.5vw;
+    width: 80%;
+    position: relative;
+    top: .4vw;
+    font-size: 1.7vw;
+    /* border-radius: 10px 10px; */
+    padding-left: 1.5vw;
+    border: 0px;
+    border-bottom: 1px solid black;
+    outline: none;
+    z-index: 2;
+    background-color: rgba(0,0,0,0);
+
+}
+
+
+
+.label {
+    position: absolute;
+    z-index: 1;
+    color: rgb(112, 112, 112);
+    font-size: 1.7vw;
+    margin-top: 1.5vw;
+    margin-left: 1.5vw;
+    transition: .2s ease-out;
+    z-index: 1;
+}
+
+.label_float {
+    position: absolute;
+    z-index: 1;
+    color: rgb(112, 112, 112);
+    
+    margin-top: -0vw;
+    margin-left: 1.5vw;
+    transition: .2s ease-out;
+}
+
+.go_button {
+    height: 5vw;
+    width: 80%;
+    top:3vw; 
+    margin: 3vw;
+    position: relative;
+    
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.go_button:hover {
+    background-color: #c5c5c5;
+    border: 3px solid black;
+}
+
+
+.change_data_button {
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+    width: 2vw;
+    top:8vw;
+    left: 2vw;
+    height: 2vw;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.change_data_button_image {
+    height: 2vw;
+    width: 2vw;
+}
+
+.change_data_button :hover {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+    width: 2.5vw;
+    height: 2.5vw;
+    /* border: 1px solid black; */
+    transition: .1s;
+
+}
+
+.title_text {
+    
+    padding: 1vw;
+
+}
+
+.sub_text {
+    font-size: 1.7vw;
+}

@@ -1,0 +1,27 @@
+.first {
+  /* height: 100vh; */
+  width: 100vw;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  background-color: #fcb677;
+        
+  /* background: linear-gradient(
+    to bottom,
+    rgba(252, 182, 119) 80%, */
+    /* rgba(61, 44, 28, 1)85%, */
+    /* rgb(0, 0, 0) 90% */
+
+  /* ); */
+  left: 0px;
+}
+
+
+.black_box{
+    position: fixed;
+    /* bottom: -1vh; */
+    background: black;
+    height: 125vh;
+    width: 100%;
+    z-index: -1;
+}

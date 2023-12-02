@@ -80,14 +80,15 @@
   /* font-size: 1.2em; */
   /* overflow-x: hidden; */
   /* background-color: rgba(0, 0, 0, 0.657); */
+  height: 100vh;
   position: absolute;
-  top: -10vh;
+  top: 0;
   transition: 0s;
   height: auto;
 }
 
 .single_gift_container {
-  padding: 2vh;
+  padding: 20px;
   position: absolute;
   left: 10%;
   width: 60%;

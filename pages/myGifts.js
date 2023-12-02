@@ -344,7 +344,7 @@ export default function MyGifts({
       ></div>
 
       <MasterBodyContainer>
-        <Spacer height={"100px"} />
+        {/* <Spacer height={"100px"} /> */}
         <div
           className={styles.master_container}
           style={{

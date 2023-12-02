@@ -75,7 +75,9 @@
     /* overflow-x: hidden; */
     /* background-color: rgba(0, 0, 0, 0.657); */
     position: fixed;
-    top: 1vw;
+    left:20%;
+    margin: 0 auto;
+    top: 0;
     z-index: 99999;
     transition: 0s ease-out;
     behavior: "smooth";
@@ -83,9 +85,9 @@
 }
 
 .single_gift_container {
-    padding: 2vw;
+    padding: 20px;
     position: absolute;
-    left: 10%;
+    /* left: 10%; */
     width: 60%;
     /* font-size: 1.2em; */
     top: 20%;

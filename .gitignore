@@ -32,8 +32,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# configs
-next.config.js
+# # configs
+# next.config.js
 
 # local env files
 .env

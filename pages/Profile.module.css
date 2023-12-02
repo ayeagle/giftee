@@ -134,6 +134,8 @@
   padding: 10px;
   margin: 0.5vw;
   transition: 0.2s;
+  box-shadow: 0 0 20px rgba(0,0,0,0);
+
 }
 
 .name_option:hover {
@@ -148,7 +150,7 @@
   /* transition-delay: .2s, 1s; */
   box-shadow: 0 0 20px #888888;
   /* width: 90%; */
-  padding: 1vw;
+  padding: 10px;
 }
 
 .input {

@@ -397,7 +397,8 @@ export default function AddGiftUnit({
 
   return (
     <>
-      <Spacer height="200px" />
+      {edit ? <></> : <Spacer height="200px" />}
+
       <div
         className={styles.add_gift_container}
         style={{ width: edit ? "100%" : "", left: edit ? "0%" : "" }}

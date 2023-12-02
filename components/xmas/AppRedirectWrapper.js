@@ -5,7 +5,6 @@ import Footer from "@components/Footer";
 import Link from "next/link";
 import auth0 from "@components/data_management/auth0";
 import MasterBodyContainer from "@components/xmas/MasterBodyContainer";
-// import Explore from './explore'
 import { useState, useEffect, useRef } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoadingPage from "./LoadingPage";
@@ -90,7 +89,7 @@ export default function AppRedirectWrapper(props) {
         slug != "getstarted" &&
         slug != "begin" &&
         slug != "groups") ||
-      (userObject.onboarded == false &&
+      (!userObject?.onboarded &&
         slug != "getstarted" &&
         slug != "begin" &&
         slug != "groups")

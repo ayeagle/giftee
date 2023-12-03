@@ -66,13 +66,11 @@ export default function AddGiftUnit({
     "Are you positive? This is a permanent deletion of your gift."
   );
 
-  ///hkjhsdakjhsakjdh
 
   ////******* UseEffects START *******////
   ////******* UseEffects START *******////
   ////******* UseEffects START *******////
   useEffect(() => {
-    ////console.log(focusGift);
     if (edited) {
       setButtonGreen(true);
     }
@@ -118,10 +116,6 @@ export default function AddGiftUnit({
       details.innerHTML = focusGift.details;
       cost.innerHTML = focusGift.cost;
 
-      ////console.log(focusGift.gift_name);
-      ////console.log(name);
-      ////console.log(name.innerHTML);
-
       setGiftName(focusGift.gift_name);
       setGiftURL(focusGift.url);
       setGiftDetails(focusGift.details);
@@ -143,9 +137,6 @@ export default function AddGiftUnit({
           }
         }
       }
-      ////console.log("this is the checkstates value that the gift should get");
-      ////console.log(temp);
-      ////console.log(temp2);
 
       setAttachedGroups(temp2);
 
@@ -228,10 +219,7 @@ export default function AddGiftUnit({
     temple.then((data) => {
       setAllGroupsData(data);
       curr_group = data;
-      ////console.log("this is the groupdata");
-      ////console.log(data);
     });
-    ////console.log("this is the groupdata returned to the main compoennt");
   };
 
   const checkFloat = () => {
@@ -270,7 +258,6 @@ export default function AddGiftUnit({
   };
 
   const validate = async () => {
-    //console.log("the VALIDATE METHOD WAS INVOKED");
 
     if (!giftName) {
       setAddPrompt("Oops you didn't enter a gift name");
@@ -298,12 +285,10 @@ export default function AddGiftUnit({
     } else true_cost = null;
 
     setGiftAdded(true);
-    //potentially other forms of validation
     const token = await getAccessTokenSilently();
 
     if (edit) {
       //update function
-      ////console.log(focusGift);
       let promise = XMAS_UpdateGift({
         user: localStorage.getItem("user_name"),
         group_id: localStorage.getItem("group_id"),
@@ -317,7 +302,6 @@ export default function AddGiftUnit({
       });
 
       promise.then((data) => {
-        ////console.log("gift update dispatched");
       });
       setSuccessPrompt("Gift Updated!");
       setTimeout(() => {
@@ -338,7 +322,6 @@ export default function AddGiftUnit({
       setSuccessPrompt("Gift Added!");
 
       promise.then((data) => {
-        ////console.log("new gift dispatched");
       });
     }
     setAddPrompt("");
@@ -363,8 +346,6 @@ export default function AddGiftUnit({
     } else {
       temp.splice(index, 1);
     }
-    ////console.log("this is the attached groups array");
-    ////console.log(temp);
     setAttachedGroups(temp);
   };
 
@@ -384,17 +365,6 @@ export default function AddGiftUnit({
     }
   };
 
-  // const isPending = () => {
-  //     //eval if pending
-  //     setTimeout(() => {
-  //         return true
-  //     }, [2000])
-  //     return false
-  // }
-
-  // if (isPending()) {
-  // setLoaded(true)
-
   return (
     <>
       {edit ? <></> : <Spacer height="200px" />}
@@ -404,7 +374,6 @@ export default function AddGiftUnit({
         style={{ width: edit ? "130%" : "", left: edit ? "-15%" : "" }}
       >
         <div className={styles.login_container}>
-          {/* {!edit ? <h1 style={{fontSize: "4vw", paddingTop: "2vw"}}>Add Gifts</h1> : <></>} */}
           <h2 className={styles.title}>{prompt}</h2>
           <div>
             {edit && (
@@ -530,27 +499,7 @@ export default function AddGiftUnit({
                   <Spacer height="3vh" />
                 </div>
               </div>
-              {/* 
-                            <div className={styles.inline_wrapper}>
-                                <div style={{ display: "flex", flexDirection: "row", width: "100%" }}>
-
-                                    <br />
-                                    <p> <label className={costFloat ? styles.label_float : styles.label}>CUSTOM </label></p>
-                                    <input
-                                        className={styles.input}
-                                        type="string"
-                                        // placeholder="Approx. cost"
-                                        value={giftAdded ? '' : null}
-                                        onChange={(e) => {
-                                            setGiftCost(e.target.value)
-                                        }}
-                                        onKeyDown={event => {
-                                            if (event.key === 'Enter') {
-                                                validate()
-                                            }
-                                        }} />
-                                </div>
-                            </div> */}
+            
               <Spacer height="0vh" />
               <div className={styles.inline_wrapper}>
                 <div
@@ -644,8 +593,7 @@ export default function AddGiftUnit({
                     {allGroupsData || bool ? (
                       allGroupsData.map((group, i) => {
                         return (
-                          // <div style={{ position: "relative", display: "flex", flexDirection: "row" }}                                                             className={styles.gift_group}
-                          // >
+            
                           <div
                             id={group.id}
                             value={group.id}
@@ -661,7 +609,6 @@ export default function AddGiftUnit({
                               let temp = checkStates;
                               temp[i] = !temp[i];
                               setCheckStates(temp);
-                              ////console.log(checkStates);
                               setBool(!bool);
                             }}
                           >
@@ -826,11 +773,5 @@ export default function AddGiftUnit({
       <Spacer height="200px" />
     </>
   );
-  // } else {
-  //     isPending()
 
-  //     return (
-  //         <div>Loading lol</div>
-  //     )
-  // }
 }

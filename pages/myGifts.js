@@ -339,12 +339,12 @@ export default function MyGifts({
           position: "fixed",
           // zIndex: "-1",
           width: "100%",
-          height: "100vh",
+          height: "110vh",
         }}
       ></div>
 
       <MasterBodyContainer>
-        {/* <Spacer height={"100px"} /> */}
+        <Spacer height={"100px"} />
         <div
           className={styles.master_container}
           style={{
@@ -591,6 +591,8 @@ export default function MyGifts({
 
             <ReferralLink link={link} />
             <Spacer height={"40px"} />
+            <Spacer height={"100px"} />
+
           </>
         )}
       </MasterBodyContainer>

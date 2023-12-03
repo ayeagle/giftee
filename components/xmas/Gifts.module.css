@@ -2,7 +2,7 @@
     position: relative;
     box-shadow: 0 0 20px #888888;
     width: 80%;
-    min-width: 400px;
+    min-width: 100px;
     max-width: 1000px;
 
     /* left: 10%; */
@@ -15,7 +15,7 @@
     flex-wrap: wrap;
     left: 5%;
     width: 90%;
-    min-width: 400px;
+    min-width: 100px;
     max-width: 1000px;
 
     justify-content: center;
@@ -271,7 +271,8 @@ border-radius: 10px;
     /* width: 100%; */
     /* max-width: 15vh;
     min-width: 80px; */
-
+    min-width: 100px;
+    max-width: 100%;
     border-radius: 0px;
     border: 0px;
     border-bottom: 1px solid black;
@@ -282,8 +283,10 @@ border-radius: 10px;
     position: relative;
     text-align: center;
     background-color: inherit;
-    margin-top: -10px;
-    padding-top: -10px;
+    margin: 5px;
+    margin-top: 0px;
+    /* padding-top: -10px; */
+    color:rgb(78, 78, 78);
 
 }
 
@@ -295,13 +298,14 @@ border-radius: 10px;
     position: relative;
     border-radius: 10px;
     max-width: 100px;
-    margin: .2vh;
     appearance: none;
+    
     /* padding: .2vh; */
     /* width: 80%; */
     /* font-size: 1.7vw; */
     background-color: inherit;
     text-align: center;
+    margin: 5px;
 
 }
 

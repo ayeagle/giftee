@@ -53,6 +53,7 @@ export default function Groups({ errorHappening, setErrorHappening }) {
   const [successPrompt, setSuccessPrompt] = useState("");
   const [buttonStyle, setButtonStyle] = useState(styles.add_groups_button);
   const [userData, setUserData] = useState([]);
+  const [numUsersDisplayed, setNumUsersDisplayed] = useState(5);
 
   useEffect(() => {
     updateHeight(window.scrollHeight);
@@ -439,13 +440,13 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                                 }}
                               >
                                 {group.user_names.map((name, i) => {
-                                  return i < 5 ? (
+                                  return i < numUsersDisplayed ? (
                                     <p id={i} className={styles.name_unit}>
                                       {name}
                                     </p>
                                   ) : i == 5 ? (
                                     <>
-                                      <p id={i} className={styles.name_unit}>
+                                      <p id={i} className={styles.name_unit} onClick={()=>setNumUsersDisplayed(1000)}>
                                         and more...
                                       </p>
                                     </>

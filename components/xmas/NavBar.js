@@ -52,45 +52,6 @@ export default function NavBar({
     setUp(!up);
     setMenuOpen(!menuOpen);
   };
-  // return (
-  //     <>
-  //         <div className={styles.container}>
-  //             <div
-  //                 className={styles.nav_unit}
-  //                 onClick={() => headerClick('/explore')}
-  //                 style={{ color: activeHeader == '/explore' ? 'white' : 'black', background: activeHeader == '/explore' ? "black" : grey, borderColor: activeHeader == '/explore' ? "black" : grey}}>
-  //                 Explore
-  //             </div>
-  //             <div
-  //                 href = "/addGifts"
-  //                 className={styles.nav_unit}
-  //                 onClick={() => headerClick('/addGift')}
-  //                 style={{ color: activeHeader == '/addGift' ? 'white' : 'black', background: activeHeader == '/addGift' ? "black" : grey, borderColor: activeHeader == '/addGift' ? "black" : grey}}>
-  //                 Add Items
-  //             </div>
-  //             <div
-  //                 href = "/myGifts"
-  //                 className={styles.nav_unit}
-  //                 onClick={() => headerClick('/myGifts')}
-  //                 style={{ color: activeHeader == '/myGifts' ? 'white' : 'black', background: activeHeader == '/myGifts' ? "black" : grey, borderColor: activeHeader == '/myGifts' ? "black" :grey}}>
-  //                 My Gifts
-  //             </div>
-  //             <div
-  //                 className={styles.nav_unit}
-  //                 onClick={() => headerClick('/groups')}
-  //                 style={{ color: activeHeader == '/groups' ? 'white' : 'black', background: activeHeader == '/groups' ? "black" : grey , borderColor: activeHeader == '/groups' ? "black" :grey}}>
-  //                 Groups
-  //             </div>
-  //             <div
-  //                 className={styles.nav_unit}
-  //                 onClick={() => headerClick('/profile')}
-  //                 style={{ color: activeHeader == '/profile' ? 'white' : 'black', background: activeHeader == '/profile' ? "black" : grey, borderColor: activeHeader == '/profile' ? "black" : grey }}>
-  //                 Settings
-  //             </div>
-
-  //         </div>
-  //     </>
-  // )
 
   useEffect(() => {}, [ultra]);
 
@@ -104,9 +65,9 @@ export default function NavBar({
           flexDirection: totalWidth < 1000 && "column",
           transition: "top .5s ease-out",
           height: totalWidth < 1000 ? "30vh" : "",
-          width: totalWidth < 1000 ? `${totalWidth}px` : "",
-          maxWidth: totalWidth < 1000 ? "100vw" : "",
-          left: totalWidth < 1000 && "0",
+          // width: totalWidth < 1000 ? `${totalWidth}px` : "",
+          // maxWidth: totalWidth < 1000 ? "100vw" : "",
+          // left: totalWidth < 1000 && "0",
           borderRadius: totalWidth < 1000 && menuOpen && !hideMenu  ? "0px 0px 20px 20px " : "0px",
           position: totalWidth < 1000 && "absolute",
           top: totalWidth < 1000 && menuOpen && !hideMenu ? "5vh" : "-23vh",

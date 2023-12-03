@@ -90,7 +90,6 @@ export default function Gifts({
     // }, 100);
   }
 
-
   const [oldCount, setOldCount] = useState(0);
 
   const increaseGiftLimit = () => {
@@ -118,18 +117,27 @@ export default function Gifts({
 
   ////////////////
   const genNamesList = () => {
+    console.log("attempted")
     if (groupData) {
+      console.log("passed")
+      console.log(groupData)
       let tempMemb = [];
       groupData.gifts.forEach((gift) => {
         if (!tempMemb.includes(gift.requester)) {
           tempMemb.push(gift.requester);
         }
+
         ////console.log(tempMemb);
         ////console.log("TEMP MEMB");
       });
+      console.log(tempMemb)
       setMembers(tempMemb);
     }
   };
+
+  useEffect(() => {
+      genNamesList();
+  }, [groupData]);
 
   // useEffect(() => {
   //   if(displayCount < maxGifts){
@@ -137,10 +145,11 @@ export default function Gifts({
   //   }
   // },[shouldDisplayIncreaseOption, maxGifts])
 
-  if (isReady() && runOnce % 10 == 1) {
+  if (isReady() && runOnce % 10 == 1 && members) {
+    console.log("running")
     setReady(true);
     setRunOnce(runOnce + 1);
-    genNamesList();
+    // genNamesList();
     // setTimeout(() => {
     //     getGroup()
     // }, [1000])
@@ -152,6 +161,7 @@ export default function Gifts({
     let temple = getGroupObject();
 
     temple.then((data) => {
+      console.log(data)
       setGroupData(data);
     });
   };
@@ -413,7 +423,7 @@ export default function Gifts({
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  minWidth: "5vh",
+                  // minWidth: "5vh",
                   justifyContent: "center",
                   flex: "1 0 5vh",
                 }}
@@ -424,18 +434,17 @@ export default function Gifts({
                   onChange={handleNameSearchChange}
                   // style={{ width: "70%" }}
                 >
-                  <option value="">For...</option>
+                  <option className={styles.default_filter_option} value="">
+                    For...
+                  </option>
                   {groupData ? (
                     members.map(function (mapped_name, index) {
-                      if (mapped_name == curr_user_name) {
-                        return;
-                      } else {
-                        return (
-                          <option key={index} value={mapped_name}>
-                            {mapped_name}
-                          </option>
-                        );
-                      }
+                      return (
+                        <option key={index} value={mapped_name}>
+                          {mapped_name}
+                        </option>
+                      );
+                      // }
                     })
                   ) : (
                     <option>Something went wrong...</option>

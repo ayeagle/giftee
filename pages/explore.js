@@ -76,7 +76,7 @@ export default function Explore() {
         style={{
           backgroundColor: oneOpen ? "rgba(0, 0, 0	 , 0.4)" : "rgba(0, 0, 0, 0)",
           zIndex: "-1",
-          width: "100vw",
+          width: "100%",
           height: `${totalH}px`,
         }}
       >
@@ -119,7 +119,7 @@ export default function Explore() {
               setGoScroll={setGoScroll}
             />
           </div>
-          <Spacer height={"5vw"} />
+          <Spacer height={"40px"} />
           <div id="referral" />
           {link && <ReferralLink link={link} setLink={setLink} oneOpen={oneOpen}/>}
           <Spacer height={"5vw"} />

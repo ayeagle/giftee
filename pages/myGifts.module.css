@@ -7,7 +7,10 @@
   border-radius: 10px 10px;
   background-color: rgb(249, 249, 249);
   height: auto;
-  min-width: 500px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   /* margin: 0 auto; */
 }
@@ -19,7 +22,7 @@
   flex-wrap: wrap;
   left: 5%;
   width: 90%;
-  min-width: 400px;
+  min-width: 100px;
 
   justify-content: center;
   /* z-index: 500; */
@@ -260,7 +263,8 @@
   /* width: 100%; */
   /* max-width: 15vh;
     min-width: 80px; */
-
+    min-width: 100px;
+    max-width: 100%;
   border-radius: 0px;
   border: 0px;
   border-bottom: 1px solid black;
@@ -271,6 +275,9 @@
   position: relative;
   text-align: center;
   background-color: inherit;
+  margin: 5px;
+  color:rgb(78, 78, 78);
+
 }
 
 .default_filter_option {
@@ -281,7 +288,7 @@
   position: relative;
   border-radius: 10px;
   max-width: 10vh;
-  margin: 0.2vh;
+  margin: 5px;
   appearance: none;
   /* padding: .2vh; */
   /* width: 80%; */

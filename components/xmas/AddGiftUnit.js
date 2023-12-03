@@ -63,7 +63,7 @@ export default function AddGiftUnit({
   const [privateGroup, setPrivateGroup] = useState(true);
   const [showDeletionWarning, setShowDeletionWarning] = useState(false);
   const [showDeletionWarningText, setShowDeletionWarningText] = useState(
-    "Are you positive? There is a permanent deletion of your gift"
+    "Are you positive? This is a permanent deletion of your gift."
   );
 
   ///hkjhsdakjhsakjdh
@@ -401,7 +401,7 @@ export default function AddGiftUnit({
 
       <div
         className={styles.add_gift_container}
-        style={{ width: edit ? "100%" : "", left: edit ? "0%" : "" }}
+        style={{ width: edit ? "130%" : "", left: edit ? "-15%" : "" }}
       >
         <div className={styles.login_container}>
           {/* {!edit ? <h1 style={{fontSize: "4vw", paddingTop: "2vw"}}>Add Gifts</h1> : <></>} */}

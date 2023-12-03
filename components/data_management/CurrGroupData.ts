@@ -1,10 +1,10 @@
-import  {
+import {
   RichGroupGift,
   GroupObject,
   GroupGift,
   CreateGroupObject,
-  CreateUserObject, 
-  UserDetails
+  CreateUserObject,
+  UserDetails,
 } from "./CreateDataObjects";
 
 let curr_group_data: GroupObject = CreateGroupObject();
@@ -72,6 +72,10 @@ export function initGroupObject(new_data: RichGroupGift[], source) {
 }
 
 export async function getGroupObject() {
+  while (!isReady()) {
+    await delay(100);
+  }
+
   return curr_group_data;
 }
 
@@ -94,4 +98,8 @@ export async function updateUserData(newUserObject) {
 
 export function isUserReady() {
   return curr_user_data.id != "";
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }

@@ -135,6 +135,7 @@ export default function HomeTop({ oneOpen }) {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
+                width: '10%',
               }}
               href="/explore"
             >
@@ -172,6 +173,7 @@ export default function HomeTop({ oneOpen }) {
                 flexDirection: "column",
                 justifyContent: "center",
                 flexWrap: "wrap",
+                // width: '10%',
                 // maxHeight: "10px",
                 // fontSize: "1.8vw",
               }}
@@ -185,8 +187,10 @@ export default function HomeTop({ oneOpen }) {
                 style={{
                   textDecoration: "none",
                   // color: "black",
-                  padding: 0,
+                  padding: '5px',
                   cursor: "pointer",
+                  width: '100%',
+
                 }}
                 onClick={() => {
                   localStorage.setItem("user_id", 0);

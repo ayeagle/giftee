@@ -123,9 +123,6 @@ export default function Groups({ errorHappening, setErrorHappening }) {
     booble.then((data) => {
       setAllGroupsData(data);
     });
-    ////console.log("this is the groupdata returned to the main compoennt");
-    ////console.log(getGroupObject());
-    ////console.log(groupData);
   };
 
   useEffect(() => {
@@ -172,8 +169,6 @@ export default function Groups({ errorHappening, setErrorHappening }) {
     }, [1000]);
   }, [ready, bool]);
 
-  // useEffect(() => {
-  // }, [bool])
 
   useEffect(() => {
     setCurrentGroupID(localStorage.getItem("group_id"));
@@ -191,10 +186,7 @@ export default function Groups({ errorHappening, setErrorHappening }) {
 
     setAllGroupsData(temple);
     curr_group = temple;
-    ////console.log("this is the groupdata");
-    ////console.log(data);
 
-    ////console.log("this is the groupdata returned to the main compoennt");
   }
 
   // const getReferralHash = () => {};
@@ -216,13 +208,6 @@ export default function Groups({ errorHappening, setErrorHappening }) {
   const backButton = () => {
     setGroupCreationStage(groupCreationStage - 1);
   };
-
-  // //console.log(allGroupsData);
-  ////console.log(allGroupsData);
-  ////console.log(allGroupsData);
-  ////console.log(allGroupsData);
-  ////console.log(allGroupsData);
-  ////console.log(allGroupsData);
 
   return (
     <>
@@ -323,43 +308,8 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                         </h3>
                       </div>
                     ) : (
-                      <div className={styles.groups_container}>
+                      <div className={styles.groups_container}>            
                         {allGroupsData.map((group, i) => {
-                          ////console.log(allGroupsData);
-                          ////console.log(i);
-                          ////console.log(group);
-                          // if (currentGroupID == group.id) {
-                          //     return (
-                          //         <div
-                          //             id={group.id}
-                          //             className={styles.groups_unit}
-                          //             style={{ backgroundColor: "rgba(60, 179, 113,.3)", border: "3px solid black", transition: "2s" }}>
-                          //             <div style={{ position: "absolute", top: "2%", left: "2%", fontSize: "1.5vw" }}>
-                          //                 Current
-                          //                 Group
-                          //             </div>
-                          //             <h4> {group.name} </h4>
-                          //             <p style={{ fontSize: "1.2vw" }}> "{group.description}"</p>
-                          //             <br />
-                          //             {/* <p>Members:</p> */}
-                          //             <div style={{ position: "relative", display: "flex", flexDirection: "row", justifyContent: "center", flexWrap: "wrap" }}>
-                          //                 {group.user_names.map((name, i) => {
-                          //                     return (
-                          //                         <p id={i} className={styles.name_unit}>{name}</p>
-                          //                     )
-                          //                 })}
-                          //             </div>
-                          //             <div> </div>
-                          //         </div>
-                          //     )
-                          // }
-                        })}
-                        {allGroupsData.map((group, i) => {
-                          ////console.log(allGroupsData);
-                          ////console.log(i);
-                          ////console.log(group);
-                          // if (currentGroupID != group.id) {
-
                           return (
                             <p
                               id={group.id}
@@ -376,22 +326,14 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                                   currentGroupID == group.id
                                     ? "3px solid black"
                                     : "",
-                                transition: ".2s",
-                                transition: "color 0s",
+                                // transition: ".2s",
+                                // transition: "color 0s",
 
                                 color:
                                   currentGroupID == group.id ? "white" : "",
                               }}
                             >
-                              {/* {currentGroupID == group.id ? (
-                                                        <div style={{ position: "absolute", top: "2%", left: "2%", fontSize: "1.5vw" }}>
-                                                            Current <br/>
-                                                            Group
-                                                        </div>
-
-                                                    ) : (
-                                                        <></>
-                                                    )} */}
+                        
 
                               {currentGroupID == group.id && (
                                 <>
@@ -437,6 +379,8 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                                   flexDirection: "row",
                                   justifyContent: "center",
                                   flexWrap: "wrap",
+                                  maxWidth: "200px",
+                                  margin: "0 auto"
                                 }}
                               >
                                 {group.user_names.map((name, i) => {
@@ -493,8 +437,3 @@ export default function Groups({ errorHappening, setErrorHappening }) {
     </>
   );
 }
-
-// export default withAuthenticationRequired(Groups, {
-//   // onRedirecting: () => <LoadingPage />,
-//   // onError: (error) => <ErrorMessage>{error.message}</ErrorMessage>,
-// });

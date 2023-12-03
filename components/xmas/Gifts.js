@@ -55,6 +55,7 @@ export default function Gifts({
   const [bool, setBool] = useState(true);
   const [groupData, setGroupData] = useState();
   const [ready, setReady] = useState(true);
+  const [yOffsetApplied, setYOffsetApplied] = useState(0);
 
   const [curr_user_id, set_curr_user_id] = useState();
   const [curr_user_name, set_curr_user_name] = useState();
@@ -117,10 +118,10 @@ export default function Gifts({
 
   ////////////////
   const genNamesList = () => {
-    console.log("attempted")
+    console.log("attempted");
     if (groupData) {
-      console.log("passed")
-      console.log(groupData)
+      console.log("passed");
+      console.log(groupData);
       let tempMemb = [];
       groupData.gifts.forEach((gift) => {
         if (!tempMemb.includes(gift.requester)) {
@@ -130,13 +131,13 @@ export default function Gifts({
         ////console.log(tempMemb);
         ////console.log("TEMP MEMB");
       });
-      console.log(tempMemb)
+      console.log(tempMemb);
       setMembers(tempMemb);
     }
   };
 
   useEffect(() => {
-      genNamesList();
+    genNamesList();
   }, [groupData]);
 
   // useEffect(() => {
@@ -146,7 +147,7 @@ export default function Gifts({
   // },[shouldDisplayIncreaseOption, maxGifts])
 
   if (isReady() && runOnce % 10 == 1 && members) {
-    console.log("running")
+    console.log("running");
     setReady(true);
     setRunOnce(runOnce + 1);
     // genNamesList();
@@ -161,7 +162,7 @@ export default function Gifts({
     let temple = getGroupObject();
 
     temple.then((data) => {
-      console.log(data)
+      console.log(data);
       setGroupData(data);
     });
   };
@@ -171,6 +172,7 @@ export default function Gifts({
       setSingleGiftStyle(styles.single_gift_box);
       setSingleGiftOpen(true);
       setOneOpen(true);
+      setYOffsetApplied(yOffSet)
       setSingleGiftObject(
         groupData.gifts.find((gift) => gift.gift_id === gift_id)
       );
@@ -356,7 +358,7 @@ export default function Gifts({
   useEffect(() => {
     // getGroup()
     window.addEventListener("scroll", function () {
-      setYOffset(window.pageYOffset);
+      setYOffset(window.scrollY);
     });
   }, [ready, oneOpen, setOneOpen]);
 
@@ -609,6 +611,7 @@ export default function Gifts({
       {singleGiftOpen ? (
         <div
           className={styles.single_gift_page_container}
+          style={{top: yOffsetApplied}}
           // style={{ top: window.pageYOffset }}
           onClick={exitGiftClick}
           onKeyDown={(event) => {
@@ -618,54 +621,60 @@ export default function Gifts({
           }}
         >
           <div
-            className={styles.single_gift_container}
-            onClick={doNothing}
-            style={{ border: "10px solid " + singleGiftObject.color + ".5)" }}
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
           >
-            {/* <img src="/IMGassets/bow.png" className={styles.image} /> */}
+            <div
+              className={styles.single_gift_container}
+              onClick={doNothing}
+              style={{ border: "10px solid " + singleGiftObject.color + ".5)" }}
+            >
+              {/* <img src="/IMGassets/bow.png" className={styles.image} /> */}
 
-            <div className={styles.single_gift_header}>
-              <p>For: {singleGiftObject.requester}</p>
-              {singleGiftObject.url != "" ? (
-                <p>
-                  <a href={singleGiftObject.url} target="_blank">
-                    <button className={styles.product_button}>
-                      Link to product {"=>"}
-                    </button>
-                  </a>
-                </p>
-              ) : (
-                <p>No Link {":("}</p>
-              )}
-              <div
-                className={styles.change_data_button}
-                onClick={exitGiftClick}
-              >
-                <img
-                  className={styles.change_data_button_image}
-                  src="/IMGassets/exit.png"
-                />
+              <div className={styles.single_gift_header}>
+                <p>For: {singleGiftObject.requester}</p>
+                {singleGiftObject.url != "" ? (
+                  <p>
+                    <a href={singleGiftObject.url} target="_blank">
+                      <button className={styles.product_button}>
+                        Link to product {"=>"}
+                      </button>
+                    </a>
+                  </p>
+                ) : (
+                  <p>No Link {":("}</p>
+                )}
+                <div
+                  className={styles.change_data_button}
+                  onClick={exitGiftClick}
+                >
+                  <img
+                    className={styles.change_data_button_image}
+                    src="/IMGassets/exit.png"
+                  />
+                </div>
               </div>
-            </div>
-            <br></br>
-            <div className={styles.single_gift_details}>
-              <h1>{singleGiftObject.gift_name}</h1>
-            </div>
-            <div className={styles.single_gift_details}>
-              <p>
-                {singleGiftObject.details == ""
-                  ? "No details provided :("
-                  : `"` + singleGiftObject.details + `"`}
-              </p>
-            </div>
-            <div className={styles.single_gift_details}>
-              <p>
-                {singleGiftObject.cost == null
-                  ? "No price provided :("
-                  : `$${singleGiftObject.cost}`}
-              </p>
-            </div>
-            {/* {claimed ? (
+              <div className={styles.single_gift_details}>
+                <h1>{singleGiftObject.gift_name}</h1>
+              </div>
+              <div className={styles.single_gift_details}>
+                <p>
+                  {singleGiftObject.details == ""
+                    ? "No details provided :("
+                    : `"` + singleGiftObject.details + `"`}
+                </p>
+              </div>
+              <div className={styles.single_gift_details}>
+                <p>
+                  {singleGiftObject.cost == null
+                    ? "No price provided :("
+                    : `$${singleGiftObject.cost}`}
+                </p>
+              </div>
+              {/* {claimed ? (
               <div className={styles.single_gift_details}>
                 <p>
                   Claimed by:{" "}
@@ -677,79 +686,80 @@ export default function Gifts({
             ) : (
               <div></div>
             )} */}
-            <Spacer height={"7vw"} />
-            {/* <div className={styles.claim_button} onClick={claimGiftCheck}>Claim this gift!</div> */}
-            {isClaiming ? (
-              singleGiftObject.taken === false ? (
-                <p className={styles.claim_button_after}>
-                  Claiming this gift will prevent others from giving it. You can
-                  always un-claim a gift. Do you want to proceed?
-                  <br></br> <br></br>
-                  <div className={styles.single_gift_header}>
-                    <div />
-                    <div />
+              <Spacer height={"10px"} />
+              {/* <div className={styles.claim_button} onClick={claimGiftCheck}>Claim this gift!</div> */}
+              {isClaiming ? (
+                singleGiftObject.taken === false ? (
+                  <p className={styles.claim_button_after}>
+                    Claiming this gift will prevent others from giving it. You
+                    can always un-claim a gift. Do you want to proceed?
+                    <br></br> <br></br>
+                    <div className={styles.single_gift_header}>
+                      <div />
+                      <div />
 
-                    <button
-                      className={styles.product_button2}
-                      onClick={() => claimYes(true)}
-                    >
-                      <p>Yes</p>
-                    </button>
-
-                    <button
-                      className={styles.product_button2}
-                      onClick={claimNo}
-                    >
-                      <p>No</p>
-                    </button>
-                    <div />
-                    <div />
-                  </div>
-                </p>
-              ) : (
-                <p className={styles.claim_button_after}>
-                  Un-claiming this gift will release it back to the pool for
-                  others. Do you want to proceed?
-                  <br></br> <br></br>
-                  <div className={styles.single_gift_header}>
-                    <div />
-                    <div />
-                    <p>
                       <button
                         className={styles.product_button2}
-                        onClick={() => claimYes(false)}
+                        onClick={() => claimYes(true)}
                       >
-                        Yes
+                        <p>Yes</p>
                       </button>
-                    </p>
-                    <p>
+
                       <button
                         className={styles.product_button2}
                         onClick={claimNo}
                       >
-                        No
+                        <p>No</p>
                       </button>
-                    </p>
-                    <div />
-                    <div />
-                  </div>
-                </p>
-              )
-            ) : singleGiftObject.taken === true ? (
-              singleGiftObject.giver_id === curr_user_id ? (
-                <p className={styles.claim_button} onClick={claimGiftCheck}>
-                  Unclaim gift?
-                </p>
+                      <div />
+                      <div />
+                    </div>
+                  </p>
+                ) : (
+                  <p className={styles.claim_button_after}>
+                    Un-claiming this gift will release it back to the pool for
+                    others. Do you want to proceed?
+                    <br></br> <br></br>
+                    <div className={styles.single_gift_header}>
+                      <div />
+                      <div />
+                      <p>
+                        <button
+                          className={styles.product_button2}
+                          onClick={() => claimYes(false)}
+                        >
+                          Yes
+                        </button>
+                      </p>
+                      <p>
+                        <button
+                          className={styles.product_button2}
+                          onClick={claimNo}
+                        >
+                          No
+                        </button>
+                      </p>
+                      <div />
+                      <div />
+                    </div>
+                  </p>
+                )
+              ) : singleGiftObject.taken === true ? (
+                singleGiftObject.giver_id === curr_user_id ? (
+                  <p className={styles.claim_button} onClick={claimGiftCheck}>
+                    Unclaim gift?
+                  </p>
+                ) : (
+                  <p className={styles.no_claim_button}>
+                    Looks like you didn't gift this one...
+                  </p>
+                )
               ) : (
-                <p className={styles.no_claim_button}>
-                  Looks like you didn't gift this one...
+                <p className={styles.claim_button} onClick={claimGiftCheck}>
+                  Claim this gift!
                 </p>
-              )
-            ) : (
-              <p className={styles.claim_button} onClick={claimGiftCheck}>
-                Claim this gift!
-              </p>
-            )}
+              )}
+            </div>
           </div>
         </div>
       ) : (

@@ -183,7 +183,6 @@ export default function HomeTop({ oneOpen }) {
               {/* <div>{groupName}</div>
                 <div>{groupData ? groupData.year : ""}</div> */}
               <button
-                href="javascript:void(0)"
                 style={{
                   textDecoration: "none",
                   // color: "black",

@@ -413,12 +413,12 @@ export default function Gifts({
                     Sort by...
                   </option>
 
-                  <option value="nameUp"> Ascending Name</option>
-                  <option value="nameDown"> Descending Name</option>
-                  <option value="costUp"> Ascending Cost</option>
-                  <option value="costDown"> Descending Cost</option>
-                  <option value="newest"> Newest First</option>
-                  <option value="oldest"> Oldest First</option>
+                  <option key="sort1" value="nameUp"> Ascending Name</option>
+                  <option key="sort2" value="nameDown"> Descending Name</option>
+                  <option key="sort3" value="costUp"> Ascending Cost</option>
+                  <option key="sort4" value="costDown"> Descending Cost</option>
+                  <option key="sort5" value="newest"> Newest First</option>
+                  <option key="sort6" value="oldest"> Oldest First</option>
                 </select>
               </div>
               <div
@@ -442,7 +442,7 @@ export default function Gifts({
                   {groupData ? (
                     members.map(function (mapped_name, index) {
                       return (
-                        <option key={index} value={mapped_name}>
+                        <option key={`${index}-${mapped_name}`} value={mapped_name}>
                           {mapped_name}
                         </option>
                       );
@@ -563,9 +563,9 @@ export default function Gifts({
                 return (
                   <div
                     className={styles.gift_box}
-                    id={`gift-${item.unique_id}`}
+                    id={`gift-${item.gift_id}`}
                     ref={giftRef}
-                    key={item.unique_id}
+                    key={item.gift_id}
                     onClick={() => giftClick(item.gift_id)}
                     style={{ backgroundColor: item.color + ".25)" }}
                   >

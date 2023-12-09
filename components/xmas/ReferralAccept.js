@@ -187,14 +187,12 @@ export default function ReferralAccept() {
                 <p>
                     {loggedIn ? (
                       <button
-                        href="javascript:void(0)"
                         onClick={() => window.location.href = "/explore"}
                       >
                         Join Group
                       </button>
                     ) : (
                       <button
-                        href="javascript:void(0)"
                         onClick={() => loginWithRedirect()}
                       >
                         Sign in to Join

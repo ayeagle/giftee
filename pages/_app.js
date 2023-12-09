@@ -4,6 +4,7 @@ import { createBrowserHistory } from "history";
 import { Auth0Provider } from "@auth0/auth0-react";
 import AppRedirectWrapper from "@components/xmas/AppRedirectWrapper";
 import ErrorPrompt from "@components/xmas/ErrorPrompt";
+import MetaHead from "@components/xmas/MetaHead";
 
 const onRedirectCallback = (appState) => {
   const history = createBrowserHistory();
@@ -17,7 +18,6 @@ const auth0Config = {
   audience: process.env.AUTH0_AUDIENCE,
 };
 
-
 const providerConfig = {
   domain: process.env.AUTH0_ISSUER_BASE_URL,
   clientId: process.env.AUTH0_CLIENT_ID,
@@ -30,20 +30,25 @@ const providerConfig = {
 };
 
 function Application({ Component, pageProps }) {
-
-  const [errorHappening, setErrorHappening] = useState(false)
-
+  const [errorHappening, setErrorHappening] = useState(false);
 
   return (
-    <Auth0Provider {...providerConfig}>
-      <AppRedirectWrapper>
-      <ErrorPrompt throwError={errorHappening} setThrowError={setErrorHappening}/>
-        <Component {...pageProps} errorHappening={errorHappening} setErrorHappening={setErrorHappening} />
-      </AppRedirectWrapper>
-    </Auth0Provider>
+    <>
+      <Auth0Provider {...providerConfig}>
+        <AppRedirectWrapper>
+          <ErrorPrompt
+            throwError={errorHappening}
+            setThrowError={setErrorHappening}
+          />
+          <Component
+            {...pageProps}
+            errorHappening={errorHappening}
+            setErrorHappening={setErrorHappening}
+          />
+        </AppRedirectWrapper>
+      </Auth0Provider>
+    </>
   );
 }
 
 export default Application;
-
-

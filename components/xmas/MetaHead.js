@@ -1,7 +1,10 @@
+import Head from 'next/head'
+import Script from 'next/script'
+
 export default function MetaHead() {
   return (
     <>
-      <head>
+      <Head>
         <title>Giftee.io</title>
         <meta charSet="utf-8" />
         <meta
@@ -15,17 +18,17 @@ export default function MetaHead() {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Giftee Preview" />
         <meta property="og:logo" content="https://i.imgur.com/SNeNujX.png" />
-        <script
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8478961908713976"
           crossOrigin="anonymous"
-        ></script>
-        <script
+        ></Script>
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8408575015165543"
           crossOrigin="anonymous"
-        ></script>
-      </head>
+        ></Script>
+      </Head>
     </>
   );
 }

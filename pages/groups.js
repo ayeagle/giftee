@@ -169,7 +169,6 @@ export default function Groups({ errorHappening, setErrorHappening }) {
     }, [1000]);
   }, [ready, bool]);
 
-
   useEffect(() => {
     setCurrentGroupID(localStorage.getItem("group_id"));
   }, []);
@@ -186,7 +185,6 @@ export default function Groups({ errorHappening, setErrorHappening }) {
 
     setAllGroupsData(temple);
     curr_group = temple;
-
   }
 
   // const getReferralHash = () => {};
@@ -218,7 +216,7 @@ export default function Groups({ errorHappening, setErrorHappening }) {
         <div className={styles.positional_container}>
           <div className={styles.groups_wrapper_container}>
             <Spacer height={"50px"} />
-            <p
+            <div
               style={{
                 position: "absolute",
                 top: "5vh",
@@ -233,11 +231,11 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                     style={{ width: "3vh", display: "flex" }}
                   />
                 ) : (
-                  <p>Create group</p>
+                  <div>Create group</div>
                 )}
               </button>
-            </p>
-            <p
+            </div>
+            <div
               style={{
                 position: "absolute",
                 top: "5vh",
@@ -251,11 +249,11 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                   className={styles.back_button_img}
                 />
               </button>
-            </p>
+            </div>
             <h1>My Groups</h1>
             {giftAdded ? (
               <div className={styles.gift_added}>
-                <p>Group Changed!</p>
+                <div>Group Changed!</div>
                 <img
                   src="/IMGassets/good_check.png"
                   style={{
@@ -268,7 +266,7 @@ export default function Groups({ errorHappening, setErrorHappening }) {
               </div>
             ) : (
               <div className={styles.gift_added_after}>
-                <p>Group Changed!</p>
+                <div>Group Changed!</div>
                 <img
                   src="/IMGassets/good_check.png"
                   style={{
@@ -308,11 +306,13 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                         </h3>
                       </div>
                     ) : (
-                      <div className={styles.groups_container}>            
+                      <div className={styles.groups_container}>
                         {allGroupsData.map((group, i) => {
+                          // console.log(`group-${group.id}`);
                           return (
-                            <p
-                              id={group.id}
+                            <div
+                              id={`group-${group.id}-${i}`}
+                              key={`group-${group.id}-${i}`}
                               className={styles.groups_unit}
                               onClick={() => {
                                 changeGroup(group.id);
@@ -333,8 +333,6 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                                   currentGroupID == group.id ? "white" : "",
                               }}
                             >
-                        
-
                               {currentGroupID == group.id && (
                                 <>
                                   {/* <img
@@ -362,16 +360,16 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                                 </>
                               )}
                               <h2> {group.name} </h2>
-                              <p style={{ fontSize: "1.2vh" }}>
+                              <div style={{ fontSize: "1.2vh" }}>
                                 "{group.description}"
-                              </p>
-                              <p style={{ fontSize: "1.2vh" }}>
+                              </div>
+                              <div style={{ fontSize: "1.2vh" }}>
                                 {" "}
                                 {group.gift_exchange_date}
-                              </p>
+                              </div>
                               <br />
                               <br />
-                              {/* <p>Members:</p> */}
+                              {/* <div>Members:</div> */}
                               <div
                                 style={{
                                   position: "relative",
@@ -380,27 +378,40 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                                   justifyContent: "center",
                                   flexWrap: "wrap",
                                   maxWidth: "200px",
-                                  margin: "0 auto"
+                                  margin: "0 auto",
                                 }}
                               >
                                 {group.user_names.map((name, i) => {
+                                  // console.log(`${group.id}-${name}-${i}`)
                                   return i < numUsersDisplayed ? (
-                                    <p id={i} className={styles.name_unit}>
+                                    <div
+                                      id={`${group.id}-${name}-${i}`}
+                                      key={`${group.id}-${name}-${i}`}
+                                      className={styles.name_unit}
+                                    >
                                       {name}
-                                    </p>
+                                    </div>
                                   ) : i == 5 ? (
-                                    <>
-                                      <p id={i} className={styles.name_unit} onClick={()=>setNumUsersDisplayed(1000)}>
+                                    <div
+                                      key={`${group.id}-${name}-${i}`}
+                                      id={`${group.id}-${name}-${i}`}
+                                    >
+                                      <div
+                                        className={styles.name_unit}
+                                        onClick={() =>
+                                          setNumUsersDisplayed(1000)
+                                        }
+                                      >
                                         and more...
-                                      </p>
-                                    </>
+                                      </div>
+                                    </div>
                                   ) : (
                                     <></>
                                   );
                                 })}
                               </div>
                               <div> </div>
-                            </p>
+                            </div>
                           );
                           // }
                         })}

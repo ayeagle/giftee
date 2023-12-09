@@ -515,9 +515,9 @@ export default function MyGifts({
                     return (
                       <div
                         className={styles.gift_box}
-                        id={`gift-${item.unique_id}`}
+                        id={`gift-${item.gift_id}`}
                         ref={giftRef}
-                        key={item.unique_id}
+                        key={item.gift_id}
                         onClick={() => giftClick(item.gift_id)}
                         style={{ backgroundColor: item.color + ".4)" }}
                       >

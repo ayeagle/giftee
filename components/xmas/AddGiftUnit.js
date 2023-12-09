@@ -66,7 +66,6 @@ export default function AddGiftUnit({
     "Are you positive? This is a permanent deletion of your gift."
   );
 
-
   ////******* UseEffects START *******////
   ////******* UseEffects START *******////
   ////******* UseEffects START *******////
@@ -153,11 +152,9 @@ export default function AddGiftUnit({
       } else {
         setURLFloat(false);
       }
-
       if (focusGift.cost != "") {
+        setCostFloat(true);
         setCustomCostFloat(true);
-        setGiftCost("");
-        setCostFloat(false);
         updateSlider(0);
       } else {
         setCustomCostFloat(false);
@@ -258,7 +255,6 @@ export default function AddGiftUnit({
   };
 
   const validate = async () => {
-
     if (!giftName) {
       setAddPrompt("Oops you didn't enter a gift name");
       setGreenSwitch(false);
@@ -301,8 +297,7 @@ export default function AddGiftUnit({
         token: token,
       });
 
-      promise.then((data) => {
-      });
+      promise.then((data) => {});
       setSuccessPrompt("Gift Updated!");
       setTimeout(() => {
         setSingleGiftOpen(false);
@@ -321,8 +316,7 @@ export default function AddGiftUnit({
       });
       setSuccessPrompt("Gift Added!");
 
-      promise.then((data) => {
-      });
+      promise.then((data) => {});
     }
     setAddPrompt("");
     setGiftName("");
@@ -371,7 +365,7 @@ export default function AddGiftUnit({
 
       <div
         className={styles.add_gift_container}
-        style={{ width: edit ? "130%" : "", left: edit ? "-15%" : "" }}
+        style={{ width: edit ? "100%" : "", left: edit ? "-0%" : "" }}
       >
         <div className={styles.login_container}>
           <h2 className={styles.title}>{prompt}</h2>
@@ -412,7 +406,7 @@ export default function AddGiftUnit({
                     className={styles.input}
                     type="string"
                     // placeholder="Gift idea/name"
-                    value={giftAdded ? "" : null}
+                    value={giftAdded ? "" : giftName}
                     onChange={(e) => {
                       setGiftName(e.target.value);
                       setEdited(true);
@@ -438,7 +432,7 @@ export default function AddGiftUnit({
                     className={styles.input}
                     type="string"
                     // placeholder="Link of gift or similar"
-                    value={giftAdded ? "" : null}
+                    value={giftAdded ? "" : giftURL}
                     onChange={(e) => {
                       setGiftURL(e.target.value);
                       setEdited(true);
@@ -475,7 +469,7 @@ export default function AddGiftUnit({
                     // style={{ height: "8vh" }}
                     type="text"
                     // placeholder="Additional details"
-                    value={giftAdded ? "" : null}
+                    value={giftAdded ? "" : giftDetails}
                     onChange={(e) => {
                       if (e.keyCode === 13) {
                         e.target.style.height += "20px";
@@ -499,7 +493,7 @@ export default function AddGiftUnit({
                   <Spacer height="3vh" />
                 </div>
               </div>
-            
+
               <Spacer height="0vh" />
               <div className={styles.inline_wrapper}>
                 <div
@@ -535,7 +529,7 @@ export default function AddGiftUnit({
                       type="number"
                       min={0}
                       // placeholder="Approx. cost"
-                      value={giftAdded ? "" : null}
+                      value={giftAdded ? "" : customCost}
                       onChange={(e) => {
                         setCustomCost(e.target.value);
                         setEdited(true);
@@ -593,9 +587,9 @@ export default function AddGiftUnit({
                     {allGroupsData || bool ? (
                       allGroupsData.map((group, i) => {
                         return (
-            
                           <div
                             id={group.id}
+                            key={group.id}
                             value={group.id}
                             className={styles.gift_group}
                             style={{
@@ -773,5 +767,4 @@ export default function AddGiftUnit({
       <Spacer height="200px" />
     </>
   );
-
 }

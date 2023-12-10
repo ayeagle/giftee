@@ -12,68 +12,68 @@ let loading_list = [
 ];
 
 export default function LoadingPage({ active, small }) {
-  // const [currQuote, setCurrQuote] = useState();
-  // const [containerStyle, setContainerStyle] = useState(styles.container_before);
-  // const [runOnce, setRunOnce] = useState(0);
-  // const [styleStage, setStyleStage] = useState("before");
+  const [currQuote, setCurrQuote] = useState();
+  const [containerStyle, setContainerStyle] = useState(styles.container_before);
+  const [runOnce, setRunOnce] = useState(0);
+  const [styleStage, setStyleStage] = useState("before");
 
-  // if (isReady && runOnce == 0) {
-  //   ////console.log("isready  run");
-  //   setRunOnce(1);
+  if (isReady && runOnce == 0) {
+    ////console.log("isready  run");
+    setRunOnce(1);
 
-  //   setTimeout(() => {
-  //     ////console.log("isready timeout run");
-  //     setStyleStage("after");
-  //     setTimeout(() => {
-  //       ////console.log("isready inner timeout run");
-  //       // setStyleStage('final')
-  //     }, [2000]);
-  //   }, [2000]);
-  // }
+    setTimeout(() => {
+      ////console.log("isready timeout run");
+      setStyleStage("after");
+      setTimeout(() => {
+        ////console.log("isready inner timeout run");
+        // setStyleStage('final')
+      }, [2000]);
+    }, [2000]);
+  }
 
-  // const cycle = () => {
-  //   ////console.log("cycle run");
-  //   let count = 0;
+  const cycle = () => {
+    ////console.log("cycle run");
+    let count = 0;
 
-  //   let img = document.getElementById("gif");
-  //   let src = img.getAttribute("src");
-  //   let gifCycler = setInterval(function () {
-  //     ////console.log("cycle timeout run");
+    let img = document.getElementById("gif");
+    let src = img.getAttribute("src");
+    let gifCycler = setInterval(function () {
+      ////console.log("cycle timeout run");
 
-  //     count++;
-  //     ////console.log(count);
-  //     if (count >= 2) {
-  //       // stop after 10 iterations
-  //       clearInterval(gifCycler);
-  //     }
+      count++;
+      ////console.log(count);
+      if (count >= 2) {
+        // stop after 10 iterations
+        clearInterval(gifCycler);
+      }
 
-  //     img.setAttribute("src", src);
-  //     // determineQuote()
-  //   }, 1300);
-  // };
+      img.setAttribute("src", src);
+      // determineQuote()
+    }, 1300);
+  };
 
-  // const determineQuote = () => {
-  //   let length = loading_list.length;
-  //   let position = Math.floor(Math.random() * length);
-  //   ////console.log(position);
-  //   setCurrQuote(loading_list[position]);
-  //   // if (position%2 == 1) {
-  //   //     setContainerStyle(styles.container_before)
-  //   // } else {
-  //   //     setContainerStyle(styles.container_after)
+  const determineQuote = () => {
+    let length = loading_list.length;
+    let position = Math.floor(Math.random() * length);
+    ////console.log(position);
+    setCurrQuote(loading_list[position]);
+    // if (position%2 == 1) {
+    //     setContainerStyle(styles.container_before)
+    // } else {
+    //     setContainerStyle(styles.container_after)
 
-  //   // }
-  // };
+    // }
+  };
 
-  // useEffect(() => {
-  //   ////console.log("useeffect run");
+  useEffect(() => {
+    ////console.log("useeffect run");
 
-  //   cycle();
-  // }, []);
+    cycle();
+  }, []);
 
   return (
     <>
-      {/* <div
+      <div
         className={
           small
             ? styleStage == "before"
@@ -108,7 +108,7 @@ export default function LoadingPage({ active, small }) {
           />
         </div>
         <h5>{currQuote}</h5>
-      </div> */}
+      </div>
     </>
   );
 }

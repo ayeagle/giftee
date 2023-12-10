@@ -20,15 +20,13 @@ export default function MetaHead({ children }: { children: ReactNode }) {
           content="Gift exchanges with friends and family made easy!"
         />
 
-        <meta property="og:image" content="../../public/IMGassets/arrow.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:site_name" content="Giftee.io" />
-        <meta property="og:image:width" content="1200" />
+        <meta property="og:image" content="https://imgur.com/Th0d4eD" />
+        {/* <meta property="og:image:type" content="image/png" /> */}
+        {/* <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Giftee Preview" />
+        <meta property="og:image:alt" content="Giftee Preview" /> */}
         {/* <meta property="og:logo" content="https://i.imgur.com/tcO8WIR.png" /> */}
         <link rel="icon" type="image/png" href="https://i.imgur.com/tcO8WIR.png" />
-        <link rel="image" type="image/png" href="https://i.imgur.com/tcO8WIR.png" />
 
         <meta property="og:url" content={"https://www.giftee.io/explore"} />
         <meta property="og:type" content="website" />

@@ -172,7 +172,7 @@ export default function Gifts({
       setSingleGiftStyle(styles.single_gift_box);
       setSingleGiftOpen(true);
       setOneOpen(true);
-      setYOffsetApplied(yOffSet)
+      setYOffsetApplied(yOffSet);
       setSingleGiftObject(
         groupData.gifts.find((gift) => gift.gift_id === gift_id)
       );
@@ -362,6 +362,9 @@ export default function Gifts({
     });
   }, [ready, oneOpen, setOneOpen]);
 
+  console.log('singleGiftObject')
+  console.log(singleGiftObject)
+
   ////console.log("this is group data before main gift component loading");
   //console.log("groupData");
   //console.log(groupData);
@@ -413,12 +416,30 @@ export default function Gifts({
                     Sort by...
                   </option>
 
-                  <option key="sort1" value="nameUp"> Ascending Name</option>
-                  <option key="sort2" value="nameDown"> Descending Name</option>
-                  <option key="sort3" value="costUp"> Ascending Cost</option>
-                  <option key="sort4" value="costDown"> Descending Cost</option>
-                  <option key="sort5" value="newest"> Newest First</option>
-                  <option key="sort6" value="oldest"> Oldest First</option>
+                  <option key="sort1" value="nameUp">
+                    {" "}
+                    Ascending Name
+                  </option>
+                  <option key="sort2" value="nameDown">
+                    {" "}
+                    Descending Name
+                  </option>
+                  <option key="sort3" value="costUp">
+                    {" "}
+                    Ascending Cost
+                  </option>
+                  <option key="sort4" value="costDown">
+                    {" "}
+                    Descending Cost
+                  </option>
+                  <option key="sort5" value="newest">
+                    {" "}
+                    Newest First
+                  </option>
+                  <option key="sort6" value="oldest">
+                    {" "}
+                    Oldest First
+                  </option>
                 </select>
               </div>
               <div
@@ -442,7 +463,10 @@ export default function Gifts({
                   {groupData ? (
                     members.map(function (mapped_name, index) {
                       return (
-                        <option key={`${index}-${mapped_name}`} value={mapped_name}>
+                        <option
+                          key={`${index}-${mapped_name}`}
+                          value={mapped_name}
+                        >
                           {mapped_name}
                         </option>
                       );
@@ -611,7 +635,7 @@ export default function Gifts({
       {singleGiftOpen ? (
         <div
           className={styles.single_gift_page_container}
-          style={{top: yOffsetApplied}}
+          style={{ top: yOffsetApplied }}
           // style={{ top: window.pageYOffset }}
           onClick={exitGiftClick}
           onKeyDown={(event) => {
@@ -635,15 +659,16 @@ export default function Gifts({
               {/* <img src="/IMGassets/bow.png" className={styles.image} /> */}
 
               <div className={styles.single_gift_header}>
-                <p>For: {singleGiftObject.requester}</p>
+                <p>
+                  <Spacer height="5px" />
+                  For: {singleGiftObject.requester}
+                </p>
                 {singleGiftObject.url != "" ? (
-                  <p>
-                    <a href={singleGiftObject.url} target="_blank">
-                      <button className={styles.product_button}>
-                        Link to product {"=>"}
-                      </button>
-                    </a>
-                  </p>
+                  <a href={singleGiftObject.url} target="_blank">
+                    <button className={styles.product_button}>
+                      Link to product {"=>"}
+                    </button>
+                  </a>
                 ) : (
                   <p>No Link {":("}</p>
                 )}

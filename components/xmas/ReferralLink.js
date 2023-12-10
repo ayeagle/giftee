@@ -46,7 +46,6 @@ export default function ReferralLink({ link, setLink, oneOpen }) {
       <div>
         <h2>Invite others</h2>
       </div>
-
       <button
         className={boxStyle}
         style={{ backgroundColor: oneOpen ? "rgba(0,0,0,0)" : "" }}
@@ -59,7 +58,7 @@ export default function ReferralLink({ link, setLink, oneOpen }) {
               style={{
                 position: "relative",
                 left: "10px",
-                fontSize: "20px",
+                fontSize: "17px",
                 top: "5px",
               }}
             />

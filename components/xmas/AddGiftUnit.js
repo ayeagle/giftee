@@ -35,11 +35,11 @@ export default function AddGiftUnit({
   const [giftAdded, setGiftAdded] = useState(false);
   const [bool, setBool] = useState(false);
 
-  const [giftName, setGiftName] = useState("");
-  const [giftURL, setGiftURL] = useState("");
+  const [giftName, setGiftName] = useState(focusGift?.gift_name?? '');
+  const [giftURL, setGiftURL] = useState(focusGift?.url?? '');
   const [giftCost, setGiftCost] = useState("");
-  const [giftDetails, setGiftDetails] = useState("");
-  const [customCost, setCustomCost] = useState("");
+  const [giftDetails, setGiftDetails] = useState(focusGift?.details?? '');
+  const [customCost, setCustomCost] = useState(focusGift?.cost ?? '');
 
   const [giftFloat, setGiftFloat] = useState(false);
   const [URLFloat, setURLFloat] = useState(false);
@@ -59,6 +59,7 @@ export default function AddGiftUnit({
   const { user, getAccessTokenSilently } = useAuth0();
   const [buttonGreen, setButtonGreen] = useState(false);
   const [edited, setEdited] = useState(false);
+  const [sliderWarning, setSliderWarning] = useState("");
 
   const [privateGroup, setPrivateGroup] = useState(true);
   const [showDeletionWarning, setShowDeletionWarning] = useState(false);
@@ -153,20 +154,21 @@ export default function AddGiftUnit({
         setURLFloat(false);
       }
       if (focusGift.cost != "") {
-        setCostFloat(true);
+        setCostFloat(false);
         setCustomCostFloat(true);
         updateSlider(0);
       } else {
         setCustomCostFloat(false);
       }
 
-      if (focusGift.detail != "") {
+      if (focusGift.details != "") {
         setDetailsFloat(true);
       } else {
         setDetailsFloat(false);
       }
     }
   }, [allGroupsData]);
+
   ////******* UseEffects END *******////
   ////******* UseEffects END *******////
   ////******* UseEffects END *******////
@@ -275,10 +277,12 @@ export default function AddGiftUnit({
 
     let true_cost;
     if (customCost != "") {
-      true_cost = customCost;
+      true_cost = Math.ceil(customCost);
     } else if (giftCost != "") {
-      true_cost = giftCost;
-    } else true_cost = null;
+      true_cost = Math.ceil(giftCost);
+    } else {
+      true_cost = null;
+    }
 
     setGiftAdded(true);
     const token = await getAccessTokenSilently();
@@ -346,18 +350,26 @@ export default function AddGiftUnit({
   const updateSlider = (val) => {
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
+    console.log("custom cost " + customCost);
     if (customCost == "") {
+      setSliderWarning("");
       setGiftCost(val);
       slider.value = val;
       if (val != 0) {
         output.innerHTML = `$${val}`;
       } else output.innerHTML = "";
     } else {
+      if (val && customCost) {
+        setSliderWarning("Delete custom cost to use slider.");
+      }
       setGiftCost("");
       output.innerHTML = "";
       slider.value = 0;
     }
   };
+
+  console.log(focusGift);
+  console.log(giftCost);
 
   return (
     <>
@@ -546,6 +558,8 @@ export default function AddGiftUnit({
 
                 <div className={styles.slidecontainer}>
                   <br></br>
+                  <p>{sliderWarning === "" ? "   " : sliderWarning}</p>
+                  {/* <label htmlFor="myRange">Select a value:</label> */}
                   <input
                     id="myRange"
                     type="range"
@@ -559,12 +573,12 @@ export default function AddGiftUnit({
                   ></input>
                 </div>
               </div>
-
+              <br></br>
               <div className={styles.inline_wrapper}>
                 <div
                   style={{
                     color: "red",
-                    bottom: "-3vh",
+                    bottom: "-25px",
                     position: "relative",
                     left: "-50%",
                   }}

@@ -107,7 +107,7 @@
 }
 
 .single_gift_header {
-    
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -127,7 +127,7 @@
     transition: .1s;
     background-color: rgb(184, 235, 255);
     border: 2px solid black;
-    padding: .3vw;
+    padding: 5px;
 }
 
 .product_button:hover {
@@ -135,7 +135,8 @@
     justify-content: center;
     border-radius: 10px;
     /* font-size: 1.55vw; */
-    background-color: rgb(147, 224, 255);
+    background-color: rgb(70, 202, 255);
+    color: black;
 
     /* width: 14vw; */
     transition: .1s;

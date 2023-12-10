@@ -2,7 +2,6 @@ import Head from "next/head";
 import Script from "next/script";
 import { ReactNode } from "react";
 
-
 export default function MetaHead({ children }: { children: ReactNode }) {
   return (
     <>
@@ -14,10 +13,46 @@ export default function MetaHead({ children }: { children: ReactNode }) {
           content="Gift exchanges with friends and family made easy!"
         />
 
+        {/* <!-- Primary Meta Tags --> */}
+        <title>Giftee.io</title>
+        <meta name="title" content="Giftee.io" />
+        <meta
+          name="description"
+          content="Gift exchanges with friends and family made easy"
+        />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.giftee.io/" />
+        <meta property="og:title" content="Giftee.io" />
+        <meta
+          property="og:description"
+          content="Gift exchanges with friends and family made easy"
+        />
+        <meta
+          property="og:image"
+          content="https://i.imgur.com/Th0d4eD.png"
+        />
+
+        {/* <!-- Twitter --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.giftee.io/" />
+        <meta property="twitter:title" content="Giftee.io" />
+        <meta
+          property="twitter:description"
+          content="Gift exchanges with friends and family made easy"
+        />
+        <meta
+          property="twitter:image"
+          content="https://i.imgur.com/Th0d4eD.png"
+        />
+
+        {/* <!-- Meta Tags Generated with https://metatags.io --> */}
+        {/* 
         <meta property="og:image" content="https://i.imgur.com/Th0d4eD.png" />
         <meta property="og:title" content="Yeagle's Bagels" />
         <link rel="icon" type="image/png" href="https://i.imgur.com/tcO8WIR.png" />
-
+ */}
 
         {/* <meta property="og:image:type" content="image/png" /> */}
         {/* <meta property="og:image:width" content="1200" />
@@ -48,7 +83,6 @@ export default function MetaHead({ children }: { children: ReactNode }) {
         ></Script>
       </Head>
       {children}
-
     </>
   );
 }

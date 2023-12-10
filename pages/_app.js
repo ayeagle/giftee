@@ -34,21 +34,21 @@ function Application({ Component, pageProps }) {
 
   return (
     <>
-      <Auth0Provider {...providerConfig}>
-        <AppRedirectWrapper>
-          <ErrorPrompt
-            throwError={errorHappening}
-            setThrowError={setErrorHappening}
-          />
-          <MetaHead>
+      <MetaHead>
+        <Auth0Provider {...providerConfig}>
+          <AppRedirectWrapper>
+            <ErrorPrompt
+              throwError={errorHappening}
+              setThrowError={setErrorHappening}
+            />
             <Component
               {...pageProps}
               errorHappening={errorHappening}
               setErrorHappening={setErrorHappening}
             />
-          </MetaHead>
-        </AppRedirectWrapper>
-      </Auth0Provider>
+          </AppRedirectWrapper>
+        </Auth0Provider>
+      </MetaHead>
     </>
   );
 }

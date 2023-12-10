@@ -14,7 +14,7 @@ export default function MetaHead({ children }: { children: ReactNode }) {
           content="Gift exchanges with friends and family made easy!"
         />
 
-        <meta property="og:image" content="https://imgur.com/Th0d4eD" />
+        <meta property="og:image" content="https://i.imgur.com/Th0d4eD.png" />
         <meta property="og:title" content="Yeagle's Bagels" />
         <link rel="icon" type="image/png" href="https://i.imgur.com/tcO8WIR.png" />
 

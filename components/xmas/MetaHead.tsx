@@ -31,7 +31,8 @@ export default function MetaHead({ children }: { children: ReactNode }) {
         />
         <meta
           property="og:image"
-          content="https://i.imgur.com/Th0d4eD.png"
+          // content="https://i.imgur.com/Th0d4eD.png"
+          content="/../..//public/Meta/full.png"
         />
 
         {/* <!-- Twitter --> */}
@@ -44,7 +45,9 @@ export default function MetaHead({ children }: { children: ReactNode }) {
         />
         <meta
           property="twitter:image"
-          content="https://i.imgur.com/Th0d4eD.png"
+          // content="https://i.imgur.com/Th0d4eD.png"
+          // content="https://i.imgur.com/Th0d4eD.png"
+          content="/../..//public/Meta/full.png"
         />
 
         {/* <!-- Meta Tags Generated with https://metatags.io --> */}
@@ -53,6 +56,11 @@ export default function MetaHead({ children }: { children: ReactNode }) {
         <meta property="og:title" content="Yeagle's Bagels" />
         <link rel="icon" type="image/png" href="https://i.imgur.com/tcO8WIR.png" />
  */}
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://i.imgur.com/tcO8WIR.png"
+        />
 
         {/* <meta property="og:image:type" content="image/png" /> */}
         {/* <meta property="og:image:width" content="1200" />

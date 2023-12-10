@@ -24,15 +24,15 @@ export default function MetaHead({ children }: { children: ReactNode }) {
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.giftee.io/" />
-        <meta property="og:title" content="Giftee.io" />
-        <meta
-          property="og:description"
-          content="Gift exchanges with friends and family made easy"
-        />
         <meta
           property="og:image"
           // content="https://i.imgur.com/Th0d4eD.png"
           content="/Meta/full.png"
+        />
+        <meta property="og:title" content="Giftee.io" />
+        <meta
+          property="og:description"
+          content="Gift exchanges with friends and family made easy"
         />
 
         {/* <!-- Twitter --> */}
@@ -78,7 +78,7 @@ export default function MetaHead({ children }: { children: ReactNode }) {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Giftee Preview" />
         <meta property="og:site_name" content={"Giftee.io"} /> */}
-        
+
         {/* jlhasdkjhdsa */}
 
         <Script

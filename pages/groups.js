@@ -210,7 +210,7 @@ export default function Groups({ errorHappening, setErrorHappening }) {
   return (
     <>
       <HomeTop />
-      <Spacer height={"100px"} />
+      <Spacer height={"200px"} />
 
       <MasterBodyContainer>
         <div className={styles.positional_container}>
@@ -251,6 +251,16 @@ export default function Groups({ errorHappening, setErrorHappening }) {
               </button>
             </div>
             <h1>My Groups</h1>
+            <br></br>
+            <div
+              style={{
+                borderRadius: "0 0 10px 10px",
+                borderTop: "2px solid black",
+                width: "90%",
+                margin: "0 auto",
+                padding: "20px"
+              }}
+            ></div>
             {giftAdded ? (
               <div className={styles.gift_added}>
                 <div>Group Changed!</div>
@@ -280,6 +290,7 @@ export default function Groups({ errorHappening, setErrorHappening }) {
             )}
 
             {/* <Spacer height={"4vh"} /> */}
+
 
             {groupCreationStage == 0 ? (
               <>
@@ -442,7 +453,7 @@ export default function Groups({ errorHappening, setErrorHappening }) {
         </div>
         {/* <Spacer height={"10vh"} /> */}
       </MasterBodyContainer>
-      <Spacer height={"100px"} />
+      <Spacer height={"200px"} />
 
       <HomeBottom />
     </>

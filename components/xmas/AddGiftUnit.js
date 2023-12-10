@@ -35,11 +35,11 @@ export default function AddGiftUnit({
   const [giftAdded, setGiftAdded] = useState(false);
   const [bool, setBool] = useState(false);
 
-  const [giftName, setGiftName] = useState(focusGift?.gift_name?? '');
-  const [giftURL, setGiftURL] = useState(focusGift?.url?? '');
+  const [giftName, setGiftName] = useState(focusGift?.gift_name ?? "");
+  const [giftURL, setGiftURL] = useState(focusGift?.url ?? "");
   const [giftCost, setGiftCost] = useState("");
-  const [giftDetails, setGiftDetails] = useState(focusGift?.details?? '');
-  const [customCost, setCustomCost] = useState(focusGift?.cost ?? '');
+  const [giftDetails, setGiftDetails] = useState(focusGift?.details ?? "");
+  const [customCost, setCustomCost] = useState(focusGift?.cost ?? "");
 
   const [giftFloat, setGiftFloat] = useState(false);
   const [URLFloat, setURLFloat] = useState(false);
@@ -380,7 +380,7 @@ export default function AddGiftUnit({
         style={{ width: edit ? "100%" : "", left: edit ? "-0%" : "" }}
       >
         <div className={styles.login_container}>
-          <h2 className={styles.title}>{prompt}</h2>
+        <h1 className={styles.title}>{prompt}</h1>
           <div>
             {edit && (
               <img
@@ -390,10 +390,20 @@ export default function AddGiftUnit({
               />
             )}
           </div>
+
           <br></br>
           <br></br>
           <div className={styles.login_signup_wrapper}>
             <div className={styles.form}>
+              <div
+                style={{
+                  borderRadius: "0 0 10px 10px",
+                  borderTop: "2px solid black",
+                  width: "100%",
+                  margin: "0 auto",
+                  padding: "20px",
+                }}
+              ></div>
               <div className={styles.inline_wrapper}>
                 <div
                   style={{

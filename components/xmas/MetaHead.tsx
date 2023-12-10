@@ -55,7 +55,7 @@ export default function MetaHead({ children }: { children: ReactNode }) {
         <meta property="og:image" content="https://i.imgur.com/Th0d4eD.png" />
         <meta property="og:title" content="Yeagle's Bagels" />
         <link rel="icon" type="image/png" href="https://i.imgur.com/tcO8WIR.png" />
- */}
+        */}
         <link
           rel="icon"
           type="image/png"

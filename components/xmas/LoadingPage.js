@@ -73,7 +73,7 @@ export default function LoadingPage({ active, small }) {
 
   return (
     <>
-      <div
+      {/* <div
         className={
           small
             ? styleStage == "before"
@@ -108,7 +108,7 @@ export default function LoadingPage({ active, small }) {
           />
         </div>
         <h5>{currQuote}</h5>
-      </div>
+      </div> */}
     </>
   );
 }

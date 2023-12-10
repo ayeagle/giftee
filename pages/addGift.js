@@ -11,7 +11,7 @@ export default function AddGift({errorHappening, setErrorHappening}) {
     <>
       <HomeTop errorHappening={errorHappening} setErrorHappening={setErrorHappening}/>
       <MasterBodyContainer>
-        <AddGiftUnit prompt={"Add new gifts ideas below!"} edit={false} errorHappening={errorHappening} setErrorHappening={setErrorHappening}/>
+        <AddGiftUnit prompt={"Add Gift"} edit={false} errorHappening={errorHappening} setErrorHappening={setErrorHappening}/>
       </MasterBodyContainer>
       <HomeBottom errorHappening={errorHappening} setErrorHappening={setErrorHappening}/>
     </>

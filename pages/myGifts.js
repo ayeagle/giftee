@@ -369,9 +369,11 @@ export default function MyGifts({
           </button>
           <br />
           <h1>My Gifts</h1>
-
-          <div className={styles.sort_container}>
-            {/* {claimed ? (
+          <h3 className={styles.title}>{groupData?.group_name ?? ""}</h3>
+          {groupData && (true || bool) ? (
+            <div className={styles.gift_container}>
+              <div className={styles.sort_container}>
+                {/* {claimed ? (
                     <div style={{ flexDirection: "column", width: "33%" }}>
                         <div className={styles.filters_title} style={{ marginTop: "-1vw" }} >Only show gifts <br />claimed by me</div>
                         <input type="checkbox" className={styles.checkbox} styles={{ opacity: "50%" }} onClick={() => setOnlyMe(!onlyMe)} />
@@ -380,22 +382,22 @@ export default function MyGifts({
                     <div></div>
                 )
                 } */}
-            <div style={{ flexDirection: "column", width: "33%" }}>
-              {/* <p className={styles.filters_title}>Sort by...</p> */}
-              <select
-                className={styles.filter_inputs}
-                onChange={handleSortChange}
-              >
-                <option value="">Sort by...</option>
-                <option value="nameUp"> Ascending Name</option>
-                <option value="nameDown"> Descending Name</option>
-                <option value="costUp"> Ascending Cost</option>
-                <option value="costDown"> Descending Cost</option>
-                <option value="newest"> Newest First</option>
-                <option value="oldest"> Oldest First</option>
-              </select>
-            </div>
-            {/* <div style={{ flexDirection: "column", width: "33%" }}>
+                <div style={{ flexDirection: "column", width: "33%" }}>
+                  {/* <p className={styles.filters_title}>Sort by...</p> */}
+                  <select
+                    className={styles.filter_inputs}
+                    onChange={handleSortChange}
+                  >
+                    <option value="">Sort by...</option>
+                    <option value="nameUp"> Ascending Name</option>
+                    <option value="nameDown"> Descending Name</option>
+                    <option value="costUp"> Ascending Cost</option>
+                    <option value="costDown"> Descending Cost</option>
+                    <option value="newest"> Newest First</option>
+                    <option value="oldest"> Oldest First</option>
+                  </select>
+                </div>
+                {/* <div style={{ flexDirection: "column", width: "33%" }}>
                     <div className={styles.filters_title} >  For... </div>
                     <select className={styles.filter_inputs} onChange={handleNameSearchChange} style={{ width: "70%" }} >
                         <option value=""></option>
@@ -411,7 +413,7 @@ export default function MyGifts({
                         }
                     </select>
                 </div> */}
-            {/* <div style={{ flexDirection: "column", width: "33%" }}>
+                {/* <div style={{ flexDirection: "column", width: "33%" }}>
                 <p className={styles.filters_title}> Search </p>
                 <input
                   className={styles.filter_inputs}
@@ -421,53 +423,48 @@ export default function MyGifts({
                   }}
                 />
               </div> */}
-            <div
-              style={{
-                flexDirection: "column",
-                display: "flex",
-                // width: "40%",
-              }}
-            >
-              {/* <div style={{ flexDirection: "row", display: "flex" }}>
-            <p className={styles.filters_title}></p> */}
+                <div
+                  style={{
+                    flexDirection: "column",
+                    display: "flex",
+                    // width: "40%",
+                  }}
+                >
+                  <input
+                    className={styles.stack_filter_inputs}
+                    placeholder="Min $"
+                    type="number"
+                    step={5}
+                    min={0}
+                    onChange={(e) => {
+                      if (e.target.value.length === 0) {
+                        setCostMin(null);
+                      } else {
+                        setCostMin(e.target.value);
+                      }
+                    }}
+                  />
+                  {/* </div> */}
 
-              <input
-                className={styles.stack_filter_inputs}
-                placeholder="Min $"
-                type="number"
-                step={5}
-                min={0}
-                onChange={(e) => {
-                  if (e.target.value.length === 0) {
-                    setCostMin(null);
-                  } else {
-                    setCostMin(e.target.value);
-                  }
-                }}
-              />
-              {/* </div> */}
-
-              {/* <div style={{ flexDirection: "row", display: "flex" }}>
+                  {/* <div style={{ flexDirection: "row", display: "flex" }}>
             <p className={styles.filters_title}>Max $</p> */}
 
-              <input
-                className={styles.stack_filter_inputs}
-                placeholder="Max $"
-                type="number"
-                step={5}
-                onChange={(e) => {
-                  if (e.target.value.length === 0) {
-                    setCostMax(null);
-                  } else {
-                    setCostMax(e.target.value);
-                  }
-                }}
-              />
-              {/* </div> */}
-            </div>
-          </div>
-          {groupData && (true || bool) ? (
-            <div className={styles.gift_container}>
+                  <input
+                    className={styles.stack_filter_inputs}
+                    placeholder="Max $"
+                    type="number"
+                    step={5}
+                    onChange={(e) => {
+                      if (e.target.value.length === 0) {
+                        setCostMax(null);
+                      } else {
+                        setCostMax(e.target.value);
+                      }
+                    }}
+                  />
+                  {/* </div> */}
+                </div>
+              </div>
               {groupData.gifts.filter(
                 (gift) => gift.requester_id == curr_user_id
               ).length === 0 ? (
@@ -569,7 +566,7 @@ export default function MyGifts({
                 <div onClick={doNothing}>
                   {/* <img src="/IMGassets/bow.png" className={styles.image} /> */}
                   <AddGiftUnit
-                    prompt={"Edit gift details"}
+                    prompt={"Edit Gift"}
                     edit={true}
                     focusGift={singleGiftObject}
                     groupData={groupData}
@@ -592,7 +589,6 @@ export default function MyGifts({
             <ReferralLink link={link} />
             <Spacer height={"40px"} />
             <Spacer height={"100px"} />
-
           </>
         )}
       </MasterBodyContainer>

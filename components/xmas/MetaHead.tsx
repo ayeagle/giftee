@@ -2,12 +2,6 @@ import Head from "next/head";
 import Script from "next/script";
 import { ReactNode } from "react";
 
-// import  Metadata } from 'next'
-
-export const metadata = {
-  title: "WAHAHAHHA",
-  description: "JHASKJHSADHKJ",
-};
 
 export default function MetaHead({ children }: { children: ReactNode }) {
   return (

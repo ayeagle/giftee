@@ -113,8 +113,8 @@ export default function HomeTop({ oneOpen }) {
   // if (user) {
   return (
     <>
-      <LoadingPage />
       <MetaHead />
+      <LoadingPage />
       <div
         style={{
           backgroundColor: oneOpen ? "rgba(0, 0, 0, 0.657)" : "",

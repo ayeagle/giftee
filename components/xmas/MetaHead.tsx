@@ -32,7 +32,7 @@ export default function MetaHead({ children }: { children: ReactNode }) {
         <meta
           property="og:image"
           // content="https://i.imgur.com/Th0d4eD.png"
-          content="/../..//public/Meta/full.png"
+          content="/Meta/full.png"
         />
 
         {/* <!-- Twitter --> */}
@@ -47,7 +47,7 @@ export default function MetaHead({ children }: { children: ReactNode }) {
           property="twitter:image"
           // content="https://i.imgur.com/Th0d4eD.png"
           // content="https://i.imgur.com/Th0d4eD.png"
-          content="/../..//public/Meta/full.png"
+          content="Meta/full.png"
         />
 
         {/* <!-- Meta Tags Generated with https://metatags.io --> */}
@@ -78,6 +78,8 @@ export default function MetaHead({ children }: { children: ReactNode }) {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Giftee Preview" />
         <meta property="og:site_name" content={"Giftee.io"} /> */}
+        
+        {/* jlhasdkjhdsa */}
 
         <Script
           async
@@ -90,6 +92,8 @@ export default function MetaHead({ children }: { children: ReactNode }) {
           crossOrigin="anonymous"
         ></Script>
       </Head>
+      {/* <img src="/Meta/full.png" />
+      <img src="https://i.imgur.com/tcO8WIR.png" /> */}
       {children}
     </>
   );

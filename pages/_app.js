@@ -40,11 +40,14 @@ function Application({ Component, pageProps }) {
             throwError={errorHappening}
             setThrowError={setErrorHappening}
           />
+          <MetaHead />
+
           <Component
             {...pageProps}
             errorHappening={errorHappening}
             setErrorHappening={setErrorHappening}
           />
+          <MetaHead />
         </AppRedirectWrapper>
       </Auth0Provider>
     </>

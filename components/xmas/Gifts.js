@@ -568,13 +568,19 @@ export default function Gifts({
             </h4>
           ) : (
             groupData.gifts.map(function (item, index) {
+              console.log(item)
+              console.log(onlyMe)
+              console.log(curr_user_id)
+              console.log(costMin)
+              console.log(costMax)
+              console.log(searchVal)
               if (
                 // displayedCountRef.current <= maxGifts &&
                 displayCount < maxGifts &&
                 item.requester_id !== curr_user_id &&
                 item.gift_id &&
                 item.taken === claimed &&
-                (onlyMe || item.giver_id === curr_user_id) &&
+                (!claimed || item.giver_id === curr_user_id) &&
                 (searchVal == "" || searchVal == item.requester) &&
                 (costMin == null || costMin <= item.cost || +costMin == 0) &&
                 (costMax == null ||

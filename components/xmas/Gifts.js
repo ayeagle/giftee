@@ -568,12 +568,6 @@ export default function Gifts({
             </h4>
           ) : (
             groupData.gifts.map(function (item, index) {
-              console.log(item)
-              console.log(onlyMe)
-              console.log(curr_user_id)
-              console.log(costMin)
-              console.log(costMax)
-              console.log(searchVal)
               if (
                 // displayedCountRef.current <= maxGifts &&
                 displayCount < maxGifts &&

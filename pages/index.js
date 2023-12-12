@@ -8,8 +8,6 @@ import MasterBodyContainer from "@components/xmas/MasterBodyContainer";
 
 export default function Home({errorHappening, setErrorHappening}) {
   return (
-    <>
       <Begin />
-    </>
   );
 }

@@ -49,7 +49,7 @@ export default function Begin({ errorHappening, setErrorHappening }) {
   if (!user) {
     return (
       <>
-        <div className={styles.page_container} style={{ height: totalHeight }}>
+        <div className={styles.page_container} >
           <div className={style1}>
             <h1 className={styles.centering_unit}>
               <Typing

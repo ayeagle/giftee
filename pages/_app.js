@@ -6,6 +6,11 @@ import AppRedirectWrapper from "@components/xmas/AppRedirectWrapper";
 import ErrorPrompt from "@components/xmas/ErrorPrompt";
 import MetaHead from "@components/xmas/MetaHead";
 
+console.log(
+  "%cHey! You're not supposed to be here >:(",
+  "color: #FF5733; font-size: 24px; font-weight: bold; background-color: #333; padding: 10px; border-radius: 5px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);"
+);
+
 const onRedirectCallback = (appState) => {
   const history = createBrowserHistory();
   history.push(

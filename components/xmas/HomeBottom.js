@@ -26,10 +26,10 @@ export default function HomeBottom({ oneOpen }) {
     // && window.location.href.split("/").pop() != 'myGifts'
     if (elementBottom >= viewportHeight) {
       setFixedBottom(false);
-      ////console.log("The webpage is longer than the viewport.");
+      //////console.log("The webpage is longer than the viewport.");
     } else {
       setFixedBottom(true);
-      ////console.log("The webpage fits within the viewport.");
+      //////console.log("The webpage fits within the viewport.");
     }
   };
 

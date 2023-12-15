@@ -53,7 +53,7 @@ export default function Explore() {
       setGroupName(localStorage.getItem("group_name"));
       setGroupData(curr_group);
       setDescr(curr_group.description);
-      ////console.log(curr_group);
+      //////console.log(curr_group);
       setLink(curr_group.invite_link);
 
       let temp_date = new Date(curr_group.gift_exchange_time*1000).toLocaleDateString("default")

@@ -48,7 +48,7 @@
 //         }
 
 //         for (let i = 0; i < curr_group.num_users; i++) {
-//             ////console.log(nameHold[i])
+//             //////console.log(nameHold[i])
 
 //             if (nameHold[i] == '' || nameHold[i] == null) {        //
 //                 tempStyles[i] = styles.label
@@ -71,8 +71,8 @@
 //         setNameHold(temp)
 //         setNameFloat(temp2)
 //         setStyles(tempStyles)
-//         ////console.log("this is submit ready")
-//         ////console.log(submitReady)
+//         //////console.log("this is submit ready")
+//         //////console.log(submitReady)
 //     }
 
 
@@ -94,27 +94,27 @@
 //     }
 
 //     const secClick = async () => {
-//         ////console.log("post group details")
-//         ////console.log(curr_group.group_name)
-//         ////console.log(nameHold)
-//         ////console.log(desc)
+//         //////console.log("post group details")
+//         //////console.log(curr_group.group_name)
+//         //////console.log(nameHold)
+//         //////console.log(desc)
 
-//         ////console.log("STATE OF THE LOCAL GROUP OBJECT")
-//         ////console.log(curr_group)
-//         ////console.log(groupData)
+//         //////console.log("STATE OF THE LOCAL GROUP OBJECT")
+//         //////console.log(curr_group)
+//         //////console.log(groupData)
 //         const token = await getAccessTokenSilently();
 
 
 //         let promise = XMAS_PostGroupObject(curr_group.group_name, nameHold, desc, token)
 
 //         promise.then((data) => {
-//             ////console.log("this is the data returned from the call ")
-//             ////console.log(data)
+//             //////console.log("this is the data returned from the call ")
+//             //////console.log(data)
 //             localStorage.setItem('group_id', data.id)
 //             curr_group.group_members = nameHold
 //             curr_group.description = desc
-//             ////console.log("ABOUT TO UPDATE THE GROUP LOCAL OBJECT")
-//             ////console.log(curr_group)
+//             //////console.log("ABOUT TO UPDATE THE GROUP LOCAL OBJECT")
+//             //////console.log(curr_group)
 //             updateGroupObject(curr_group)
 //             setGroupData(curr_group)
 //             redirect('/home')
@@ -175,7 +175,7 @@
 //                                     if (e.target.value.length > 0) {
 //                                         setSubmitReady(true)
 //                                     } else setSubmitReady(false)
-//                                     // ////console.log(curr_group)
+//                                     // //////console.log(curr_group)
 //                                 }
 //                                 } />
 //                         </div>

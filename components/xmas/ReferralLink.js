@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import styles from "./ReferralLink.module.css";
 
 export default function ReferralLink({ link, setLink, oneOpen }) {
-  ////console.log("this is the data passed throught to the referral link func")
-  ////console.log(link)
+  //////console.log("this is the data passed throught to the referral link func")
+  //////console.log(link)
 
   const [internText, setInternText] = useState(link);
   const [changeAllowed, setChangeAllowed] = useState(true);
@@ -29,7 +29,7 @@ export default function ReferralLink({ link, setLink, oneOpen }) {
   }, [boxStyle]);
 
   const copy = () => {
-    ////console.log("we got clicked")
+    //////console.log("we got clicked")
     navigator.clipboard.writeText(link);
     setChangeAllowed(false);
     setInternText("Copied to clipboard! Share away :)");

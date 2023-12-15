@@ -7,7 +7,7 @@ export default function XMAS_PropagateNameChange(old_name, new_name, group_id, t
   let temp = getGroupObject();
   let timestamp = new Date().toISOString();
 
-  ////console.log("Propogate name change -- client-side invoked");
+  //////console.log("Propogate name change -- client-side invoked");
 
   return axios
     .post("https://server.giftee.io/xmas_propagateNameChange", {
@@ -19,7 +19,7 @@ export default function XMAS_PropagateNameChange(old_name, new_name, group_id, t
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((response) => {
-      ////console.log("this is the response which we will set group_id to + " + response.data);
+      //////console.log("this is the response which we will set group_id to + " + response.data);
       // localStorage.setItem('group_id', response.data)
 
       // temp.group_id = response.data
@@ -30,6 +30,6 @@ export default function XMAS_PropagateNameChange(old_name, new_name, group_id, t
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("propagate change UNSUCCESSFUL REQUEST");
+      //////console.log("propagate change UNSUCCESSFUL REQUEST");
     });
 }

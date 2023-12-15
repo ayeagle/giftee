@@ -7,7 +7,7 @@ export default function XMAS_PostGroupObject(name, mode, description, gift_excha
   let temp = getGroupObject();
   let timestamp = new Date().toISOString();
 
-  ////console.log("Post Group Object -- client-side invoked");
+  //////console.log("Post Group Object -- client-side invoked");
 
   return axios
     .post("https://server.giftee.io/xmas_postGroupObject", {
@@ -23,7 +23,7 @@ export default function XMAS_PostGroupObject(name, mode, description, gift_excha
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((response) => {
-      ////console.log(response.data);
+      //////console.log(response.data);
       localStorage.setItem("group_id", response.data.id);
 
       // temp.group_id = response.data.id
@@ -34,6 +34,6 @@ export default function XMAS_PostGroupObject(name, mode, description, gift_excha
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("get group object  UNSUCCESSFUL REQUEST");
+      //////console.log("get group object  UNSUCCESSFUL REQUEST");
     });
 }

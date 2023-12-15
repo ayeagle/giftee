@@ -163,11 +163,11 @@ export default function CreatGroupFlow({
 
     let temp_event_date = Math.floor(new Date(eventDate).getTime() / 1000);
 
-    //console.log(temp_event_date);
-    //console.log(temp_event_date);
-    //console.log(temp_event_date);
-    //console.log(temp_event_date);
-    //console.log(temp_event_date);
+    ////console.log(temp_event_date);
+    ////console.log(temp_event_date);
+    ////console.log(temp_event_date);
+    ////console.log(temp_event_date);
+    ////console.log(temp_event_date);
     // return
 
     let promise = XMAS_PostGroupObject(
@@ -192,8 +192,8 @@ export default function CreatGroupFlow({
         setNewGroupHash(data);
         let promise2 = XMAS_PostReferralHash(carryoverid, data, token);
         promise2.then((data) => {
-          ////console.log("the referral hash return data");
-          ////console.log(data);
+          //////console.log("the referral hash return data");
+          //////console.log(data);
         });
       });
     });
@@ -224,7 +224,7 @@ export default function CreatGroupFlow({
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      ////console.log("Enter key pressed");
+      //////console.log("Enter key pressed");
       validate();
     }
   };
@@ -276,14 +276,14 @@ export default function CreatGroupFlow({
       temp.splice(index, 1);
       temp2.splice(index, 1);
     }
-    ////console.log("this is the attached groups array");
-    ////console.log(temp);
-    ////console.log(temp2);
+    //////console.log("this is the attached groups array");
+    //////console.log(temp);
+    //////console.log(temp2);
 
     setAttachedUsers(temp);
     setAttachedUsersNames(temp2);
 
-    ////console.log(checkStates);
+    //////console.log(checkStates);
   };
 
   const addUsersToGroup = async () => {
@@ -300,7 +300,7 @@ export default function CreatGroupFlow({
 
 
     promise.then((data) => {
-      ////console.log(data);
+      //////console.log(data);
     });
 
     setTimeout(() => {
@@ -349,8 +349,8 @@ export default function CreatGroupFlow({
     //     //     }
     //     // }
   };
-  ////console.log(groupCreationStage);
-  ////console.log(groupCreationStage);
+  //////console.log(groupCreationStage);
+  //////console.log(groupCreationStage);
 
   return (
     <>
@@ -534,7 +534,7 @@ export default function CreatGroupFlow({
                   userList.length > 0 ? (
                     <>
                       {userList.map((user, i) => {
-                        ////console.log(userList);
+                        //////console.log(userList);
                         return (
                           <>
                             <div
@@ -552,7 +552,7 @@ export default function CreatGroupFlow({
                                 let temp = checkStates;
                                 temp[i] = !temp[i];
                                 setCheckStates(temp);
-                                ////console.log(checkStates);
+                                //////console.log(checkStates);
                                 setBool(!bool);
                               }}
                             >

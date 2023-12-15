@@ -99,7 +99,7 @@ export default function AddGiftUnit({
   }, [loaded]);
 
   useEffect(() => {
-    //////console.log(focusGift);
+    ////////console.log(focusGift);
     if (focusGift && allGroupsData) {
       let name = document.getElementById("gift_name");
       let url = document.getElementById("gift_url");
@@ -350,7 +350,7 @@ export default function AddGiftUnit({
   const updateSlider = (val) => {
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
-    // //console.log("custom cost " + customCost);
+    // ////console.log("custom cost " + customCost);
     if (customCost == "") {
       setSliderWarning("");
       setGiftCost(val);
@@ -368,8 +368,8 @@ export default function AddGiftUnit({
     }
   };
 
-  //console.log(focusGift);
-  //console.log(giftCost);
+  ////console.log(focusGift);
+  ////console.log(giftCost);
 
   return (
     <>

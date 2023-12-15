@@ -35,10 +35,10 @@ export default function Invite({errorHappening, setErrorHappening}) {
 
     if (referralCode) {
       // If a referral code was found, show a prompt to join the group
-      ////console.log("REFERRAL TRIGGERED");
-      ////console.log("REFERRAL TRIGGERED");
-      ////console.log("REFERRAL TRIGGERED");
-      ////console.log("REFERRAL TRIGGERED");
+      //////console.log("REFERRAL TRIGGERED");
+      //////console.log("REFERRAL TRIGGERED");
+      //////console.log("REFERRAL TRIGGERED");
+      //////console.log("REFERRAL TRIGGERED");
       getReferralGroup(referralCode);
 
       //check referral code
@@ -47,11 +47,11 @@ export default function Invite({errorHappening, setErrorHappening}) {
     } else {
       // If no referral code was found, simply show the group joining page
       // showGroupJoinPage();
-      ////console.log("NO NON OREFERRAL TRIGGERED");
-      ////console.log("NO NON OREFERRAL TRIGGERED");
-      ////console.log("NO NON OREFERRAL TRIGGERED");
-      ////console.log("NO NON OREFERRAL TRIGGERED");
-      ////console.log("NO NON OREFERRAL TRIGGERED");
+      //////console.log("NO NON OREFERRAL TRIGGERED");
+      //////console.log("NO NON OREFERRAL TRIGGERED");
+      //////console.log("NO NON OREFERRAL TRIGGERED");
+      //////console.log("NO NON OREFERRAL TRIGGERED");
+      //////console.log("NO NON OREFERRAL TRIGGERED");
       setRefLinkPrompt("Hmmmm no group referral code provided...");
 
       //looks like there's no referral code
@@ -64,25 +64,25 @@ export default function Invite({errorHappening, setErrorHappening}) {
 
     let promise = XMAS_GetGroupObjectReferral(refid, token);
 
-    ////console.log(refid);
-    ////console.log(refid);
-    ////console.log(refid);
-    ////console.log(refid);
-    ////console.log(refid);
-    ////console.log(refid);
-    ////console.log(refid);
-    ////console.log(refid);
+    //////console.log(refid);
+    //////console.log(refid);
+    //////console.log(refid);
+    //////console.log(refid);
+    //////console.log(refid);
+    //////console.log(refid);
+    //////console.log(refid);
+    //////console.log(refid);
 
     promise.then((data) => {
-      // ////console.log(
+      // //////console.log(
       //   "data returned to the get ref group function within the invite page"
       // );
-      // ////console.log(data);
-      ////console.log(data);
-      ////console.log(data);
-      ////console.log(data);
-      ////console.log(data);
-      ////console.log(data);
+      // //////console.log(data);
+      //////console.log(data);
+      //////console.log(data);
+      //////console.log(data);
+      //////console.log(data);
+      //////console.log(data);
 
       if (data.length == 0) {
         setRefLinkPrompt("Ruh roh that's not a valid referral link");
@@ -96,8 +96,8 @@ export default function Invite({errorHappening, setErrorHappening}) {
 
   // const [groupName, setGroupName] = useState('')
 
-  ////console.log("EXPLORE PAGE EXPLORE PAGE");
-  ////console.log(curr_group);
+  //////console.log("EXPLORE PAGE EXPLORE PAGE");
+  //////console.log(curr_group);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -105,11 +105,11 @@ export default function Invite({errorHappening, setErrorHappening}) {
         const curr_group = await getGroupObject();
         setGroupName(localStorage.getItem("group_name"));
         setGroupData(curr_group);
-        // ////console.log(
+        // //////console.log(
         //   "EXPLOREEXPLOREEXPLOREEXPLOREEXPLOREEXPLOREEXPLORE PAGE EXPLORE PAGE"
         // );
 
-        ////console.log(curr_group);
+        //////console.log(curr_group);
       } catch (error) {
         console.error("Error fetching group data", error);
       }

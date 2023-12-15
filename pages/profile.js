@@ -88,8 +88,8 @@ export default function  Profile({ errorHappening, setErrorHappening }) {
     temple.then((data) => {
       setGroupData(data);
       curr_group = data;
-      //console.log("this is the groupdata");
-      //console.log(data);
+      ////console.log("this is the groupdata");
+      ////console.log(data);
 
       setCurrUser(localStorage.getItem("current_user"));
       setCurrGroup(data.group_name);
@@ -107,14 +107,14 @@ export default function  Profile({ errorHappening, setErrorHappening }) {
       }
       // setReady(true);
     });
-    //////console.log("this is the groupdata returned to the main compoennt");
+    ////////console.log("this is the groupdata returned to the main compoennt");
   };
 
   // useEffect(() => {
   //     // getGroup()
   //     curr_group = groupData
-  //     //////console.log("this is the groupdata")
-  //     //////console.log(groupData)
+  //     ////////console.log("this is the groupdata")
+  //     ////////console.log(groupData)
 
   //     setCurrUser(localStorage.getItem('current_user'))
   //     setCurrGroup(curr_group.group_name)
@@ -164,23 +164,23 @@ export default function  Profile({ errorHappening, setErrorHappening }) {
           );
           let temp_current = new Date(updateValue);
 
-          //console.log("time data cycle");
-          //console.log("time data cycle");
-          //console.log("temp_event_unix");
-          //console.log(temp_event_unix);
-          //console.log("tempDate");
-          //console.log(tempDate);
-          //console.log("currDate");
-          //console.log(currDate);
-          //console.log("temp_current");
-          //console.log(temp_current);
-          //console.log("current");
-          //console.log(current);
-          //console.log("updateValue");
-          //console.log(updateValue);
-          //console.log("variable");
-          //console.log(variable);
-          //console.log("time data cycle END");
+          ////console.log("time data cycle");
+          ////console.log("time data cycle");
+          ////console.log("temp_event_unix");
+          ////console.log(temp_event_unix);
+          ////console.log("tempDate");
+          ////console.log(tempDate);
+          ////console.log("currDate");
+          ////console.log(currDate);
+          ////console.log("temp_current");
+          ////console.log(temp_current);
+          ////console.log("current");
+          ////console.log(current);
+          ////console.log("updateValue");
+          ////console.log(updateValue);
+          ////console.log("variable");
+          ////console.log(variable);
+          ////console.log("time data cycle END");
 
           if (temp_event_unix != current && updateValue != "") {
             setCurrDate(temp_current);
@@ -191,13 +191,13 @@ export default function  Profile({ errorHappening, setErrorHappening }) {
       case "membE":
         setMembE(!membE);
         if (updateValue != current && updateValue != "") {
-          //////console.log("IDK WHAT THE FUCK IS NEEDED HERE");
+          ////////console.log("IDK WHAT THE FUCK IS NEEDED HERE");
           setCurrMemb(updateValue);
           dispatchDBChange(variable, tempUpdateVal);
         }
         break;
     }
-    //////console.log(this);
+    ////////console.log(this);
     setBool(!bool);
   };
 
@@ -211,8 +211,8 @@ export default function  Profile({ errorHappening, setErrorHappening }) {
     let promise = XMAS_PostGroupChange(variable, updateValue, group_id, token);
 
     promise.then((data) => {
-      //////console.log("data returned from the page load API call");
-      //////console.log(data);
+      ////////console.log("data returned from the page load API call");
+      ////////console.log(data);
       // curr_group = data
       // updateGroupObject(data)
       // setGroupData(data)
@@ -229,8 +229,8 @@ export default function  Profile({ errorHappening, setErrorHappening }) {
     let promise = XMAS_PostGroupChange(variable, updateValue, group_id, token);
 
     promise.then((data) => {
-      //////console.log("data returned from the page load API call");
-      //////console.log(data);
+      ////////console.log("data returned from the page load API call");
+      ////////console.log(data);
       // curr_group = data
       // updateGroupObject(data)
       // setGroupData(data)
@@ -257,13 +257,13 @@ export default function  Profile({ errorHappening, setErrorHappening }) {
 
   if (error) return <div>{error.message}</div>;
 
-  //console.log("groupData");
-  //console.log("groupData");
-  //console.log("groupData");
-  //console.log(groupData);
-  //console.log("groupData");
-  //console.log("groupData");
-  //console.log("groupData");
+  ////console.log("groupData");
+  ////console.log("groupData");
+  ////console.log("groupData");
+  ////console.log(groupData);
+  ////console.log("groupData");
+  ////console.log("groupData");
+  ////console.log("groupData");
 
   return (
     <>

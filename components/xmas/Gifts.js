@@ -100,8 +100,8 @@ export default function Gifts({
     } else {
       setShouldDisplayIncreaseOption(true);
     }
-    //console.log(displayCount);
-    //console.log(maxGifts);
+    ////console.log(displayCount);
+    ////console.log(maxGifts);
     // setOldCount(displayCount)
     setMaxGifts(maxGifts + 10);
   };
@@ -118,20 +118,20 @@ export default function Gifts({
 
   ////////////////
   const genNamesList = () => {
-    console.log("attempted");
+    //console.log("attempted");
     if (groupData) {
-      console.log("passed");
-      console.log(groupData);
+      //console.log("passed");
+      //console.log(groupData);
       let tempMemb = [];
       groupData.gifts.forEach((gift) => {
         if (!tempMemb.includes(gift.requester)) {
           tempMemb.push(gift.requester);
         }
 
-        ////console.log(tempMemb);
-        ////console.log("TEMP MEMB");
+        //////console.log(tempMemb);
+        //////console.log("TEMP MEMB");
       });
-      console.log(tempMemb);
+      //console.log(tempMemb);
       setMembers(tempMemb);
     }
   };
@@ -147,7 +147,7 @@ export default function Gifts({
   // },[shouldDisplayIncreaseOption, maxGifts])
 
   if (isReady() && runOnce % 10 == 1 && members) {
-    console.log("running");
+    //console.log("running");
     setReady(true);
     setRunOnce(runOnce + 1);
     // genNamesList();
@@ -162,7 +162,7 @@ export default function Gifts({
     let temple = getGroupObject();
 
     temple.then((data) => {
-      console.log(data);
+      //console.log(data);
       setGroupData(data);
     });
   };
@@ -180,12 +180,12 @@ export default function Gifts({
   };
 
   const exitGiftClick = (gift_id) => {
-    //////console.log("gift UNclicked");
+    ////////console.log("gift UNclicked");
     setSingleGiftStyle(styles.gift_box);
     setSingleGiftOpen(false);
     setIsClaiming(false);
     setOneOpen(false);
-    ////console.log(groupData);
+    //////console.log(groupData);
   };
 
   const doNothing = (event) => {
@@ -211,11 +211,11 @@ export default function Gifts({
       (gift) => gift.gift_id === singleGiftObject.gift_id
     );
 
-    ////console.log(singleGiftObject);
+    //////console.log(singleGiftObject);
 
-    ////console.log(singleGiftObject.gift_id);
-    ////console.log(taken_gift);
-    ////console.log(index);
+    //////console.log(singleGiftObject.gift_id);
+    //////console.log(taken_gift);
+    //////console.log(index);
 
     taken_gift.taken = !taken_gift.taken;
     taken_gift.giver_id = curr_user_id;
@@ -280,27 +280,27 @@ export default function Gifts({
     switch (e.target.value) {
       case "nameUp":
         tempArray.gifts.sort((a, b) => (a.requester > b.requester ? 1 : -1));
-        //////console.log(tempArray);
+        ////////console.log(tempArray);
         break;
       case "nameDown":
         tempArray.gifts.sort((a, b) => (a.requester < b.requester ? 1 : -1));
-        //////console.log(tempArray);
+        ////////console.log(tempArray);
         break;
       case "costUp":
         tempArray.gifts.sort((a, b) => (a.cost > b.cost ? 1 : -1));
-        //////console.log(tempArray);
+        ////////console.log(tempArray);
         break;
       case "costDown":
         tempArray.gifts.sort((a, b) => (a.cost < b.cost ? 1 : -1));
-        //////console.log(tempArray);
+        ////////console.log(tempArray);
         break;
       case "newest":
         tempArray.gifts.sort((a, b) => (a.gift_id > b.gift_id ? 1 : -1));
-        //////console.log(tempArray);
+        ////////console.log(tempArray);
         break;
       case "oldest":
         tempArray.gifts.sort((a, b) => (a.gift_id < b.gift_id ? 1 : -1));
-        //////console.log(tempArray);
+        ////////console.log(tempArray);
         break;
       default:
         break;
@@ -315,8 +315,8 @@ export default function Gifts({
   };
 
   useEffect(() => {
-    //console.log(costMin);
-    //console.log(costMin == 0);
+    ////console.log(costMin);
+    ////console.log(costMin == 0);
   }, [costMin]);
 
   let numDisplayed = 0;
@@ -353,7 +353,7 @@ export default function Gifts({
     singleGiftOpen,
   ]);
 
-  //console.log(onlyMe)
+  ////console.log(onlyMe)
 
   useEffect(() => {
     // getGroup()
@@ -362,16 +362,16 @@ export default function Gifts({
     });
   }, [ready, oneOpen, setOneOpen]);
 
-  console.log('singleGiftObject')
-  console.log(singleGiftObject)
-
-  ////console.log("this is group data before main gift component loading");
-  //console.log("groupData");
-  //console.log(groupData);
+  //console.log("singleGiftObject");
   //console.log(singleGiftObject);
-  //////console.log(singleGiftObject);
-  //////console.log(singleGiftObject);
-  // //////console.log(groupData.gifts.length)
+
+  //////console.log("this is group data before main gift component loading");
+  ////console.log("groupData");
+  ////console.log(groupData);
+  ////console.log(singleGiftObject);
+  ////////console.log(singleGiftObject);
+  ////////console.log(singleGiftObject);
+  // ////////console.log(groupData.gifts.length)
 
   return (
     <div
@@ -614,9 +614,9 @@ export default function Gifts({
                   </div>
                 );
               } else {
-                // ////console.log(maxGifts)
+                // //////console.log(maxGifts)
 
-                // ////console.log(displayedCountRef.current)
+                // //////console.log(displayedCountRef.current)
                 return;
               }
             })
@@ -670,7 +670,13 @@ export default function Gifts({
                     </button>
                   </a>
                 ) : (
-                  <p>No Link {":("}</p>
+                  <>
+                    <p className={styles.no_product_text}>
+                      {" "}
+                      <Spacer height="5px" />
+                      No Link {":("}
+                    </p>
+                  </>
                 )}
                 <div
                   className={styles.change_data_button}

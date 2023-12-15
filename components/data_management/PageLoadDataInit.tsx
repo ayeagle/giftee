@@ -93,7 +93,7 @@ export default function PageLoadDataInit(props: PageLoadDataInitProps) {
       });
       localStorage.removeItem("ref_group_id");
       promise.then((data) => {
-        //console.log("Posted user update from referral");
+        ////console.log("Posted user update from referral");
       });
     }
   };

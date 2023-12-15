@@ -76,7 +76,7 @@ export class GroupData {
 //   }
 
 //   async updateUserData(newUserObject) {
-//     ////console.log("LOCAL USER DATA INSTANCE IS BEING UPDATED")
+//     //////console.log("LOCAL USER DATA INSTANCE IS BEING UPDATED")
 //     this.curr_user_data = newUserObject;
 //   }
 

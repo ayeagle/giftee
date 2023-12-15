@@ -44,7 +44,7 @@ export default function HomeTop({ oneOpen }) {
   useEffect(() => {
     setGroupName(localStorage.getItem("group_name"));
     setUserName(localStorage.getItem("user_name"));
-    ////console.log("this is the group_name : " + groupName);
+    //////console.log("this is the group_name : " + groupName);
     // slug = window.location.href.split("/").pop();
   }, []);
 
@@ -52,10 +52,10 @@ export default function HomeTop({ oneOpen }) {
     setGroupName(localStorage.getItem("group_name"));
     setUserName(localStorage.getItem("user_name"));
     // validate()
-    ////console.log("this is the group_name : " + groupName);
+    //////console.log("this is the group_name : " + groupName);
   }, [dataChange, setDataChange]);
 
-  // ////console.log("%cUSER", "color: green; background: yellow; font-size: 30px");
+  // //////console.log("%cUSER", "color: green; background: yellow; font-size: 30px");
 
   // console.warn(user);
 
@@ -69,24 +69,24 @@ export default function HomeTop({ oneOpen }) {
 
   const handleScroll = () => {
     let position = window.scrollY;
-    // ////console.log("position");
+    // //////console.log("position");
 
-    // ////console.log(position);
+    // //////console.log(position);
 
     setScrollPosition(position);
-    // ////console.log("scrollPosition");
+    // //////console.log("scrollPosition");
 
-    // ////console.log(scrollPosition);
+    // //////console.log(scrollPosition);
 
     setScrollDistance(position - previousScrollPosition);
-    // ////console.log("scrollDistance");
+    // //////console.log("scrollDistance");
 
-    // ////console.log(scrollDistance);
+    // //////console.log(scrollDistance);
 
     setPreviousScrollPosition(position);
-    // ////console.log("previousScrollPosition");
+    // //////console.log("previousScrollPosition");
 
-    // ////console.log(previousScrollPosition);
+    // //////console.log(previousScrollPosition);
 
     if (position <= 100) {
       setScroll(0);

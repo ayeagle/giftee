@@ -47,8 +47,8 @@ export default function AppRedirectWrapper(props) {
     }, 100);
   }
 
-  ////console.log("user load state is ready");
-  ////console.log(local.isUserReady());
+  //////console.log("user load state is ready");
+  //////console.log(local.isUserReady());
   //comment or something
 
   async function getUser() {
@@ -64,14 +64,14 @@ export default function AppRedirectWrapper(props) {
 
   if (isLoading) {
     // console.warn(isLoading);
-    ////console.log("actively in the isLoading phase");
+    //////console.log("actively in the isLoading phase");
     return <LoadingPage />;
   }
 
   if (error) {
     console.warn(error);
     console.error(error);
-    ////console.log(error.message);
+    //////console.log(error.message);
     return (
       <div>
         THIS IS AN ERROR SCREEN
@@ -98,18 +98,18 @@ export default function AppRedirectWrapper(props) {
     }
   }
 
-  ////console.log(userObject);
-  ////console.log("sdjlahasjdhjkashkjdhjhsdkjhaskhjdhdshaashadhkjashkjdhjasdhjdas");
+  //////console.log(userObject);
+  //////console.log("sdjlahasjdhjkashkjdhjhsdkjhaskhjdhdshaashadhkjashkjdhjasdhjdas");
 
   if (user) {
     if (slugSet) {
       if (userLoaded) {
-        //console.log(slug);
-        //console.log(localStorage);
-        //console.log(user);
-        //console.log(slugSet);
-        //console.log(userLoaded);
-        //console.log(userObject);
+        ////console.log(slug);
+        ////console.log(localStorage);
+        ////console.log(user);
+        ////console.log(slugSet);
+        ////console.log(userLoaded);
+        ////console.log(userObject);
 
         evalOnboarded();
       }
@@ -133,13 +133,13 @@ export default function AppRedirectWrapper(props) {
   }
 
   // if (userLoaded) {
-  //   ////console.log("APPARENTLY THE USER WAS LOADED");
-  //   ////console.log("SLUG");
-  //   ////console.log(slug);
+  //   //////console.log("APPARENTLY THE USER WAS LOADED");
+  //   //////console.log("SLUG");
+  //   //////console.log(slug);
 
   //   if (!user && slugSet && slug != "begin") {
   //     //need to add some logic that will retain the redirection data if invited or otherwise but not logged in
-  //     ////console.log("this the href bruu");
+  //     //////console.log("this the href bruu");
 
   //     let refid_array = window.location.href.split("?");
   //     let refid = refid_array.pop();
@@ -168,13 +168,13 @@ export default function AppRedirectWrapper(props) {
 
   // if (user) {
   //   console.warn(user);
-  //   ////console.log("actively in the user return phase");
+  //   //////console.log("actively in the user return phase");
   //   return <>{props.children}</>;
   // }
 
   // if (slugSet && slug != "begin" && userLoaded) {
-  //   ////console.log(slug);
-  //   ////console.log("slug");
+  //   //////console.log(slug);
+  //   //////console.log("slug");
   //   window.location.href = "/begin";
   // }
 

@@ -11,7 +11,7 @@ export default function XMAS_AddGroupUsers(props: AddGroupUsersProps) {
   // let curr_group = getGroupObject()
   let testName = "";
 
-  ////console.log("Add group users -- client-side invoked");
+  //////console.log("Add group users -- client-side invoked");
 
   return axios
     .post(
@@ -26,14 +26,14 @@ export default function XMAS_AddGroupUsers(props: AddGroupUsersProps) {
       }
     )
     .then((response) => {
-      ////console.log(response.data);
+      //////console.log(response.data);
       testName = response.data;
 
-      ////console.log("the add users request was successful");
+      //////console.log("the add users request was successful");
       return response.data;
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("UNSUCCESSFUL LOGIN REQUEST");
+      //////console.log("UNSUCCESSFUL LOGIN REQUEST");
     });
 }

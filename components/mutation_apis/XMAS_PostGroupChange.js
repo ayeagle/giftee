@@ -9,7 +9,7 @@ export default function XMAS_PostGroupChange(variable, updateValue, group_id, to
   let temp = getGroupObject();
   let timestamp = new Date().toISOString();
 
-  ////console.log("Post Group Change -- client-side invoked");
+  //////console.log("Post Group Change -- client-side invoked");
 
   return axios
     .post("https://server.giftee.io/xmas_postGroupChange", {
@@ -21,7 +21,7 @@ export default function XMAS_PostGroupChange(variable, updateValue, group_id, to
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((response) => {
-      ////console.log("this is the response which we will set group_id to + " + response.data);
+      //////console.log("this is the response which we will set group_id to + " + response.data);
       // localStorage.setItem('group_id', response.data)
 
       // temp.group_id = response.data
@@ -32,6 +32,6 @@ export default function XMAS_PostGroupChange(variable, updateValue, group_id, to
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("get group object  UNSUCCESSFUL REQUEST");
+      //////console.log("get group object  UNSUCCESSFUL REQUEST");
     });
 }

@@ -9,7 +9,7 @@ export default function AcceptReferral({ link }) {
 
 
     const copy = () => {
-        ////console.log("we got clicked")
+        //////console.log("we got clicked")
         navigator.clipboard.writeText(link)
         setChangeAllowed(false)
         setInternText("Copied to clipboard")

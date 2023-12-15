@@ -53,7 +53,7 @@ export default function tempInvite({errorHappening, setErrorHappening}) {
     } else {
       // If no referral code was found, simply show the group joining page
       // showGroupJoinPage();
-      ////console.log("NO NON OREFERRAL TRIGGERED");
+      //////console.log("NO NON OREFERRAL TRIGGERED");
       setRefLinkPrompt("Hmmmm no group referral code provided...");
 
       //looks like there's no referral code
@@ -80,8 +80,8 @@ export default function tempInvite({errorHappening, setErrorHappening}) {
 
   // const [groupName, setGroupName] = useState('')
 
-  ////console.log("EXPLORE PAGE EXPLORE PAGE");
-  ////console.log(curr_group);
+  //////console.log("EXPLORE PAGE EXPLORE PAGE");
+  //////console.log(curr_group);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -89,11 +89,11 @@ export default function tempInvite({errorHappening, setErrorHappening}) {
         const curr_group = await getGroupObject();
         setGroupName(localStorage.getItem("group_name"));
         setGroupData(curr_group);
-        // ////console.log(
+        // //////console.log(
         //   "EXPLOREEXPLOREEXPLOREEXPLOREEXPLOREEXPLOREEXPLORE PAGE EXPLORE PAGE"
         // );
 
-        ////console.log(curr_group);
+        //////console.log(curr_group);
       } catch (error) {
         console.error("Error fetching group data", error);
       }

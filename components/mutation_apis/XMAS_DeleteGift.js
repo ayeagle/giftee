@@ -18,10 +18,10 @@ export default function XMAS_DeleteGift(
       }
     )
     .then((response) => {
-      //console.log("gift deleted yay it worked hehe");
+      ////console.log("gift deleted yay it worked hehe");
     })
     .catch((error) => {
-      //console.log("UNSUCCESSFUL  gift deletion  CREATION REQUEST");
+      ////console.log("UNSUCCESSFUL  gift deletion  CREATION REQUEST");
       console.error(error);
     });
 }

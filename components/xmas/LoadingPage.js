@@ -18,30 +18,30 @@ export default function LoadingPage({ active, small }) {
   const [styleStage, setStyleStage] = useState("before");
 
   if (isReady && runOnce == 0) {
-    ////console.log("isready  run");
+    //////console.log("isready  run");
     setRunOnce(1);
 
     setTimeout(() => {
-      ////console.log("isready timeout run");
+      //////console.log("isready timeout run");
       setStyleStage("after");
       setTimeout(() => {
-        ////console.log("isready inner timeout run");
+        //////console.log("isready inner timeout run");
         // setStyleStage('final')
       }, [2000]);
     }, [2000]);
   }
 
   const cycle = () => {
-    ////console.log("cycle run");
+    //////console.log("cycle run");
     let count = 0;
 
     let img = document.getElementById("gif");
     let src = img.getAttribute("src");
     let gifCycler = setInterval(function () {
-      ////console.log("cycle timeout run");
+      //////console.log("cycle timeout run");
 
       count++;
-      ////console.log(count);
+      //////console.log(count);
       if (count >= 2) {
         // stop after 10 iterations
         clearInterval(gifCycler);
@@ -55,7 +55,7 @@ export default function LoadingPage({ active, small }) {
   const determineQuote = () => {
     let length = loading_list.length;
     let position = Math.floor(Math.random() * length);
-    ////console.log(position);
+    //////console.log(position);
     setCurrQuote(loading_list[position]);
     // if (position%2 == 1) {
     //     setContainerStyle(styles.container_before)
@@ -66,7 +66,7 @@ export default function LoadingPage({ active, small }) {
   };
 
   useEffect(() => {
-    ////console.log("useeffect run");
+    //////console.log("useeffect run");
 
     cycle();
   }, []);

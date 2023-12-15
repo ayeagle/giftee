@@ -98,7 +98,7 @@ export default function Groups({ errorHappening, setErrorHappening }) {
     curr_user.then((data) => {
       const temp = data;
       setUserData(temp);
-      ////console.log(
+      //////console.log(
       ("this is the retrieved user data within the get started page");
     });
 
@@ -141,15 +141,15 @@ export default function Groups({ errorHappening, setErrorHappening }) {
     let styleBool = true;
 
     const blinking = setInterval(() => {
-      ////console.log("evalblink interval");
+      //////console.log("evalblink interval");
 
-      ////console.log("evalblink interval after");
+      //////console.log("evalblink interval after");
 
       if (styleBool) {
-        ////console.log("style 2 set");
+        //////console.log("style 2 set");
         setButtonStyle(styles.add_button_blink2);
       } else {
-        ////console.log("style 1 set");
+        //////console.log("style 1 set");
         setButtonStyle(styles.add_button_blink1);
       }
       styleBool = !styleBool;
@@ -319,7 +319,7 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                     ) : (
                       <div className={styles.groups_container}>
                         {allGroupsData.map((group, i) => {
-                          // console.log(`group-${group.id}`);
+                          // //console.log(`group-${group.id}`);
                           return (
                             <div
                               id={`group-${group.id}-${i}`}
@@ -327,8 +327,8 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                               className={styles.groups_unit}
                               onClick={() => {
                                 changeGroup(group.id);
-                                //console.log(group.id);
-                                //console.log(allGroupsData);
+                                ////console.log(group.id);
+                                ////console.log(allGroupsData);
                               }}
                               style={{
                                 backgroundColor:
@@ -393,7 +393,7 @@ export default function Groups({ errorHappening, setErrorHappening }) {
                                 }}
                               >
                                 {group.user_names.map((name, i) => {
-                                  // console.log(`${group.id}-${name}-${i}`)
+                                  // //console.log(`${group.id}-${name}-${i}`)
                                   return i < numUsersDisplayed ? (
                                     <div
                                       id={`${group.id}-${name}-${i}`}

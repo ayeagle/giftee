@@ -17,7 +17,7 @@ export default function XMAS_UpdateGift(props: UpdateGiftProps) {
 
   let testName = "";
 
-  ////console.log("Update Gift -- client-side invoked");
+  //////console.log("Update Gift -- client-side invoked");
 
   return axios
     .post(
@@ -42,6 +42,6 @@ export default function XMAS_UpdateGift(props: UpdateGiftProps) {
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("UNSUCCESSFUL  gift update  CREATION REQUEST");
+      //////console.log("UNSUCCESSFUL  gift update  CREATION REQUEST");
     });
 }

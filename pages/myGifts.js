@@ -79,10 +79,10 @@ export default function MyGifts({
   //     setRunOnce(runOnce + 1)
   // }, [groupData])
 
-  ////console.log("............");
-  ////console.log("............");
-  ////console.log("............");
-  ////console.log(groupData);
+  //////console.log("............");
+  //////console.log("............");
+  //////console.log("............");
+  //////console.log(groupData);
 
   useEffect(() => {
     // getGroup()
@@ -113,30 +113,30 @@ export default function MyGifts({
     curr_group.then((data) => {
       const curr_group = data;
       setGroupData(curr_group);
-      ////console.log(curr_group);
+      //////console.log(curr_group);
       setLink(curr_group.invite_link);
     });
 
-    ////console.log("this is the groupdata returned to the main compoennt");
-    ////console.log("this is the groupdata returned to the main compoennt");
-    ////console.log("this is the groupdata returned to the main compoennt");
-    ////console.log("this is the groupdata returned to the main compoennt");
-    ////console.log("this is the groupdata returned to the main compoennt");
-    ////console.log("this is the groupdata returned to the main compoennt");
-    ////console.log("this is the groupdata returned to the main compoennt");
-    ////console.log(getGroupObject());
-    ////console.log(groupData);
-    // ////console.log("current user")
-    // ////console.log(localStorage.getItem('current_user'))
-    // ////console.log("group_id")
+    //////console.log("this is the groupdata returned to the main compoennt");
+    //////console.log("this is the groupdata returned to the main compoennt");
+    //////console.log("this is the groupdata returned to the main compoennt");
+    //////console.log("this is the groupdata returned to the main compoennt");
+    //////console.log("this is the groupdata returned to the main compoennt");
+    //////console.log("this is the groupdata returned to the main compoennt");
+    //////console.log("this is the groupdata returned to the main compoennt");
+    //////console.log(getGroupObject());
+    //////console.log(groupData);
+    // //////console.log("current user")
+    // //////console.log(localStorage.getItem('current_user'))
+    // //////console.log("group_id")
 
-    // ////console.log(localStorage.getItem('group_id'))
+    // //////console.log(localStorage.getItem('group_id'))
 
     // let promise = XMAS_GetGroupObject(localStorage.getItem('current_user'), localStorage.getItem('group_id'))
 
     // promise.then((data) => {
-    //     ////console.log("data returned from the page load API call")
-    //     ////console.log(data)
+    //     //////console.log("data returned from the page load API call")
+    //     //////console.log(data)
     //     curr_group = data
     //     updateGroupObject(data)
     //     setGroupData(data)
@@ -145,7 +145,7 @@ export default function MyGifts({
   };
 
   // if (!groupData && runOnce == 1) {
-  //     ////console.log("RUNONCE VAL: " + runOnce)
+  //     //////console.log("RUNONCE VAL: " + runOnce)
   //     getGroup()
   // }
 
@@ -167,7 +167,7 @@ export default function MyGifts({
 
   const exitGiftClick = (gift_id) => {
     // if (oneOpen) {
-    ////console.log("gift UNclicked");
+    //////console.log("gift UNclicked");
     setSingleGiftStyle(styles.gift_box);
     setSingleGiftOpen(false);
     setIsClaiming(false);
@@ -242,27 +242,27 @@ export default function MyGifts({
     switch (e.target.value) {
       case "nameUp":
         tempArray.gifts.sort((a, b) => (a.requester > b.requester ? 1 : -1));
-        ////console.log(tempArray);
+        //////console.log(tempArray);
         break;
       case "nameDown":
         tempArray.gifts.sort((a, b) => (a.requester < b.requester ? 1 : -1));
-        ////console.log(tempArray);
+        //////console.log(tempArray);
         break;
       case "costUp":
         tempArray.gifts.sort((a, b) => (a.cost > b.cost ? 1 : -1));
-        ////console.log(tempArray);
+        //////console.log(tempArray);
         break;
       case "costDown":
         tempArray.gifts.sort((a, b) => (a.cost < b.cost ? 1 : -1));
-        ////console.log(tempArray);
+        //////console.log(tempArray);
         break;
       case "newest":
         tempArray.gifts.sort((a, b) => (a.gift_id > b.gift_id ? 1 : -1));
-        ////console.log(tempArray);
+        //////console.log(tempArray);
         break;
       case "oldest":
         tempArray.gifts.sort((a, b) => (a.gift_id < b.gift_id ? 1 : -1));
-        ////console.log(tempArray);
+        //////console.log(tempArray);
         break;
       default:
         break;
@@ -314,20 +314,20 @@ export default function MyGifts({
     });
   }, []);
 
-  ////console.log("this is group data before main gift component loading");
-  ////console.log(groupData);
-  // ////console.log(groupData.gifts.length)
+  //////console.log("this is group data before main gift component loading");
+  //////console.log(groupData);
+  // //////console.log(groupData.gifts.length)
 
-  ////console.log("single gift thing");
-  ////console.log("single gift thing");
-  ////console.log("single gift thing");
-  ////console.log("single gift thing");
-  ////console.log("single gift thing");
-  ////console.log("single gift thing");
-  ////console.log("single gift thing");
-  ////console.log("single gift thing");
-  ////console.log("single gift thing");
-  ////console.log(singleGiftObject);
+  //////console.log("single gift thing");
+  //////console.log("single gift thing");
+  //////console.log("single gift thing");
+  //////console.log("single gift thing");
+  //////console.log("single gift thing");
+  //////console.log("single gift thing");
+  //////console.log("single gift thing");
+  //////console.log("single gift thing");
+  //////console.log("single gift thing");
+  //////console.log(singleGiftObject);
 
   return (
     <>

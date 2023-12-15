@@ -4,7 +4,7 @@ import { getGroupObject, updateGroupObject } from "../data_management/CurrGroupD
 let testName = "";
 
 export default function XMAS_PostReferralHash(group_id, hash, token) {
-  ////console.log("Post group code send -- client-side invoked");
+  //////console.log("Post group code send -- client-side invoked");
 
   return axios
     .post("https://server.giftee.io/xmas_postReferralHash", {
@@ -15,7 +15,7 @@ export default function XMAS_PostReferralHash(group_id, hash, token) {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((response) => {
-      ////console.log("this is the response which we will set group_id to + " + response.data);
+      //////console.log("this is the response which we will set group_id to + " + response.data);
       // localStorage.setItem('group_id', response.data)
 
       // temp.group_id = response.data
@@ -26,6 +26,6 @@ export default function XMAS_PostReferralHash(group_id, hash, token) {
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("get group object  UNSUCCESSFUL REQUEST");
+      //////console.log("get group object  UNSUCCESSFUL REQUEST");
     });
 }

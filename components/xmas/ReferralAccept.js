@@ -47,17 +47,17 @@ export default function ReferralAccept() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const referralCode = params.get("refid");
-    //console.log('referralCode')
-    //console.log(referralCode)
+    ////console.log('referralCode')
+    ////console.log(referralCode)
 
     localStorage.setItem("refid", referralCode);
 
     if (referralCode) {
       // If a referral code was found, show a prompt to join the group
-      ////console.log("REFERRAL TRIGGERED");
-      ////console.log("REFERRAL TRIGGERED");
-      ////console.log("REFERRAL TRIGGERED");
-      ////console.log("REFERRAL TRIGGERED");
+      //////console.log("REFERRAL TRIGGERED");
+      //////console.log("REFERRAL TRIGGERED");
+      //////console.log("REFERRAL TRIGGERED");
+      //////console.log("REFERRAL TRIGGERED");
       getReferralGroup(referralCode);
 
       //check referral code
@@ -78,11 +78,11 @@ export default function ReferralAccept() {
     let promise = XMAS_GetGroupObjectReferral(refid);
 
     promise.then((data) => {
-      //console.log("//////////////////////////////////////////")
-      //console.log("//////////////////////////////////////////")
-      //console.log("//////////////////////////////////////////")
-      //console.log(data)
-      //console.log(data[0].id)
+      ////console.log("//////////////////////////////////////////")
+      ////console.log("//////////////////////////////////////////")
+      ////console.log("//////////////////////////////////////////")
+      ////console.log(data)
+      ////console.log(data[0].id)
 
       if (data.length == 0) {
         setRefLinkPrompt("Ruh roh that's not a valid referral link");
@@ -97,8 +97,8 @@ export default function ReferralAccept() {
 
   // const [groupName, setGroupName] = useState('')
 
-  ////console.log("EXPLORE PAGE EXPLORE PAGE");
-  ////console.log(curr_group);
+  //////console.log("EXPLORE PAGE EXPLORE PAGE");
+  //////console.log(curr_group);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -106,11 +106,11 @@ export default function ReferralAccept() {
         const curr_group = await getGroupObject();
         setGroupName(localStorage.getItem("group_name"));
         setGroupData(curr_group);
-        // ////console.log(
+        // //////console.log(
         //   "EXPLOREEXPLOREEXPLOREEXPLOREEXPLOREEXPLOREEXPLORE PAGE EXPLORE PAGE"
         // );
 
-        ////console.log(curr_group);
+        //////console.log(curr_group);
       } catch (error) {
         console.error("Error fetching group data", error);
       }

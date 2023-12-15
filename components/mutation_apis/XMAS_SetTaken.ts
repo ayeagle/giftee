@@ -17,7 +17,7 @@ export default async function XMAS_SetTaken(props: SetTakenProps) {
   let curr_group_data = await getGroupObject();
   let testName = "";
 
-  ////console.log("Set Taken -- client-side invoked");
+  //////console.log("Set Taken -- client-side invoked");
 
   return axios
     .post(
@@ -33,7 +33,7 @@ export default async function XMAS_SetTaken(props: SetTakenProps) {
       }
     )
     .then((response) => {
-      ////console.log(response.data);
+      //////console.log(response.data);
       testName = response.data;
       let giftIndex = curr_group_data.gifts.findIndex(
         (gift) => gift.gift_id === props.gift_unique_id
@@ -59,11 +59,11 @@ export default async function XMAS_SetTaken(props: SetTakenProps) {
       // POTENTIALLY NEED TO RE-INCLUDE
       // POTENTIALLY NEED TO RE-INCLUDE
 
-      ////console.log("the login request was successful");
+      //////console.log("the login request was successful");
       return response.data;
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("UNSUCCESSFUL LOGIN REQUEST");
+      //////console.log("UNSUCCESSFUL LOGIN REQUEST");
     });
 }

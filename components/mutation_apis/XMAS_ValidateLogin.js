@@ -5,7 +5,7 @@ export default function XMAS_ValidateLogin(userName, password, token) {
 
   let testName = "";
 
-  ////console.log("Validate Login -- client-side invoked");
+  //////console.log("Validate Login -- client-side invoked");
 
   return axios
     .post("https://server.giftee.io/xmas_validateLogin", {
@@ -16,18 +16,18 @@ export default function XMAS_ValidateLogin(userName, password, token) {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((response) => {
-      ////console.log(response.data);
+      //////console.log(response.data);
       testName = response.data;
 
       localStorage.setItem("username", response.data.username);
       localStorage.setItem("password", response.data.upassword);
       localStorage.setItem("uid", response.data.uid);
 
-      ////console.log("the login request was successful");
+      //////console.log("the login request was successful");
       return response.data;
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("UNSUCCESSFUL LOGIN REQUEST");
+      //////console.log("UNSUCCESSFUL LOGIN REQUEST");
     });
 }

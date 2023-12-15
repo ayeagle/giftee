@@ -21,17 +21,17 @@ export function initGroupObject(new_data: RichGroupGift[], source) {
 
   curr_group_data = new GroupData(new_data)
 
-  // console.log("this is the new data");
-  // console.log(new_data);
-  // console.log(new_data);
+  // //console.log("this is the new data");
+  // //console.log(new_data);
+  // //console.log(new_data);
 
   localStorage.setItem("group_name", new_data[0].name);
 
-  //console.log(new_data);
-  //console.log(new_data);
-  //console.log("THIS IS THE NEW DAta");
-  //console.log(new_data);
-  //console.log(new_data);
+  ////console.log(new_data);
+  ////console.log(new_data);
+  ////console.log("THIS IS THE NEW DAta");
+  ////console.log(new_data);
+  ////console.log(new_data);
 
   // curr_group_data.group_name = new_data[0].name;
   // curr_group_data.group_id = new_data[0].id;
@@ -49,18 +49,18 @@ export function initGroupObject(new_data: RichGroupGift[], source) {
   //   new_data[0].gift_exchange_time * 1000
   // ).toLocaleDateString("default");
 
-  // //console.log(curr_group_data);
-  // //console.log(curr_group_data);
-  // //console.log("THIS IS THE NEW CURR_GROUP_DATA");
-  // //console.log(curr_group_data);
-  // //console.log(curr_group_data);
+  // ////console.log(curr_group_data);
+  // ////console.log(curr_group_data);
+  // ////console.log("THIS IS THE NEW CURR_GROUP_DATA");
+  // ////console.log(curr_group_data);
+  // ////console.log(curr_group_data);
 
   // curr_group_data.invite_link = `giftee.io/invite?refid=${new_data[0].referral_hash}`;
 
   // let temp: GroupGift[] = [];
 
   // new_data.map((element, i) => {
-  //   // ////console.log(element)
+  //   // //////console.log(element)
   //   temp.push({
   //     gift_id: element.unique_id,
   //     requester: element.requester_name,
@@ -101,7 +101,7 @@ export async function getUserData() {
 }
 
 export async function updateUserData(newUserObject) {
-  ////console.log("LOCAL USER DATA INSTANCE IS BEING UPDATED")
+  //////console.log("LOCAL USER DATA INSTANCE IS BEING UPDATED")
   curr_user_data = newUserObject;
 }
 

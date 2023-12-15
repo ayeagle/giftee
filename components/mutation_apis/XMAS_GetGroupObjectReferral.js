@@ -4,7 +4,7 @@ import { getGroupObject, updateGroupObject } from "../data_management/CurrGroupD
 
 export default function XMAS_GetGroupObjectReferral(xmas_referral_hash, token) {
 
-  ////console.log("Get Group Object by REF -- client-side invoked");
+  //////console.log("Get Group Object by REF -- client-side invoked");
 
   return axios
     .post("https://server.giftee.io/xmas_getGroupObjectReferral", {
@@ -14,14 +14,14 @@ export default function XMAS_GetGroupObjectReferral(xmas_referral_hash, token) {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((response) => {
-      ////console.log("RIGHT BEFORE THE ASSIGNMENT FUNCTION");
-      ////console.log(response.data);
+      //////console.log("RIGHT BEFORE THE ASSIGNMENT FUNCTION");
+      //////console.log(response.data);
       return response.data;
 
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("get group object  UNSUCCESSFUL REQUEST");
-      // ////console.log(temp)
+      //////console.log("get group object  UNSUCCESSFUL REQUEST");
+      // //////console.log(temp)
     });
 }

@@ -5,7 +5,7 @@ export default function XMAS_ResolveUser(name, email, token) {
 
   let testName = "";
 
-  ////console.log(token, "Resolve User -- client-side invoked");
+  //////console.log(token, "Resolve User -- client-side invoked");
 
   return axios
     .post("https://server.giftee.io/xmas_resolveUser", {
@@ -16,7 +16,7 @@ export default function XMAS_ResolveUser(name, email, token) {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((response) => {
-      ////console.log(response.data);
+      //////console.log(response.data);
       // testName = response.data
       return response.data;
 
@@ -25,6 +25,6 @@ export default function XMAS_ResolveUser(name, email, token) {
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("UNSUCCESSFUL GET OR CREATE REQUEST");
+      //////console.log("UNSUCCESSFUL GET OR CREATE REQUEST");
     });
 }

@@ -16,8 +16,8 @@ export default function DecorativeBackground() {
       document.documentElement.scrollHeight
     );
     setHeight(max);
-    // ////console.log("this the max height");
-    // ////console.log(max);
+    // //////console.log("this the max height");
+    // //////console.log(max);
   };
 
   return (

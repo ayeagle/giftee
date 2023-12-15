@@ -42,12 +42,12 @@ export default function NavBar({
   }, [hideMenu]);
 
   const handleMenuClick = () => {
-    ////console.log("menuOpen");
-    ////console.log(menuOpen);
-    ////console.log("hideMenu");
-    ////console.log(hideMenu);
-    ////console.log("totalWidth");
-    ////console.log(totalWidth);
+    //////console.log("menuOpen");
+    //////console.log(menuOpen);
+    //////console.log("hideMenu");
+    //////console.log(hideMenu);
+    //////console.log("totalWidth");
+    //////console.log(totalWidth);
 
     setUp(!up);
     setMenuOpen(!menuOpen);

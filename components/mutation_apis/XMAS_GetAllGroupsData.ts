@@ -9,7 +9,7 @@ type GetAllGroupsDataProps = {
 };
 
 export default function XMAS_GetAllGroupsData(props: GetAllGroupsDataProps) {
-  //console.log(token, "Get Group Object -- client-side invoked");
+  ////console.log(token, "Get Group Object -- client-side invoked");
 
   return axios
     .post(
@@ -35,7 +35,7 @@ export default function XMAS_GetAllGroupsData(props: GetAllGroupsDataProps) {
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("get group object  UNSUCCESSFUL REQUEST");
-      // ////console.log(temp)
+      //////console.log("get group object  UNSUCCESSFUL REQUEST");
+      // //////console.log(temp)
     });
 }

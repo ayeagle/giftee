@@ -24,19 +24,19 @@ export default function UserSelect({progress, setProgress }) {
     if (runOnce === 0) {
         // validate()
         setRunOnce(2)
-        // ////console.log('fetching object')
+        // //////console.log('fetching object')
         // // curr_group = getGroupObject();
-        // ////console.log('retrieved object')
-        // ////console.log(curr_group)
+        // //////console.log('retrieved object')
+        // //////console.log(curr_group)
     }
 
 
     const userChoose = (name) => {
-        ////console.log(name)
+        //////console.log(name)
         localStorage.setItem('current_user', name);
         localStorage.setItem('group_id', curr_group.group_id);
 
-        ////console.log("at the time of choosing a user, the progress was " + progress)
+        //////console.log("at the time of choosing a user, the progress was " + progress)
         if(progress <= 1){
             setProgress(progress + 1)
         } else {
@@ -57,8 +57,8 @@ export default function UserSelect({progress, setProgress }) {
             </div>
             {curr_group.name != '' ? (<div>
                 {curr_group.group_members.map((name, index) => {
-                    ////console.log("----------------> this is the index: " + index)
-                    ////console.log("----------------> this is the name: " + name)
+                    //////console.log("----------------> this is the index: " + index)
+                    //////console.log("----------------> this is the name: " + name)
 
                     return (
                         <div className={styles.name_option} onClick={() => userChoose(name)}>

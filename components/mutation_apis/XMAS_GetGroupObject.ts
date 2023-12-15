@@ -17,14 +17,14 @@ export default function XMAS_GetGroupObject(props: GetGroupObjectProps) {
       }
     )
     .then((response) => {
-      //console.log("RIGHT BEFORE THE ASSIGNMENT FUNCTION");
-      //console.log(response.data);
+      ////console.log("RIGHT BEFORE THE ASSIGNMENT FUNCTION");
+      ////console.log(response.data);
 
       return response.data;
     })
     .catch((error) => {
       console.error(error);
-      ////console.log("get group object  UNSUCCESSFUL REQUEST");
-      // ////console.log(temp)
+      //////console.log("get group object  UNSUCCESSFUL REQUEST");
+      // //////console.log(temp)
     });
 }

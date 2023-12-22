@@ -627,6 +627,7 @@ export default function Gifts({
         <div>
           <br />
           <Loading />
+          If no gifts are loading, try logging out and back in.
           <br />
           <br />
           <br />
